@@ -1,0 +1,13 @@
+  analyzer:
+    errors:
+      prefer_const_declarations: warning
+      prefer_const_constructors: warning
+      cancel_subscriptions: warning
+      close_sinks: warning
+      
+  linter:
+    rules:
+      prefer_const_declarations: true
+      prefer_const_constructors: true
+      cancel_subscriptions: true
+      close_sinks: true

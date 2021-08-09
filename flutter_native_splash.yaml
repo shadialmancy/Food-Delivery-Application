@@ -1,0 +1,7 @@
+  flutter_native_splash:
+    image: assets/images/icono-app.jpg
+    # color: "42a5f5"
+    color: "c87b29"
+    fill: true
+    android_disable_fullscreen: true
+    # android: false
