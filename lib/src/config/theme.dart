@@ -54,7 +54,8 @@ class ThemeInfo {
   static TextStyle textoGrande() {
     return const TextStyle(fontSize: 25);
   }
-  static double radioBordeCircular(){
+
+  static double radioBordeCircular() {
     return 10;
   }
 }

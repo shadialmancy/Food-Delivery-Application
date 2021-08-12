@@ -5,8 +5,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Hola Mundo ${Config.data['version']}'),
+      body: Row(
+        children: [
+          Center(
+            child: Text('Hola Mundo ${Config.data['version']}'),
+          ),
+        ],
       ),
     );
   }
