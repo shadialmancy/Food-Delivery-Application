@@ -4,8 +4,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class ThemeInfo {
-  static final systemNavigationBarColor = Colors.black;
-  static final statusBarColor = Colors.black;
+  static const systemNavigationBarColor = Colors.black;
+  static const statusBarColor = Colors.black;
 
   static getTheme() {
     return ThemeData(
