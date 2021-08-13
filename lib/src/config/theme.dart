@@ -9,12 +9,12 @@ class ThemeInfo {
 
   static getTheme() {
     return ThemeData(
-      brightness: Brightness.dark,
-      primarySwatch: generateMaterialColor(Palette.primary),
+      brightness: Brightness.light,
+      // primarySwatch: generateMaterialColor(Palette.primary),
       // primaryColor: Colors.orange[400],
-      accentColor: Colors.blue,
-      backgroundColor: const Color(0xff110e15),
-      scaffoldBackgroundColor: const Color(0xff110e15),
+      // accentColor: Colors.blue,
+      // backgroundColor: const Color(0xff110e15),
+      // scaffoldBackgroundColor: const Color(0xff110e15),
     );
   }
 
