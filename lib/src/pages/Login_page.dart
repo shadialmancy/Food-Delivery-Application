@@ -37,9 +37,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
             Container(
               width: 300,
               height: 50,
@@ -106,26 +104,11 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(FontAwesomeIcons.googlePlus),
-                  color: Colors.red,
-                  iconSize: 50,
-                ),
+                IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.googlePlus), color: Colors.red, iconSize: 50),
                 SizedBox(width: 10),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(FontAwesomeIcons.facebook),
-                  color: Colors.red,
-                  iconSize: 50,
-                ),
+                IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.facebook), color: Colors.red, iconSize: 50),
                 SizedBox(width: 10),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(FontAwesomeIcons.twitter),
-                  color: Colors.red,
-                  iconSize: 50,
-                )
+                IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.twitter), color: Colors.red, iconSize: 50)
               ],
             )
           ],
