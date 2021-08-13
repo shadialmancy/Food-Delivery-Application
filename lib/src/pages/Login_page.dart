@@ -23,10 +23,10 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
-                    Text(
+                    const Text(
                       "LYZOO",
                       style: TextStyle(
                           fontSize: 98,
@@ -34,14 +34,14 @@ class _LoginPageState extends State<LoginPage> {
                           fontWeight: FontWeight.bold,
                           letterSpacing: 2),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                     Container(
                       width: 300,
                       height: 50,
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           fillColor: Color(0xFFE7E7E7),
                           filled: true,
                           prefixIcon: Icon(
@@ -56,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Container(
@@ -65,9 +65,9 @@ class _LoginPageState extends State<LoginPage> {
                       child: TextFormField(
                         obscureText: passwordVisible,
                         decoration: InputDecoration(
-                          fillColor: Color(0xFFE7E7E7),
+                          fillColor: const Color(0xFFE7E7E7),
                           filled: true,
-                          prefixIcon: Icon(
+                          prefixIcon: const Icon(
                             Icons.lock,
                             color: Colors.red,
                           ),
@@ -81,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                               });
                             },
                           ),
-                          enabledBorder: OutlineInputBorder(
+                          enabledBorder: const OutlineInputBorder(
                             borderSide: BorderSide(width: 0, color: Color(0xFFE7E7E7)),
                             borderRadius: BorderRadius.all(Radius.circular(50)),
                           ),
@@ -89,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Container(
@@ -98,25 +98,25 @@ class _LoginPageState extends State<LoginPage> {
                       child: RaisedButton(
                         onPressed: () {},
                         color: Colors.red,
-                        shape: RoundedRectangleBorder(
+                        shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(50))),
-                        child: Text(
+                        child: const Text(
                           "Login",
                           style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Forgot Password ?',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 0,
                     ),
                     Container(
@@ -126,17 +126,17 @@ class _LoginPageState extends State<LoginPage> {
                               child: Container(
                                   margin:
                                   const EdgeInsets.only(left: 10.0, right: 15.0),
-                                  child: Divider(
+                                  child: const Divider(
                                     indent: 30,
                                     color: Colors.black,
                                     height: 0,
                                   ))),
-                          Text("OR"),
+                          const Text("OR"),
                           Expanded(
                               child: Container(
                                   margin:
                                   const EdgeInsets.only(left: 15.0, right: 10.0),
-                                  child: Divider(
+                                  child: const Divider(
                                     color: Colors.black,
                                     height: 0,
                                     endIndent: 30,
@@ -147,16 +147,16 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Don\'t have an account yet?"),
+                        const Text("Don\'t have an account yet?"),
                         TextButton(
                             onPressed: () {},
-                            child: Text(
+                            child: const Text(
                               "Register",
                               style: TextStyle(color: Colors.black),
                             ))
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 0,
                     ),
                     Row(
@@ -164,25 +164,25 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         IconButton(
                           onPressed: () {},
-                          icon: Icon(FontAwesomeIcons.googlePlus),
+                          icon: const Icon(FontAwesomeIcons.googlePlus),
                           color: Colors.red,
                           iconSize: 50,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         IconButton(
                           onPressed: () {},
-                          icon: Icon(FontAwesomeIcons.facebook),
+                          icon: const Icon(FontAwesomeIcons.facebook),
                           color: Colors.red,
                           iconSize: 50,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         IconButton(
                           onPressed: () {},
-                          icon: Icon(FontAwesomeIcons.twitter),
+                          icon: const Icon(FontAwesomeIcons.twitter),
                           color: Colors.red,
                           iconSize: 50,
                         )
