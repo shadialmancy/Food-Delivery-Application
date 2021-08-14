@@ -13,6 +13,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
  
   HomeController _controller = new HomeController();
+
+  final List<int> numbers = [1, 2, 3, 5, 8, 13, 21, 34, 55];
  
   @override
   void initState() {
@@ -27,8 +29,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
            title: const Center(child: Text('Delivery')),
-           elevation: 0,
-           backgroundColor: Colors.red,
+           elevation: 5,
+           backgroundColor: MyColors.primaryOrange,
            leading: const Icon(Icons.menu, color: Colors.white),
            actions: <Widget>[
              
@@ -49,13 +51,19 @@ class _HomePageState extends State<HomePage> {
                  _card1(context),
                  
                  _card1(context),
+
+                 _scrollHorizontal(context),
+
+                 _card1(context),
+
+                 _card1(context),
               ],
             ),
           ),
         ),
         bottomNavigationBar: ConvexAppBar(
           backgroundColor: Colors.white,
-          color: Colors.black38 ,
+          color: MyColors.primaryColor,
           activeColor: MyColors.primaryOrange,
           style: TabStyle.reactCircle,
           height: 60,
@@ -84,7 +92,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 10),
 
               const ListTile(
-                 leading: Icon(Icons.timer),
+                 
                  title: Text("Comida China Food Inn"),
                  subtitle: Text("Comida estilo asiatica para comer en casa"),
               ),
@@ -141,6 +149,58 @@ class _HomePageState extends State<HomePage> {
       ),
     );
  }
+
+ Widget _scrollHorizontal(BuildContext context){
+   return Container(
+     margin: const EdgeInsets.only(top: 30),
+     child: Column(
+       crossAxisAlignment: CrossAxisAlignment.start,
+       children: [
+ 
+         const Padding(
+           padding: const EdgeInsets.only(left: 30),
+           child: const Text(
+             'Promociones',
+             style: TextStyle(
+               fontSize: 25,
+               fontWeight: FontWeight.bold
+             ),
+           )
+         ),
+
+         Container(
+          padding: const EdgeInsets.only(top: 24, bottom: 5),
+          height: MediaQuery.of(context).size.height * 0.25,
+          child: ListView.builder(
+           scrollDirection: Axis.horizontal,
+           itemCount: numbers.length, itemBuilder: (context, index) {
+            return Container(
+              width: MediaQuery.of(context).size.width * 0.6,
+              child: Card(
+                margin: const EdgeInsets.only(left: 30),
+                color: Colors.blue,
+                child: Container(
+                 child: Center(
+                   child: Text(
+                     numbers[index].toString(), 
+                     style: const TextStyle(
+                       color: Colors.white, 
+                       fontSize: 36.0
+                     ),
+                   )
+                 ),
+                ),
+              ),
+            );
+           }
+          )
+         ),
+       ],
+     ),
+   );
+      
+ }
+
 
 
 }
