@@ -14,11 +14,31 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-      child: Center(
-        child: column(context)
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    ));
+      body: Container(
+        width: double.infinity,
+        child: Stack(
+          children: <Widget>[
+
+            Positioned(
+              top: -80,
+              left: -100,
+              child: circle()
+            ),
+
+            Positioned(
+              top: 60,
+              left: 25,
+              child: text(),
+            ),
+
+            
+            SingleChildScrollView(
+              child: column(context)
+            )
+          ],
+        ),
+      ) // This trailing comma makes auto-formatting nicer for build methods.
+    );
   }
 
 
@@ -247,7 +267,27 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  Widget circle(){
+    return Container(
+      width: 240,
+      height: 230,
+      decoration: BoxDecoration(
+        color: MyColors.primaryColor,
+        borderRadius: BorderRadius.circular(100)
+      )
+    );
+  }
 
+  Widget text(){
+    return Text(
+      'Login',
+      style: TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+        fontSize: 22
+      )
+    );
+  }
 
 
 }
