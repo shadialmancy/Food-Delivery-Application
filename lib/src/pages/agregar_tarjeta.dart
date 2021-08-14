@@ -1,0 +1,222 @@
+import 'package:flutter/material.dart';
+
+class AgregarTarjetaPage extends StatefulWidget {
+  @override
+  _AgregarTarjetaPageState createState() => _AgregarTarjetaPageState();
+}
+
+class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
+  String inicial = 'Mexico';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        leading: const Icon(
+          Icons.west,
+          color: Colors.black,
+          size: 30.0,
+        ),
+        elevation: 0,
+        title: const Text(
+          'Agragar tarjeta',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        backgroundColor: Colors.white,
+      ),
+      body: Align(
+        alignment: Alignment.topCenter,
+        child: Container(
+          height: 400,
+          width: 400,
+          child: _formulario(),
+        ),
+      ),
+    );
+  }
+
+  Widget _formulario() {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Numero de tarjeta',
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+          const SizedBox(height: 5.0),
+          Container(
+            height: 40.0,
+            color: Colors.grey[200],
+            padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+            child: TextFormField(
+              keyboardType: TextInputType.number,
+              style: const TextStyle(color: Colors.black),
+              decoration: const InputDecoration(
+                contentPadding: EdgeInsets.all(5.0),
+                border: InputBorder.none,
+                prefixIcon: Icon(Icons.person),
+              ),
+            ),
+          ),
+          const SizedBox(height: 15.0),
+          Row(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Exp. date',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(height: 5.0),
+                  Container(
+                    height: 40.0,
+                    width: 172.0,
+                    color: Colors.grey[200],
+                    padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.number,
+                      style: const TextStyle(color: Colors.black),
+                      decoration: const InputDecoration(
+                        contentPadding: EdgeInsets.only(bottom: 6.0),
+                        border: InputBorder.none,
+                        hintText: 'mm/yy',
+                        hintStyle: TextStyle(
+                          color: Colors.black38,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(width: 15.0),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  const Text(
+                    'CVV',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(height: 5.0),
+                  Container(
+                    height: 40.0,
+                    width: 172.0,
+                    color: Colors.grey[200],
+                    padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.number,
+                      style: const TextStyle(color: Colors.black),
+                      decoration: const InputDecoration(
+                        contentPadding: EdgeInsets.only(bottom: 6.0),
+                        border: InputBorder.none,
+                        hintText: '123',
+                        hintStyle: TextStyle(
+                          color: Colors.black38,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+          const SizedBox(height: 30.0),
+          _seleccionPais(),
+          const SizedBox(height: 15.0),
+          const Text(
+            'Codigo postal',
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+          const SizedBox(height: 5.0),
+          Container(
+            height: 40.0,
+            color: Colors.grey[200],
+            padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                contentPadding: EdgeInsets.only(bottom: 8.0),
+                border: InputBorder.none,
+              ),
+              keyboardType: TextInputType.number,
+              style: const TextStyle(color: Colors.black),
+            ),
+          ),
+          _botonGuardar(),
+        ],
+      ),
+    );
+  }
+
+  Container _seleccionPais() {
+    return Container(
+      height: 40.0,
+      width: double.infinity,
+      color: Colors.grey[200],
+      padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+      child: DropdownButton<String>(
+        underline: Container(
+          height: 0,
+          color: Colors.transparent,
+        ),
+        value: inicial,
+        icon: const Icon(
+          Icons.arrow_drop_down,
+          color: Colors.black,
+        ),
+        iconSize: 35,
+        dropdownColor: Colors.white,
+        style: const TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.w500,
+          fontSize: 18.0,
+        ),
+        isExpanded: true,
+        onChanged: (String? newValue) {
+          setState(() {
+            inicial = newValue!;
+          });
+        },
+        items: <String>['Mexico', 'Argentina', 'Colombia', 'Peru']
+            .map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+      ),
+    );
+  }
+
+  Padding _botonGuardar() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 15.0),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          animationDuration: const Duration(milliseconds: 500),
+          elevation: 2,
+          primary: Colors.black54,
+          minimumSize: const Size(double.infinity, 40.0),
+          onPrimary: Colors.white,
+          onSurface: Colors.white,
+          enableFeedback: true,
+        ),
+        onPressed: () {},
+        child: const Text('Guardar'),
+      ),
+    );
+  }
+}
