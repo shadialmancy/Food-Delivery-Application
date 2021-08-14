@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: Config.data['title'].toString(),
       theme: ThemeInfo.getTheme(),
       routes: RoutesApp().getRoutes(),
