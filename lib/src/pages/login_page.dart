@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ramayo_client_app/src/pages/controllers/login_controller.dart';
 import 'package:ramayo_client_app/src/utils/my_colors.dart';
 
 class LoginPage extends StatefulWidget {
@@ -10,6 +12,16 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   
   bool passwordVisible = false;
+
+  LoginController _controller = new LoginController();
+ 
+  @override
+  void initState() {
+    super.initState();
+    SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
+      _controller.init(context);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +157,7 @@ class _LoginPageState extends State<LoginPage> {
       width: double.infinity,
       margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 5),
       child: ElevatedButton(
-       onPressed: (){}, 
+       onPressed: _controller.goToHomePage, 
        child: const Text('Login'),
        style: ElevatedButton.styleFrom(
          primary: MyColors.primaryColor,
@@ -227,7 +239,7 @@ class _LoginPageState extends State<LoginPage> {
       "LYZOO", 
       style: TextStyle(
         fontSize: 98, 
-        color: Colors.red, 
+        color: const Color.fromRGBO(252, 73, 73, 0.80), 
         fontWeight: FontWeight.bold, 
         letterSpacing: 2
       )

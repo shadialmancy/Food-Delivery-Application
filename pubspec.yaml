@@ -1,7 +1,7 @@
 name: ramayo_client_app
 description: Ramayo Delivery
 
-publish_to: 'none' 
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -9,17 +9,17 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
-
+  convex_bottom_bar: ^3.0.0
   cupertino_icons: ^1.0.2
-  package_info: ^2.0.2
-  provider: ^5.0.0
-  font_awesome_flutter: ^9.1.0
-  flutter_local_notifications: ^8.0.0
-  intl: ^0.17.0
   firebase_core: ^1.4.0
   firebase_messaging: ^10.0.4
+  flutter:
+    sdk: flutter
+  flutter_local_notifications: ^8.0.0
+  font_awesome_flutter: ^9.1.0
+  intl: ^0.17.0
+  package_info: ^2.0.2
+  provider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
@@ -31,4 +31,3 @@ flutter:
 
   assets:
     - assets/
- 

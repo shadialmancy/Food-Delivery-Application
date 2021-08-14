@@ -1,6 +1,8 @@
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:ramayo_client_app/src/pages/controllers/home_controller.dart';
+import 'package:ramayo_client_app/src/utils/my_colors.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -51,6 +53,22 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+        bottomNavigationBar: ConvexAppBar(
+          backgroundColor: Colors.white,
+          color: Colors.black38 ,
+          activeColor: MyColors.primaryOrange,
+          style: TabStyle.reactCircle,
+          height: 60,
+          items: [
+            const TabItem(icon: Icons.home, title: 'Home'),
+            const TabItem(icon: Icons.map, title: 'Discovery'),
+            const TabItem(icon: Icons.add, title: 'Add'),
+            const TabItem(icon: Icons.message, title: 'Message'),
+            const TabItem(icon: Icons.people, title: 'Profile'),
+          ],
+          initialActiveIndex: 2,//optional, default as 0
+          onTap: (int i) => print('click index=$i'),
+        ),
     );
   }
 
@@ -72,25 +90,27 @@ class _HomePageState extends State<HomePage> {
               ),
               
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                      
+                     const SizedBox(width: 15),
+
                      const Icon(Icons.star, color: Colors.yellow),
                      const Icon(Icons.star, color: Colors.yellow),
                      const Icon(Icons.star, color: Colors.yellow),
                      const Icon(Icons.star, color: Colors.yellow),
                      const Icon(Icons.star, color: Colors.yellow),
 
-                     const SizedBox(width: 30,),
+                     const SizedBox(width: 70),
                       
-                     ElevatedButton(
-                        child: const Text("Cancelar"),
-                        onPressed: (){},
+                     TextButton(
+                       onPressed: (){}, 
+                       child: const Text('Cancelar'),
                      ),
 
-                  ElevatedButton(
-                       child: const Text("Aceptar"),
+                     TextButton(
                        onPressed: (){},
+                       child: const Text('Aceptar'),
                      ),
                 ],
               ),
