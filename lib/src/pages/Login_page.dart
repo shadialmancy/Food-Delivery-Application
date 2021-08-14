@@ -92,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
       width: 300,
       height: 50,
       decoration: BoxDecoration(
-        color: const Color.fromRGBO(231, 13, 50, 0.09),
+        color: const Color.fromRGBO(231, 13, 50, 0.09019607843137255),
         borderRadius: BorderRadius.circular(30)
       ),
       child: TextFormField(
