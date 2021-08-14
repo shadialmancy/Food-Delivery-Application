@@ -141,7 +141,12 @@ class _LoginPageState extends State<LoginPage> {
   Widget forgotPassword(){
     return TextButton(
       onPressed: () {},
-      child: Text('Forgot Password ?', style: TextStyle(color: Colors.black)),
+      child: Text(
+        'Forgot Password ?', 
+        style: TextStyle(
+          color: MyColors.primaryColor
+        ),
+      ),
     );
   }
 
@@ -150,14 +155,19 @@ class _LoginPageState extends State<LoginPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         
-        Text("Don\'t have an account yet?"),
+        Text(
+          "Don\'t have an account yet?",
+          style: TextStyle(
+            color: MyColors.primaryColor
+          )
+        ),
                 
         TextButton(
           onPressed: () {}, 
           child: Text(
             "Register", 
             style: TextStyle(
-              color: Colors.black
+              color: MyColors.primaryColor
             )
           )
         )
@@ -211,7 +221,12 @@ class _LoginPageState extends State<LoginPage> {
                   
         Expanded(
          child: Container(
-          margin: const EdgeInsets.only(left: 10.0, right: 15.0), child: Divider(indent: 30, color: Colors.black, height: 0)
+          margin: const EdgeInsets.only(left: 10.0, right: 15.0), 
+          child: Divider(
+            indent: 30, 
+            color: MyColors.primaryColor, 
+            height: 0
+          )
          )
         ),
 
@@ -219,7 +234,12 @@ class _LoginPageState extends State<LoginPage> {
 
         Expanded(
          child: Container(
-          margin: const EdgeInsets.only(left: 15.0, right: 10.0), child: Divider(color: Colors.black, height: 0, endIndent: 30)
+          margin: const EdgeInsets.only(left: 15.0, right: 10.0), 
+          child: Divider(
+            color: MyColors.primaryColor, 
+            height: 0, 
+            endIndent: 30
+          )
          )
         ),
        ],
