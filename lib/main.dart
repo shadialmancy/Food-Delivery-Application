@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:ramayo_client_app/src/config/config.dart';
 import 'package:ramayo_client_app/src/config/routes.dart';
 import 'package:ramayo_client_app/src/config/theme.dart';
+import 'package:ramayo_client_app/src/services/local_notification.dart';
 import 'package:ramayo_client_app/src/services/version_app.dart';
+
+LocalNotification ln = LocalNotification();
 
 Future<void> main() async {
   await VersionApp.getVersion();
+  ln.initializeSetting();
   runApp(MyApp());
 }
 
@@ -16,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: Config.data['title'].toString(),
       theme: ThemeInfo.getTheme(),
       routes: RoutesApp().getRoutes(),
-      initialRoute: 'login',
+      initialRoute: 'pruebas',
     );
   }
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "318798964924",
+    "project_id": "ramayo-client-app-delivery",
+    "storage_bucket": "ramayo-client-app-delivery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318798964924:android:7c8bed9f3dcaaf2b8c48b9",
+        "android_client_info": {
+          "package_name": "es.ipforward.ramayo_client_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318798964924-v0j60m2dpfd143rqujo5mcranss11kn0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFqrQtaCGHrMjh7ExloELBxAHj5e3EsW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318798964924-v0j60m2dpfd143rqujo5mcranss11kn0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
