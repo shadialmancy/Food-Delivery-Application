@@ -61,9 +61,9 @@ class _HomePageState extends State<HomePage> {
           height: 60,
           items: [
             const TabItem(icon: Icons.home, title: 'Home'),
-            const TabItem(icon: Icons.map, title: 'Discovery'),
-            const TabItem(icon: Icons.add, title: 'Add'),
-            const TabItem(icon: Icons.message, title: 'Message'),
+            const TabItem(icon: Icons.map, title: 'Category'),
+            const TabItem(icon: Icons.add, title: 'Super'),
+            const TabItem(icon: Icons.message, title: 'List'),
             const TabItem(icon: Icons.people, title: 'Profile'),
           ],
           initialActiveIndex: 2,//optional, default as 0
