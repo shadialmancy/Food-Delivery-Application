@@ -49,37 +49,37 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             
-            SizedBox(height: 150),
+            const SizedBox(height: 150),
 
             title(),
             
-            SizedBox(height: 130),
+            const SizedBox(height: 130),
             
             inputEmail(),
 
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             
             inputPassword(),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
 
             bottonLogin(),
 
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             
             forgotPassword(),
 
-            SizedBox(height: 0),
+            const SizedBox(height: 0),
 
 
             orIcon(),
             
             register(),
 
-            SizedBox(height: 0),
+            const SizedBox(height: 0),
             
             socialIcon(),
           ],
@@ -88,16 +88,16 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget inputEmail(){
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 50),
+      margin: const EdgeInsets.symmetric(horizontal: 50),
       width: 300,
       height: 50,
       decoration: BoxDecoration(
-        color: Color.fromRGBO(231, 13, 50, 0.09),
+        color: const Color.fromRGBO(231, 13, 50, 0.09),
         borderRadius: BorderRadius.circular(30)
       ),
       child: TextFormField(
         keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           hintText: 'Correo electronico',
           border: InputBorder.none,
           contentPadding: EdgeInsets.all(15),
@@ -115,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget inputPassword(){
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 50),
+      margin: const EdgeInsets.symmetric(horizontal: 50),
       width: 300,
       decoration: BoxDecoration(
         color: MyColors.primaryOpacityColor,
@@ -127,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
        decoration: InputDecoration(
         hintText: 'Contraseña',
         border: InputBorder.none,
-        contentPadding: EdgeInsets.all(15),
+        contentPadding: const EdgeInsets.all(15),
         hintStyle: TextStyle(
           color: MyColors.primaryColorDark
         ),
@@ -143,16 +143,16 @@ class _LoginPageState extends State<LoginPage> {
   Widget bottonLogin(){
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 50, vertical: 5),
+      margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 5),
       child: ElevatedButton(
        onPressed: (){}, 
-       child: Text('Login'),
+       child: const Text('Login'),
        style: ElevatedButton.styleFrom(
          primary: MyColors.primaryColor,
          shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.circular(30)
          ),
-         padding: EdgeInsets.symmetric(vertical: 15)
+         padding: const EdgeInsets.symmetric(vertical: 15)
        ),
       ),
     );
@@ -202,28 +202,28 @@ class _LoginPageState extends State<LoginPage> {
                
         IconButton(
           onPressed: () {}, 
-          icon: Icon(FontAwesomeIcons.googlePlus), color: Colors.red, iconSize: 50
+          icon: const Icon(FontAwesomeIcons.googlePlus), color: Colors.red, iconSize: 50
         ),
                
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
                
         IconButton(
           onPressed: () {}, 
-          icon: Icon(FontAwesomeIcons.facebook), color: Colors.red, iconSize: 50
+          icon: const Icon(FontAwesomeIcons.facebook), color: Colors.red, iconSize: 50
         ),
                
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
                
         IconButton(
           onPressed: () {}, 
-          icon: Icon(FontAwesomeIcons.twitter), color: Colors.red, iconSize: 50
+          icon: const Icon(FontAwesomeIcons.twitter), color: Colors.red, iconSize: 50
         )
       ],
     );
   }
 
   Widget title(){
-    return Text(
+    return const Text(
       "LYZOO", 
       style: TextStyle(
         fontSize: 98, 
@@ -250,7 +250,7 @@ class _LoginPageState extends State<LoginPage> {
          )
         ),
 
-        Text("OR"),
+        const Text("OR"),
 
         Expanded(
          child: Container(
@@ -279,7 +279,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget text(){
-    return Text(
+    return const Text(
       'Login',
       style: TextStyle(
         color: Colors.white,
