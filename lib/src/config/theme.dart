@@ -4,17 +4,36 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class ThemeInfo {
-  static final systemNavigationBarColor = Colors.black;
-  static final statusBarColor = Colors.black;
+  static const systemNavigationBarColor = Colors.black;
+  static const statusBarColor = Colors.black;
 
   static getTheme() {
     return ThemeData(
-      brightness: Brightness.dark,
-      primarySwatch: generateMaterialColor(Palette.primary),
+      brightness: Brightness.light,
+      // primarySwatch: generateMaterialColor(Palette.primary),
       // primaryColor: Colors.orange[400],
-      accentColor: Colors.blue,
-      backgroundColor: const Color(0xff110e15),
-      scaffoldBackgroundColor: const Color(0xff110e15),
+      // accentColor: Colors.blue,
+      // backgroundColor: const Color(0xff110e15),
+      // scaffoldBackgroundColor: const Color(0xff110e15),
+      // textButtonTheme: TextButtonThemeData(
+      //   style: TextButton.styleFrom(
+      //     primary: Colors.orange,
+      //   ),
+      // ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          // onPrimary: Colors.yellow,
+          primary: const Color(0xFFE70D32),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+          padding: const EdgeInsets.symmetric(vertical: 15),
+        ),
+      ),
+      // outlinedButtonTheme: OutlinedButtonThemeData(
+      //   style: OutlinedButton.styleFrom(
+      //     primary: Colors.purple,
+      //     backgroundColor: Colors.green,
+      //   ),
+      // ),
     );
   }
 
