@@ -96,6 +96,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget inputPassword(){
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 50),
+      width: 300,
       decoration: BoxDecoration(
         color: MyColors.primaryOpacityColor,
         borderRadius: BorderRadius.circular(30)
