@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ramayo_client_app/src/pages/controllers/validaciones.dart';
 
 class AgregarTarjetaPage extends StatefulWidget {
   @override
@@ -7,9 +8,13 @@ class AgregarTarjetaPage extends StatefulWidget {
 
 class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
   String inicial = 'Mexico';
+  String numerotarjeta = '';
+  String cvv = '';
+  final _formkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -20,7 +25,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
         ),
         elevation: 0,
         title: const Text(
-          'Agragar tarjeta',
+          'Agregar tarjeta',
           style: TextStyle(
             color: Colors.black,
           ),
@@ -30,8 +35,8 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
       body: Align(
         alignment: Alignment.topCenter,
         child: Container(
-          height: 400,
-          width: 400,
+          height: size.height * 0.43,
+          width: size.width * 0.67,
           child: _formulario(),
         ),
       ),
@@ -39,124 +44,136 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
   }
 
   Widget _formulario() {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Numero de tarjeta',
-            style: TextStyle(
-              color: Colors.black,
-            ),
-          ),
-          const SizedBox(height: 5.0),
-          Container(
-            height: 40.0,
-            color: Colors.grey[200],
-            padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-            child: TextFormField(
-              keyboardType: TextInputType.number,
-              style: const TextStyle(color: Colors.black),
-              decoration: const InputDecoration(
-                contentPadding: EdgeInsets.all(5.0),
-                border: InputBorder.none,
-                prefixIcon: Icon(Icons.person),
+    return Form(
+      key: _formkey,
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Numero de tarjeta',
+              style: TextStyle(
+                color: Colors.black,
               ),
             ),
-          ),
-          const SizedBox(height: 15.0),
-          Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Exp. date',
-                    style: TextStyle(
-                      color: Colors.black,
-                    ),
+            const SizedBox(height: 5.0),
+            Container(
+              height: 40.0,
+              color: Colors.grey[200],
+              padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+              child: TextFormField(
+                onChanged: (value) {
+                  numerotarjeta = value;
+                },
+                keyboardType: TextInputType.number,
+                style: const TextStyle(color: Colors.black),
+                decoration: const InputDecoration(
+                  contentPadding: EdgeInsets.all(5.0),
+                  border: InputBorder.none,
+                  prefixIcon: Icon(
+                    Icons.credit_card,
+                    color: Colors.red,
+                    size: 30.0,
                   ),
-                  const SizedBox(height: 5.0),
-                  Container(
-                    height: 40.0,
-                    width: 172.0,
-                    color: Colors.grey[200],
-                    padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-                    child: TextFormField(
-                      keyboardType: TextInputType.number,
-                      style: const TextStyle(color: Colors.black),
-                      decoration: const InputDecoration(
-                        contentPadding: EdgeInsets.only(bottom: 6.0),
-                        border: InputBorder.none,
-                        hintText: 'mm/yy',
-                        hintStyle: TextStyle(
-                          color: Colors.black38,
+                ),
+              ),
+            ),
+            const SizedBox(height: 15.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Exp. date',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                    const SizedBox(height: 5.0),
+                    Container(
+                      height: 40.0,
+                      width: 172.0,
+                      color: Colors.grey[200],
+                      padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                      child: TextFormField(
+                        keyboardType: TextInputType.number,
+                        style: const TextStyle(color: Colors.black),
+                        decoration: const InputDecoration(
+                          contentPadding: EdgeInsets.only(bottom: 6.0),
+                          border: InputBorder.none,
+                          hintText: 'mm/yy',
+                          hintStyle: TextStyle(
+                            color: Colors.black38,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(width: 15.0),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  const Text(
-                    'CVV',
-                    style: TextStyle(
-                      color: Colors.black,
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'CVV',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 5.0),
-                  Container(
-                    height: 40.0,
-                    width: 172.0,
-                    color: Colors.grey[200],
-                    padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-                    child: TextFormField(
-                      keyboardType: TextInputType.number,
-                      style: const TextStyle(color: Colors.black),
-                      decoration: const InputDecoration(
-                        contentPadding: EdgeInsets.only(bottom: 6.0),
-                        border: InputBorder.none,
-                        hintText: '123',
-                        hintStyle: TextStyle(
-                          color: Colors.black38,
+                    const SizedBox(height: 5.0),
+                    Container(
+                      height: 40.0,
+                      width: 172.0,
+                      color: Colors.grey[200],
+                      padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                      child: TextFormField(
+                        onChanged: (value) {
+                          cvv = value;
+                        },
+                        keyboardType: TextInputType.number,
+                        style: const TextStyle(color: Colors.black),
+                        decoration: const InputDecoration(
+                          contentPadding: EdgeInsets.only(bottom: 6.0),
+                          border: InputBorder.none,
+                          hintText: '123',
+                          hintStyle: TextStyle(
+                            color: Colors.black38,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              )
-            ],
-          ),
-          const SizedBox(height: 30.0),
-          _seleccionPais(),
-          const SizedBox(height: 15.0),
-          const Text(
-            'Codigo postal',
-            style: TextStyle(
-              color: Colors.black,
+                  ],
+                )
+              ],
             ),
-          ),
-          const SizedBox(height: 5.0),
-          Container(
-            height: 40.0,
-            color: Colors.grey[200],
-            padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                contentPadding: EdgeInsets.only(bottom: 8.0),
-                border: InputBorder.none,
+            const SizedBox(height: 30.0),
+            _seleccionPais(),
+            const SizedBox(height: 15.0),
+            const Text(
+              'Codigo postal',
+              style: TextStyle(
+                color: Colors.black,
               ),
-              keyboardType: TextInputType.number,
-              style: const TextStyle(color: Colors.black),
             ),
-          ),
-          _botonGuardar(),
-        ],
+            const SizedBox(height: 5.0),
+            Container(
+              height: 40.0,
+              color: Colors.grey[200],
+              padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  contentPadding: EdgeInsets.only(bottom: 8.0),
+                  border: InputBorder.none,
+                ),
+                keyboardType: TextInputType.number,
+                style: const TextStyle(color: Colors.black),
+              ),
+            ),
+            _botonGuardar(),
+          ],
+        ),
       ),
     );
   }
@@ -181,7 +198,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
         dropdownColor: Colors.white,
         style: const TextStyle(
           color: Colors.black,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w300,
           fontSize: 18.0,
         ),
         isExpanded: true,
@@ -208,9 +225,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
         style: ElevatedButton.styleFrom(
           animationDuration: const Duration(milliseconds: 500),
           elevation: 2,
-          primary: Colors.black54,
           minimumSize: const Size(double.infinity, 40.0),
-          onPrimary: Colors.white,
           onSurface: Colors.white,
           enableFeedback: true,
         ),

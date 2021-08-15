@@ -10,8 +10,8 @@ class RoutesApp {
     return {
       '/': (BuildContext context) => HomePage(),
       '/agregarTargeta': (BuildContext context) => AgregarTarjetaPage(),
-      'login': (BuildContext context) => LoginPage(),
-      'pruebas': (BuildContext context) => PruebasPage(),
+      '/login': (BuildContext context) => LoginPage(),
+      '/pruebas': (BuildContext context) => PruebasPage(),
       '/detalle': (BuildContext context) => DetallePage(),
     };
   }
