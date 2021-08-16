@@ -42,6 +42,15 @@ class _HomeState extends State<Home> {
                  _card1(context),
 
                  _card1(context),
+
+                 const SizedBox(height: 20),
+
+                 _scrollHorizontal(context),
+
+                 _card1(context),
+
+                 _card1(context),
+
               ],
             ),
           ),
