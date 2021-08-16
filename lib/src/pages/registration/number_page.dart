@@ -26,8 +26,24 @@ class _NumberPageState extends State<NumberPage> {
 
           const SizedBox(height: 30),
 
-          _text()
+          _text(),
+          
+          const SizedBox(height: 280),
+
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 30),
+            child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+
+              bottonBack(),
+
+              bottonNext(),
             
+
+            ],
+          ),
+          ),
 
         ],
       )
@@ -123,7 +139,7 @@ class _NumberPageState extends State<NumberPage> {
           text: 'Para continuar recibiras un mensaje SMS a el numero de telefono que ingresate para poder verificar tu numero',
           style: TextStyle(
             fontWeight: FontWeight.normal, 
-            color: Colors.black26
+            color: Colors.black38
           )
         ),
         
@@ -133,9 +149,71 @@ class _NumberPageState extends State<NumberPage> {
     );
   }
  
+  Widget bottonNext(){
+    return Container(
+      width: 100,
+      height: 50,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
 
+          const SizedBox(width: 10),
 
+          const Text(
+            'Next',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold
+            )
+          ),
 
+          const Icon(
+            Icons.arrow_forward,
+            color: Colors.white
+          ),
+
+        ],
+      ),
+      decoration: BoxDecoration(
+       color: Colors.red,
+       borderRadius: BorderRadius.circular(60)
+      )
+    );
+  }
+
+  Widget bottonBack(){
+    return Container(
+      width: 100,
+      height: 50,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+
+          const Icon(
+            Icons.arrow_back,
+            color: Colors.white
+          ),
+
+          const Text(
+            'Back',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold
+            )
+          ),
+
+          const SizedBox(width: 10),
+
+        ],
+      ),
+      decoration: BoxDecoration(
+        color: Colors.red,
+        borderRadius: BorderRadius.circular(60)
+      ),
+    );
+  }
 
 
 }
