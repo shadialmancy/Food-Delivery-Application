@@ -26,38 +26,40 @@ class _NumberPageState extends State<NumberPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+      
+              
+             _title(),
+      
+      
+            _formulario(),
+      
+            const SizedBox(height: 10),
+      
+            _text(),
             
-           _title(),
-
-
-          _formulario(),
-
-          const SizedBox(height: 30),
-
-          _text(),
-          
-          const SizedBox(height: 280),
-
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 30),
-            child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-
-              bottonBack(),
-
-              bottonNext(),
-            
-
-            ],
-          ),
-          ),
-
-        ],
+            const SizedBox(height: 370),
+      
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 30),
+              child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+      
+                bottonBack(),
+      
+                bottonNext(),
+              
+      
+              ],
+            ),
+            ),
+      
+          ],
+        ),
       )
     );
   }
@@ -65,7 +67,7 @@ class _NumberPageState extends State<NumberPage> {
 
   Widget _title(){
     return const Padding(
-      padding: EdgeInsets.only(top: 110, left: 30, bottom: 60),
+      padding: EdgeInsets.only(top: 110, left: 30, bottom: 30),
       child: Text(
        'Ingresa tu numero',
        style: TextStyle(
@@ -142,7 +144,7 @@ class _NumberPageState extends State<NumberPage> {
 
   Widget _text(){
     return  Padding(
-     padding: const EdgeInsets.all(25),
+     padding: const EdgeInsets.only(left: 30, top: 5, right: 30),
      child: RichText(
       text: const TextSpan(
         children: [
