@@ -12,8 +12,6 @@ class _HomeState extends State<Home> {
 
   HomeController _controller = new HomeController();
 
-  final List<int> numbers = [1, 2, 3, 5, 8, 13, 21, 34, 55];
-
   @override
   void initState() {
     super.initState();
@@ -37,11 +35,22 @@ class _HomeState extends State<Home> {
                  
                  _card1(context),
 
+                 const SizedBox(height: 20),
+
                  _scrollHorizontal(context),
 
                  _card1(context),
 
                  _card1(context),
+
+                 const SizedBox(height: 20),
+
+                 _scrollHorizontal(context),
+
+                 _card1(context),
+
+                 _card1(context),
+
               ],
             ),
           ),
@@ -49,57 +58,8 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget _scrollHorizontal(BuildContext context){
-   return Container(
-     margin: const EdgeInsets.only(top: 30),
-     child: Column(
-       crossAxisAlignment: CrossAxisAlignment.start,
-       children: [
- 
-         const Padding(
-           padding: const EdgeInsets.only(left: 30),
-           child: const Text(
-             'Promociones',
-             style: TextStyle(
-               fontSize: 25,
-               fontWeight: FontWeight.bold
-             ),
-           )
-         ),
 
-         Container(
-          padding: const EdgeInsets.only(top: 24, bottom: 5),
-          height: MediaQuery.of(context).size.height * 0.25,
-          child: ListView.builder(
-           scrollDirection: Axis.horizontal,
-           itemCount: numbers.length, itemBuilder: (context, index) {
-            return Container(
-              width: MediaQuery.of(context).size.width * 0.6,
-              child: Card(
-                margin: const EdgeInsets.only(left: 30),
-                color: Colors.blue,
-                child: Container(
-                 child: Center(
-                   child: Text(
-                     numbers[index].toString(), 
-                     style: const TextStyle(
-                       color: Colors.white, 
-                       fontSize: 36.0
-                     ),
-                   )
-                 ),
-                ),
-              ),
-            );
-           }
-          )
-         ),
-       ],
-     ),
-   );
-  }
-
-  Widget _card1(BuildContext context){
+ Widget _card1(BuildContext context){
      final card = Container(      
         child: Column(
           children: <Widget>[
@@ -168,5 +128,138 @@ class _HomeState extends State<Home> {
       ),
     );
  }
+
+ Widget _scrollHorizontal(BuildContext context){
+   return Container(
+         height: 220,
+         width: double.infinity,
+         child: Column(
+           crossAxisAlignment: CrossAxisAlignment.start,
+           children: <Widget>[
+
+              Expanded(
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 20,
+                  itemBuilder: (_, int index){
+                    return contenedores();
+                  }
+                ),
+              ),
+           ],
+         ),
+   );
+  }
+
+ Widget contenedores(){
+   return Container(
+     width: 270,
+     margin: const EdgeInsets.only(left: 20),
+     child: Column(
+       mainAxisAlignment: MainAxisAlignment.center,
+       children: <Widget>[
+
+          smallCard(),
+
+       ],
+     ),
+   );
+ }
+
+ Widget smallCard(){
+   return Container(
+          height: 180,
+          width: 250,
+          child: Column(
+            children: <Widget>[
+          
+                Container(
+                  height: 100,
+                  width: 250,
+                  child: Image.network(
+                   'https://static.displate.com/857x1200/displate/2018-11-30/c3ec1197d3ad652433bbebf9dec1a7af_9793d944a67664785f7eaf6d30033180.jpg',
+                   fit: BoxFit.fill
+                  ),
+                ),
+          
+               
+               const SizedBox(height: 10),
+               
+
+               Row(
+                 children: <Widget>[
+
+                  const SizedBox(width: 16),
+
+                   const Text(
+                     'La Muralla China',
+                     style: TextStyle(
+                       fontWeight: FontWeight.bold,
+                       fontSize: 18
+                     ),
+                   ),
+
+                   const SizedBox(width: 60),
+
+                   Container(
+                     height: 30,
+                     width: 30,
+                     decoration: BoxDecoration(
+                       borderRadius: BorderRadius.circular(30),
+                       color: Colors.grey[300]
+                     ),
+                     child: const Center(
+                       child: Text(
+                         '4.4',
+                         style: TextStyle(
+                           color: Colors.black,
+                           fontWeight: FontWeight.bold
+                         )
+                       )
+                     ),
+                   ),
+                 ],
+               ),
+
+               const SizedBox(height: 3),
+
+               Row(
+                 children: <Widget>[
+
+                   const SizedBox(width: 16),
+
+                   Icon(
+                     Icons.money,
+                     color: Colors.greenAccent[400]
+                   ),
+
+                   Text(
+                    ' - Costo de envio MXN 22.0',
+                    style: TextStyle(
+                      color: Colors.grey[800]
+                    )
+                   ),
+
+                 ],
+               ),
+          
+            ],
+          ),
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            //borderRadius: BorderRadius.circular(30),
+            boxShadow: <BoxShadow>[
+             const BoxShadow(
+               color: Colors.black26,
+               blurRadius: 10,
+               spreadRadius: 2,
+               offset: Offset(2, 10),
+             ),
+            ],
+          ),
+   );
+ }
+
+
 
 }
