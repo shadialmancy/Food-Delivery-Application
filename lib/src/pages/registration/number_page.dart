@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:ramayo_client_app/src/pages/controllers/number_controller.dart';
 
 
 class NumberPage extends StatefulWidget {
@@ -10,6 +12,16 @@ class NumberPage extends StatefulWidget {
 class _NumberPageState extends State<NumberPage> {
 
  final _formKey = GlobalKey<FormState>();
+
+ NumberController _controller = new NumberController();
+ 
+  @override
+  void initState() {
+    super.initState();
+    SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
+      _controller.init(context);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -150,70 +162,78 @@ class _NumberPageState extends State<NumberPage> {
   }
  
   Widget bottonNext(){
-    return Container(
-      width: 100,
-      height: 50,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-
-          const SizedBox(width: 10),
-
-          const Text(
-            'Next',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-              fontWeight: FontWeight.bold
-            )
-          ),
-
-          const Icon(
-            Icons.arrow_forward,
-            color: Colors.white
-          ),
-
-        ],
+    return GestureDetector(
+      onTap: _controller.goToVerificaTuNumero,
+      child: Container(
+        width: 100,
+        height: 50,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+    
+            const SizedBox(width: 10),
+    
+            const Text(
+              'Next',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold
+              )
+            ),
+    
+            const Icon(
+              Icons.arrow_forward,
+              color: Colors.white
+            ),
+    
+          ],
+        ),
+        decoration: BoxDecoration(
+         color: Colors.red,
+         borderRadius: BorderRadius.circular(60)
+        )
       ),
-      decoration: BoxDecoration(
-       color: Colors.red,
-       borderRadius: BorderRadius.circular(60)
-      )
     );
   }
 
   Widget bottonBack(){
-    return Container(
-      width: 100,
-      height: 50,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-
-          const Icon(
-            Icons.arrow_back,
-            color: Colors.white
-          ),
-
-          const Text(
-            'Back',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-              fontWeight: FontWeight.bold
-            )
-          ),
-
-          const SizedBox(width: 10),
-
-        ],
-      ),
-      decoration: BoxDecoration(
-        color: Colors.red,
-        borderRadius: BorderRadius.circular(60)
+    return GestureDetector(
+      onTap: (){},
+      child: Container(
+        width: 100,
+        height: 50,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+    
+            const Icon(
+              Icons.arrow_back,
+              color: Colors.white
+            ),
+    
+            const Text(
+              'Back',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold
+              )
+            ),
+    
+            const SizedBox(width: 10),
+    
+          ],
+        ),
+        decoration: BoxDecoration(
+          color: Colors.red,
+          borderRadius: BorderRadius.circular(60)
+        ),
       ),
     );
   }
+
+
 
 
 }

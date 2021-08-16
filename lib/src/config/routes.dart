@@ -6,6 +6,7 @@ import 'package:ramayo_client_app/src/pages/login_page.dart';
 import 'package:ramayo_client_app/src/pages/pruebas_page.dart';
 import 'package:ramayo_client_app/src/pages/registration/number_page.dart';
 import 'package:ramayo_client_app/src/pages/registration/register_1.dart';
+import 'package:ramayo_client_app/src/pages/verifica_number_page.dart';
 
 class RoutesApp {
   getRoutes() {
@@ -16,7 +17,8 @@ class RoutesApp {
       '/pruebas': (BuildContext context) => PruebasPage(),
       '/detalle': (BuildContext context) => DetallePage(),
       '/register_1': (BuildContext context) => const RegisterPage_1(),
-      '/numberPage': (BuildContext context) => NumberPage()
+      '/numberPage': (BuildContext context) => NumberPage(),
+      '/verificaNumber': (BuildContext context) => VerificaNumero(),
     };
   }
 }
