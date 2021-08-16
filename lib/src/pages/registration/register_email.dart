@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:ramayo_client_app/src/pages/registration/constants.dart';
 
-class RegisterPage4 extends StatefulWidget {
-  const RegisterPage4({Key? key}) : super(key: key);
+class RegisterEmail extends StatefulWidget {
+  const RegisterEmail({Key? key}) : super(key: key);
 
   @override
-  _RegisterPage4State createState() => _RegisterPage4State();
+  _RegisterEmailState createState() => _RegisterEmailState();
 }
 
-class _RegisterPage4State extends State<RegisterPage4> {
+class _RegisterEmailState extends State<RegisterEmail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,4 +56,6 @@ class _RegisterPage4State extends State<RegisterPage4> {
       ],
     );
   }
+
+
 }

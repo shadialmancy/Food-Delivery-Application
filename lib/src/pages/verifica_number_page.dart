@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:ramayo_client_app/src/pages/controllers/verificar_number_controller.dart';
 
 class VerificaNumero extends StatefulWidget {
 
@@ -7,6 +9,18 @@ class VerificaNumero extends StatefulWidget {
 }
 
 class _VerificaNumeroState extends State<VerificaNumero> {
+
+  VerificarNumberController _controller = new VerificarNumberController();
+
+  @override
+  void initState() { 
+    super.initState();
+    SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
+      _controller.init(context);
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +71,6 @@ class _VerificaNumeroState extends State<VerificaNumero> {
       ),
     );
   }
-
 
   Widget _text(){
     return const Padding(
@@ -112,7 +125,7 @@ class _VerificaNumeroState extends State<VerificaNumero> {
 
   Widget bottonNext(){
     return GestureDetector(
-      onTap: (){},
+      onTap: _controller.goToRegisterEmail,
       child: Container(
         width: 100,
         height: 50,
