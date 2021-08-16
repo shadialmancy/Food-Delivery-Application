@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ramayo_client_app/src/pages/controllers/terminos_y_condiciones_controller.dart';
 
 class RegisterPage_1 extends StatefulWidget {
   const RegisterPage_1({Key? key}) : super(key: key);
@@ -9,28 +12,52 @@ class RegisterPage_1 extends StatefulWidget {
 }
 
 class _RegisterPage_1State extends State<RegisterPage_1> {
+
+ TerminosYCondicionesController _controller = new TerminosYCondicionesController();
+
+ @override
+  void initState() {
+    super.initState();
+    SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
+      _controller.init(context);
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(10),
-        color: Colors.white,
-        child: column(context),
+      body: Stack(
+        children: <Widget>[
+
+          Center(
+            child: Container(
+              //width: double.infinity,
+              //color: Colors.blue,
+              child: SvgPicture.asset(
+               'assets/undraw_Sync_files_re_ws4c.svg',
+               height: 450,
+               width: 200,
+              ),
+            ),
+          ),
+
+          Positioned(
+            top: 75,
+            child: Container(
+             margin: const EdgeInsets.symmetric(horizontal: 20),
+             width: 370,
+             child: description()
+            ),
+          ),
+
+          registerButton(),
+
+        ]
       ),
     );
   }
 
-  Widget column(BuildContext context) {
-    return Column(
-      children: [
-        const SizedBox(
-          height: 30,
-        ),
-        description(),
-        registerButton()
-      ],
-    );
-  }
 
   Widget description() {
     return RichText(
@@ -65,9 +92,9 @@ class _RegisterPage_1State extends State<RegisterPage_1> {
       alignment: Alignment.bottomCenter,
       child: Container(
         width: double.infinity,
-        margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 5),
+        margin: const EdgeInsets.only(left: 50, right: 50, bottom: 80),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: _controller.goToAgregarTarjeta,
           child: const Text("Estoy de acuerdo"),
           style: ElevatedButton.styleFrom(
             primary: Colors.black,
@@ -78,4 +105,7 @@ class _RegisterPage_1State extends State<RegisterPage_1> {
       ),
     );
   }
+
+
+
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ramayo_client_app/src/pages/controllers/validaciones.dart';
 
 class AgregarTarjetaPage extends StatefulWidget {
   @override
@@ -35,8 +34,8 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
       body: Align(
         alignment: Alignment.topCenter,
         child: Container(
-          height: size.height * 0.43,
-          width: size.width * 0.67,
+          height: double.infinity,
+          width: double.infinity,
           child: _formulario(),
         ),
       ),
@@ -51,13 +50,16 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            
             const Text(
               'Numero de tarjeta',
               style: TextStyle(
                 color: Colors.black,
               ),
             ),
+            
             const SizedBox(height: 5.0),
+            
             Container(
               height: 40.0,
               color: Colors.grey[200],
@@ -79,7 +81,9 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
                 ),
               ),
             ),
+            
             const SizedBox(height: 15.0),
+            
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -148,16 +152,22 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
                 )
               ],
             ),
+            
             const SizedBox(height: 30.0),
+            
             _seleccionPais(),
+            
             const SizedBox(height: 15.0),
+            
             const Text(
               'Codigo postal',
               style: TextStyle(
                 color: Colors.black,
               ),
             ),
+            
             const SizedBox(height: 5.0),
+            
             Container(
               height: 40.0,
               color: Colors.grey[200],
@@ -171,6 +181,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
                 style: const TextStyle(color: Colors.black),
               ),
             ),
+            
             _botonGuardar(),
           ],
         ),
