@@ -1,56 +1,36 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ramayo_client_app/src/pages/registration/constants.dart';
 
 
-class RegisterPage2 extends StatefulWidget {
-  const RegisterPage2({Key? key}) : super(key: key);
+class RegisterNameYLastName extends StatefulWidget {
+  const RegisterNameYLastName({Key? key}) : super(key: key);
 
   @override
-  _RegisterPage2State createState() => _RegisterPage2State();
+  _RegisterNameYLastNameState createState() => _RegisterNameYLastNameState();
 }
 
-class _RegisterPage2State extends State<RegisterPage2> {
+class _RegisterNameYLastNameState extends State<RegisterNameYLastName> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(10),
-        child: column(context),
+      body: Column(
+        children: <Widget>[
+
+         
+        ],
       ),
     );
   }
 
-  Widget column(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(height: 50),
-        header_text("Como te llamas ?",),
-        const SizedBox(height: 15),
-        description_text("déjenos saber cómo dirigimos correctamente a usted"),
-        const SizedBox(height: 15),
-        textfield("Ingresa tu primer nombre",TextInputType.text),
-        const SizedBox(height: 15),
-        textfield("Ingresa tu primer apellido",TextInputType.text),
-        const SizedBox(height: 100),
-        row()
-      ],
+  Widget _title(){
+    return const Text(
+      'Como te llamas ?'
     );
   }
 
-  Widget row() {
-    return Row(
-      children: [
-        backButton(),
-        const SizedBox(
-          width: 120,
-        ),
-        nextButton()
-      ],
-    );
-  }
+  
+
 
 //   Widget header_text() {
 //     return const Text(
