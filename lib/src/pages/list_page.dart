@@ -100,7 +100,7 @@ class _ListPageState extends State<ListPage> {
            const SizedBox(height: 10),
 
            Text(
-            '1 articulo - ${precio}',
+            "1 articulo - $precio",
             style: TextStyle(
               color: Colors.grey[600]
             ),
