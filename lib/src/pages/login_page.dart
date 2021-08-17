@@ -195,7 +195,7 @@ class _LoginPageState extends State<LoginPage> {
         ),
                 
         TextButton(
-          onPressed: () {}, 
+          onPressed: _controller.goToIngresaNumero, 
           child: Text(
             "Register", 
             style: TextStyle(

@@ -4,6 +4,7 @@ import 'package:ramayo_client_app/src/pages/detalle_page.dart';
 import 'package:ramayo_client_app/src/pages/home_page.dart';
 import 'package:ramayo_client_app/src/pages/login_page.dart';
 import 'package:ramayo_client_app/src/pages/pruebas_page.dart';
+import 'package:ramayo_client_app/src/pages/registration/activar_ubicacion_page.dart';
 import 'package:ramayo_client_app/src/pages/registration/number_page.dart';
 import 'package:ramayo_client_app/src/pages/registration/register_1.dart';
 import 'package:ramayo_client_app/src/pages/registration/register_email.dart';
@@ -25,6 +26,7 @@ class RoutesApp {
       '/registerEmail': (BuildContext context) => RegisterEmail(),
       '/registerPassword': (BuildContext context) => RegisterPassword(),
       '/registerNameYLastname': (BuildContext context) => RegisterNameYLastName(),
+      '/ubication': (BuildContext context) => ActivarUbicacion(),
     };
   }
 }

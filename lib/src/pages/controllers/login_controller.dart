@@ -15,4 +15,8 @@ import 'package:flutter/material.dart';
      
      Navigator.pushNamed(context!, '/');
    }
+
+   void goToIngresaNumero(){
+     Navigator.pushNamed(context!, '/numberPage');
+   }
  }

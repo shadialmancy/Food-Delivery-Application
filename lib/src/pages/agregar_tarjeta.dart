@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:ramayo_client_app/src/pages/controllers/agregar_tarjeta_controller.dart';
 
 class AgregarTarjetaPage extends StatefulWidget {
   @override
@@ -6,6 +8,18 @@ class AgregarTarjetaPage extends StatefulWidget {
 }
 
 class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
+
+  AgregarTarjetaController _controller = new AgregarTarjetaController();
+
+  @override
+  void initState() {
+    super.initState();
+    SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
+      _controller.init(context);
+    });
+  }
+
+
   String inicial = 'Mexico';
   String numerotarjeta = '';
   String cvv = '';
@@ -240,7 +254,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
           onSurface: Colors.white,
           enableFeedback: true,
         ),
-        onPressed: () {},
+        onPressed: _controller.goToUbicationPage,
         child: const Text('Guardar'),
       ),
     );
