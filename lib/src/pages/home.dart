@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:ramayo_client_app/src/pages/controllers/home_controller.dart';
+import 'package:ramayo_client_app/src/utils/my_colors.dart';
 
 class Home extends StatefulWidget {
 
@@ -23,6 +24,19 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+           title: const Center(child: Text('Delivery')),
+           elevation: 5,
+           backgroundColor: MyColors.primaryOrange,
+           leading: const Icon(Icons.menu, color: Colors.white),
+           actions: <Widget>[
+             
+               IconButton(
+                 icon: const Icon(Icons.search),
+                 onPressed: (){},
+               )
+           ],
+        ),
       body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(bottom: 30),

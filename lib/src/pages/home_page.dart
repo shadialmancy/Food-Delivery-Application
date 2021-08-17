@@ -30,19 +30,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-           title: const Center(child: Text('Delivery')),
-           elevation: 5,
-           backgroundColor: MyColors.primaryOrange,
-           leading: const Icon(Icons.menu, color: Colors.white),
-           actions: <Widget>[
-             
-               IconButton(
-                 icon: const Icon(Icons.search),
-                 onPressed: (){},
-               )
-           ],
-        ),
+      
         body: TabBarView(
           physics: const NeverScrollableScrollPhysics(),
           controller: _tabController,

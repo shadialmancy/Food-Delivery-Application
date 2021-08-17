@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ramayo_client_app/src/utils/my_colors.dart';
 
 
 class CategoryPage extends StatefulWidget {
@@ -16,6 +17,19 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+           title: const Center(child: Text('Delivery')),
+           elevation: 5,
+           backgroundColor: MyColors.primaryOrange,
+           leading: const Icon(Icons.menu, color: Colors.white),
+           actions: <Widget>[
+             
+               IconButton(
+                 icon: const Icon(Icons.search),
+                 onPressed: (){},
+               )
+           ],
+        ),
       body: Container(
         margin: const EdgeInsets.only(left: 8, right: 8, top: 10),
         child: _prueba()
