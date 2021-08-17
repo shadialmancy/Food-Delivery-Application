@@ -27,31 +27,42 @@ class _ListPageState extends State<ListPage> {
        elevation: 5,
        backgroundColor: Colors.white,
       ),
-      body: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (_, int index){
-         return Column(
-           children: <Widget>[
+      body: Padding(
+        padding: const EdgeInsets.only(top: 10),
+        child: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (_, int index){
+           return Column(
+             children: <Widget>[
 
-             _pedido(),
+              _pedido(),
 
-             const Divider(),
+              const Divider(
+                height: 1,
+                indent: 130,
+                thickness: 1,
+              ),
 
-           ],
-         );
-        }
+             ],
+           );
+          }
+        ),
       )
     );
   }
 
 
   Widget _pedido(){
-    return Container(
-      margin: const EdgeInsets.all(5),
-      height: 100,
-      //color: Colors.red,
-      child: Center(
-        child: _tarjetaPedido(),
+    return GestureDetector(
+      onTap: (){
+        print('EL pepe');
+      },
+      child: Container(
+        margin: const EdgeInsets.all(5),
+        height: 85,
+        child: Center(
+          child: _tarjetaPedido(),
+        ),
       ),
     );
   }
@@ -111,6 +122,6 @@ class _ListPageState extends State<ListPage> {
   }
 
 
-
+ 
 
 }
