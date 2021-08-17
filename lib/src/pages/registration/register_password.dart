@@ -74,7 +74,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
       children: [
         backButton(),
         const SizedBox(
-          width: 120,
+          width: 140,
         ),
         nextButton()
       ],

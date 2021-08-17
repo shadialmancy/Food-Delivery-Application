@@ -15,9 +15,11 @@ class _RegisterPage2State extends State<RegisterPage2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(10),
-        child: column(context),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          child: column(context),
+        ),
       ),
     );
   }
@@ -45,7 +47,7 @@ class _RegisterPage2State extends State<RegisterPage2> {
       children: [
         backButton(),
         const SizedBox(
-          width: 120,
+          width: 140,
         ),
         nextButton()
       ],

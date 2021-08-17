@@ -9,6 +9,7 @@ class RegisterPage_1 extends StatefulWidget {
 }
 
 class _RegisterPage_1State extends State<RegisterPage_1> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +28,7 @@ class _RegisterPage_1State extends State<RegisterPage_1> {
           height: 30,
         ),
         description(),
+        image(),
         registerButton()
       ],
     );
@@ -41,7 +43,7 @@ class _RegisterPage_1State extends State<RegisterPage_1> {
         style: TextStyle(fontSize: 19, color: Colors.black),
         children: const <TextSpan>[
           TextSpan(
-              text: '"Condiciones de uso"',
+              text: 'Condiciones de uso',
               style: TextStyle(fontSize: 19, color: Color(0xff02bc74))),
           TextSpan(
             text: ' y reconozco el',
@@ -58,6 +60,10 @@ class _RegisterPage_1State extends State<RegisterPage_1> {
         ],
       ),
     );
+  }
+
+  Widget image(){
+    return Container(child: Image.asset('images/sync_file.png'));
   }
 
   Widget registerButton() {

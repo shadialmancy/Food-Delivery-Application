@@ -14,7 +14,7 @@ Widget description_text(String text) {
   return Text(text);
 }
 
-Widget textfield(String hint,TextInputType type) {
+Widget textfield(String hint, TextInputType type) {
   return Container(
     color: const Color(0xFFDEDEDE),
     padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -29,23 +29,29 @@ Widget textfield(String hint,TextInputType type) {
 }
 
 Widget nextButton() {
-  return ElevatedButton(
-    onPressed: () {},
-    style: ElevatedButton.styleFrom(
+  return Container(
+    width: 100,
+    child: ElevatedButton(
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(
         primary: MyColors.primaryColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20)),
-    child: Row(
-      children: [
-        const Text(
-          "Next",
-          style: TextStyle(fontSize: 20),
-        ),
-        const SizedBox(
-          width: 5,
-        ),
-        const Icon(FontAwesomeIcons.arrowRight)
-      ],
+      ),
+      child: Row(
+        children: [
+          const SizedBox(
+            width: 15,
+          ),
+          const Text(
+            "Next",
+            style: TextStyle(fontSize: 20),
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          const Icon(FontAwesomeIcons.arrowRight,size: 20,)
+        ],
+      ),
     ),
   );
 }
@@ -61,7 +67,12 @@ Widget backButton() {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20)),
       child: Row(
-        children: [const Icon(FontAwesomeIcons.arrowLeft)],
+        children: [
+          const SizedBox(
+            width: 15,
+          ),
+          const Icon(FontAwesomeIcons.arrowLeft)
+        ],
       ),
     ),
   );
