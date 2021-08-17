@@ -1,58 +1,214 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:ramayo_client_app/src/pages/registration/constants.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ramayo_client_app/src/pages/controllers/register_name_controller.dart';
 
-
-class RegisterPage2 extends StatefulWidget {
-  const RegisterPage2({Key? key}) : super(key: key);
+class RegisterNameYLastName extends StatefulWidget {
+  const RegisterNameYLastName({Key? key}) : super(key: key);
 
   @override
-  _RegisterPage2State createState() => _RegisterPage2State();
+  _RegisterNameYLastNameState createState() => _RegisterNameYLastNameState();
 }
 
-class _RegisterPage2State extends State<RegisterPage2> {
+class _RegisterNameYLastNameState extends State<RegisterNameYLastName> {
+
+  RegisterNameController _controller = new RegisterNameController();
+
+  @override
+  void initState() {
+    super.initState();
+    SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
+      _controller.init(context);
+    });
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(10),
-          child: column(context),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+
+          _title(),
+
+          _descripcion(),
+
+          _inputName(),
+
+          _inputLastname(),
+
+          Container(
+              margin: const EdgeInsets.only(left: 20, right: 20, top: 320),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+      
+                   bottonBack(),
+      
+                   bottonNext(),
+      
+                ],
+              ),
+            ),
+         
+        ],
+      ),
+    );
+  }
+
+  Widget _title(){
+    return const Padding(
+      padding: EdgeInsets.only(top: 85, left: 20),
+      child: const Text(
+        'Como te llamas ?',
+        style: TextStyle(
+          fontSize: 25,
+          color: Colors.black,
+          fontWeight: FontWeight.w500
+        )
+      ),
+    );
+  }
+
+  Widget _descripcion(){
+    return Padding(
+      padding: const EdgeInsets.only(top: 20, left: 20),
+      child: Text(
+        'Dejanos saber como dirigirnos correctamente a ti',
+        style: TextStyle(
+          fontSize: 15,
+          color: Colors.grey[600],
+          fontWeight: FontWeight.normal
+        )
+      ),
+    );
+  }
+
+  Widget _inputName(){
+    return Container(
+      margin: const EdgeInsets.only(left: 20, top: 20, right: 20),
+      width: 389,
+      height: 50,
+      decoration: BoxDecoration(
+        color: Colors.grey[200],
+      ),
+      child: TextFormField(
+        keyboardType: TextInputType.name,
+        decoration: const InputDecoration(
+          hintText: 'Ingresa tu primer nombre',
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.all(15),
+          hintStyle: TextStyle(
+            color: Colors.black54
+          ),
         ),
       ),
     );
   }
 
-  Widget column(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(height: 50),
-        header_text("Como te llamas ?",),
-        const SizedBox(height: 15),
-        description_text("déjenos saber cómo dirigimos correctamente a usted"),
-        const SizedBox(height: 15),
-        textfield("Ingresa tu primer nombre",TextInputType.text),
-        const SizedBox(height: 15),
-        textfield("Ingresa tu primer apellido",TextInputType.text),
-        const SizedBox(height: 100),
-        row()
-      ],
+  Widget _inputLastname(){
+    return Container(
+      margin: const EdgeInsets.only(left: 20, top: 20, right: 20),
+      width: 389,
+      height: 50,
+      decoration: BoxDecoration(
+        color: Colors.grey[200],
+      ),
+      child: TextFormField(
+        keyboardType: TextInputType.name,
+        decoration: const InputDecoration(
+          hintText: 'Ingresa tu primer apellido',
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.all(15),
+          hintStyle: TextStyle(
+            color: Colors.black54
+          ),
+        ),
+      ),
     );
   }
 
-  Widget row() {
-    return Row(
-      children: [
-        backButton(),
-        const SizedBox(
-          width: 140,
+
+  Widget bottonNext(){
+    return GestureDetector(
+      onTap: _controller.goToAcuerdoycondiciones,
+      child: Container(
+        width: 100,
+        height: 50,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+    
+            const SizedBox(width: 5),
+    
+            const Text(
+              'Next',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold
+              )
+            ),
+    
+            const Icon(
+              FontAwesomeIcons.arrowRight,
+              color: Colors.white
+            ),
+    
+            const SizedBox(width: 3),
+          ],
         ),
-        nextButton()
-      ],
+        decoration: BoxDecoration(
+         color: Colors.red,
+         borderRadius: BorderRadius.circular(60)
+        )
+      ),
     );
   }
+
+  Widget bottonBack(){
+    return GestureDetector(
+      onTap: (){},
+      child: Container(
+        width: 100,
+        height: 50,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+
+            const SizedBox(width: 3),
+    
+            const Icon(
+              FontAwesomeIcons.arrowLeft,
+              color: Colors.white
+            ),
+    
+            const Text(
+              'Back',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold
+              )
+            ),
+    
+            const SizedBox(width: 10),
+    
+          ],
+        ),
+        decoration: BoxDecoration(
+          color: Colors.red,
+          borderRadius: BorderRadius.circular(60)
+        ),
+      ),
+    );
+  }
+  
+ 
 
 //   Widget header_text() {
 //     return const Text(

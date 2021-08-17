@@ -1,51 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ramayo_client_app/src/pages/controllers/register_email_controller.dart';
+import 'package:ramayo_client_app/src/pages/controllers/activar_ubicacion_controller.dart';
 
-class RegisterEmail extends StatefulWidget {
-  const RegisterEmail({Key? key}) : super(key: key);
-
+class ActivarUbicacion extends StatefulWidget {
   @override
-  _RegisterEmailState createState() => _RegisterEmailState();
+  _ActivarUbicacionState createState() => _ActivarUbicacionState();
 }
 
-class _RegisterEmailState extends State<RegisterEmail> {
-  
-  RegisterEmailController _controller = new RegisterEmailController();
+class _ActivarUbicacionState extends State<ActivarUbicacion> {
 
-   @override
+  ActivarUbicationController _controller = new ActivarUbicationController();
+
+  @override
   void initState() {
     super.initState();
     SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
       _controller.init(context);
     });
   }
-  
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
 
-        const SizedBox(height: 50,),
+          _title(),
 
-        header_text("Ingresa tu correo electronico"),
-        
-        const SizedBox(height: 15),
+          _descripcion(),
 
-        description_text("los recibos se enviarán a su correo electrónico"),
+          _inputAdress(),
 
-        const SizedBox(height: 15),
+          _activarUbicacion(),
 
-        _inputNumber(),
-        
-        const SizedBox(height: 100),
-
-
-        Container(
-              margin: const EdgeInsets.only(left: 30, right: 30, top: 280),
+          Container(
+              margin: const EdgeInsets.only(left: 20, right: 20, top: 270),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -57,42 +49,54 @@ class _RegisterEmailState extends State<RegisterEmail> {
                 ],
               ),
             ),
-      ],
+
+        ],
       ),
     );
   }
-  
 
-  Widget header_text(String text) {
-   return Padding(
-     padding: const EdgeInsets.only(left: 30, top: 50),
-     child: Text(
-      text,
-      style: const TextStyle(
-          fontSize: 25, color: Colors.black, fontWeight: FontWeight.w500),
-     ),
-   );
+
+  Widget _title(){
+    return const Padding(
+      padding: EdgeInsets.only(top: 85, left: 20),
+      child: const Text(
+        'Busca comida cerca de ti',
+        style: TextStyle(
+          fontSize: 25,
+          color: Colors.black,
+          fontWeight: FontWeight.w500
+        )
+      ),
+    );
   }
 
-  Widget description_text(String text) {
-   return Padding(
-    padding: const EdgeInsets.only(left: 30),
-    child: Text(text)
-   );
+  Widget _descripcion(){
+    return Padding(
+      padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+      child: Text(
+        'Para que nuestra app funcione correctamente necesitamos saber tu ubicacion',
+        textAlign: TextAlign.justify,
+        style: TextStyle(
+          fontSize: 20,
+          color: Colors.grey[600],
+          fontWeight: FontWeight.normal,
+        )
+      ),
+    );
   }
 
-  Widget _inputNumber(){
+  Widget _inputAdress(){
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 30),
+      margin: const EdgeInsets.only(left: 20, top: 20, right: 20),
       width: 389,
       height: 50,
       decoration: BoxDecoration(
         color: Colors.grey[200],
       ),
       child: TextFormField(
-        keyboardType: TextInputType.phone,
+        keyboardType: TextInputType.streetAddress,
         decoration: const InputDecoration(
-          hintText: 'Ingresa tu email',
+          hintText: 'Ingresa tu direccion',
           border: InputBorder.none,
           contentPadding: EdgeInsets.all(15),
           hintStyle: TextStyle(
@@ -103,9 +107,38 @@ class _RegisterEmailState extends State<RegisterEmail> {
     );
   }
 
+  Widget _activarUbicacion(){
+    return GestureDetector(
+      onTap: (){},
+      child: Container(
+        margin: const  EdgeInsets.only(top: 50, left: 20),
+        child: Row(
+          children: <Widget>[
+    
+            const Icon(
+              FontAwesomeIcons.locationArrow
+            ),
+    
+            const SizedBox(width: 22),
+    
+            const Text(
+              'Activar Ubicacion',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.black,
+                fontWeight: FontWeight.w500
+              )
+            ),
+    
+          ],
+        ),
+      ),
+    );
+  }
+ 
   Widget bottonNext(){
     return GestureDetector(
-      onTap: _controller.goToRegisterPassword,
+      onTap: _controller.goToHomePage,
       child: Container(
         width: 100,
         height: 50,
@@ -177,5 +210,8 @@ class _RegisterEmailState extends State<RegisterEmail> {
       ),
     );
   }
+
+
+
 
 }

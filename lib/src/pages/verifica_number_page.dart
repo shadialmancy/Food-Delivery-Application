@@ -1,50 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ramayo_client_app/src/pages/controllers/register_email_controller.dart';
+import 'package:ramayo_client_app/src/pages/controllers/verificar_number_controller.dart';
 
-class RegisterEmail extends StatefulWidget {
-  const RegisterEmail({Key? key}) : super(key: key);
+class VerificaNumero extends StatefulWidget {
 
   @override
-  _RegisterEmailState createState() => _RegisterEmailState();
+  _VerificaNumeroState createState() => _VerificaNumeroState();
 }
 
-class _RegisterEmailState extends State<RegisterEmail> {
-  
-  RegisterEmailController _controller = new RegisterEmailController();
+class _VerificaNumeroState extends State<VerificaNumero> {
 
-   @override
-  void initState() {
+  VerificarNumberController _controller = new VerificarNumberController();
+
+  @override
+  void initState() { 
     super.initState();
     SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
       _controller.init(context);
     });
   }
-  
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-
-        const SizedBox(height: 50,),
-
-        header_text("Ingresa tu correo electronico"),
-        
-        const SizedBox(height: 15),
-
-        description_text("los recibos se enviarán a su correo electrónico"),
-
-        const SizedBox(height: 15),
-
-        _inputNumber(),
-        
-        const SizedBox(height: 100),
-
-
-        Container(
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+      
+            _title(),
+      
+            _text(),
+      
+            _inputNumber(),
+      
+            _reenviarCodigo(),
+      
+            Container(
               margin: const EdgeInsets.only(left: 30, right: 30, top: 280),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -57,28 +50,39 @@ class _RegisterEmailState extends State<RegisterEmail> {
                 ],
               ),
             ),
-      ],
+             
+      
+          ],
+        ),
       ),
     );
   }
-  
 
-  Widget header_text(String text) {
-   return Padding(
-     padding: const EdgeInsets.only(left: 30, top: 50),
-     child: Text(
-      text,
-      style: const TextStyle(
-          fontSize: 25, color: Colors.black, fontWeight: FontWeight.w500),
-     ),
-   );
+
+  Widget _title(){
+    return const Padding(
+      padding: EdgeInsets.only(top: 100, left: 30, bottom: 30),
+      child: Text(
+        'Verifica tu numero de celular',
+        style: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.bold
+        )
+      ),
+    );
   }
 
-  Widget description_text(String text) {
-   return Padding(
-    padding: const EdgeInsets.only(left: 30),
-    child: Text(text)
-   );
+  Widget _text(){
+    return const Padding(
+      padding: EdgeInsets.only(left: 30, bottom: 20, right: 30),
+      child: Text(
+        'Ingresa los 4 digitos que se te enviaron al numero que ingresaste',
+        style: TextStyle(
+          fontSize: 15,
+
+        ),
+      ),
+    );
   }
 
   Widget _inputNumber(){
@@ -92,7 +96,7 @@ class _RegisterEmailState extends State<RegisterEmail> {
       child: TextFormField(
         keyboardType: TextInputType.phone,
         decoration: const InputDecoration(
-          hintText: 'Ingresa tu email',
+          hintText: 'Ingresa el codigo de 4 digitos',
           border: InputBorder.none,
           contentPadding: EdgeInsets.all(15),
           hintStyle: TextStyle(
@@ -103,9 +107,25 @@ class _RegisterEmailState extends State<RegisterEmail> {
     );
   }
 
+  Widget _reenviarCodigo(){
+    return Container(
+      margin: const EdgeInsets.only(left: 30, top: 30),
+      child: TextButton(
+       onPressed: () {}, 
+       child: Text(
+        "Reenviar el codigo SMS", 
+        style: TextStyle(
+         fontSize: 15,
+         color: Colors.greenAccent[400]
+        )
+       )
+      ),
+    );
+  }
+
   Widget bottonNext(){
     return GestureDetector(
-      onTap: _controller.goToRegisterPassword,
+      onTap: _controller.goToRegisterEmail,
       child: Container(
         width: 100,
         height: 50,
@@ -113,7 +133,7 @@ class _RegisterEmailState extends State<RegisterEmail> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
     
-            const SizedBox(width: 5),
+            const SizedBox(width: 10),
     
             const Text(
               'Next',
@@ -125,11 +145,10 @@ class _RegisterEmailState extends State<RegisterEmail> {
             ),
     
             const Icon(
-              FontAwesomeIcons.arrowRight,
+              Icons.arrow_forward,
               color: Colors.white
             ),
     
-            const SizedBox(width: 3),
           ],
         ),
         decoration: BoxDecoration(
@@ -149,11 +168,9 @@ class _RegisterEmailState extends State<RegisterEmail> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-
-            const SizedBox(width: 3),
     
             const Icon(
-              FontAwesomeIcons.arrowLeft,
+              Icons.arrow_back,
               color: Colors.white
             ),
     
@@ -177,5 +194,6 @@ class _RegisterEmailState extends State<RegisterEmail> {
       ),
     );
   }
+
 
 }
