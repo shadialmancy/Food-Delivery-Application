@@ -1,31 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:ramayo_client_app/src/utils/my_colors.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class ListPage extends StatefulWidget {
+class FavoriteRestaurantPage extends StatefulWidget {
+  FavoriteRestaurantPage({Key? key}) : super(key: key);
 
   @override
-  _ListPageState createState() => _ListPageState();
+  _FavoriteRestaurantPageState createState() => _FavoriteRestaurantPageState();
 }
 
-class _ListPageState extends State<ListPage> {
+class _FavoriteRestaurantPageState extends State<FavoriteRestaurantPage> {
 
-  double precio = 154.70;
+  double precio = 11.9;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-       title: const Padding(
-         padding: const EdgeInsets.only(left: 80),
-         child: const Text(
-          'Tus pedidos',
-          style: TextStyle(
-           color: Colors.black
+        leading: const Icon(
+          FontAwesomeIcons.arrowLeft,
+          color: Colors.black
+        ),
+        title: const Padding(
+          padding: const EdgeInsets.only(left: 72),
+          child: const Text(
+            'Tus Favoritos',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w500
+            ),
           ),
-         ),
-       ),
-       elevation: 5,
-       backgroundColor: Colors.white,
+        ),
+        elevation: 0,
+        backgroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 10),
@@ -35,7 +41,7 @@ class _ListPageState extends State<ListPage> {
            return Column(
              children: <Widget>[
 
-              _pedido(),
+              _contenedor(),
 
               const Divider(
                 height: 1,
@@ -47,12 +53,11 @@ class _ListPageState extends State<ListPage> {
            );
           }
         ),
-      )
+      ),
     );
   }
 
-
-  Widget _pedido(){
+  Widget _contenedor(){
     return GestureDetector(
       onTap: (){
         print('EL pepe');
@@ -61,13 +66,13 @@ class _ListPageState extends State<ListPage> {
         margin: const EdgeInsets.all(5),
         height: 85,
         child: Center(
-          child: _tarjetaPedido(),
+          child: _tarjetaRestaurante(),
         ),
       ),
     );
   }
 
-  Widget _tarjetaPedido(){
+  Widget _tarjetaRestaurante(){
    return Container(
     height: 130,
     width: 400,
@@ -83,10 +88,11 @@ class _ListPageState extends State<ListPage> {
         ),
 
         Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+
+           const SizedBox(height: 5), 
 
            const Text(
             'La Coronela Hamburguesas',
@@ -97,17 +103,10 @@ class _ListPageState extends State<ListPage> {
             )
            ),
   
-           const SizedBox(height: 10),
+           const SizedBox(height: 7),
 
            Text(
-            "1 articulo - $precio",
-            style: TextStyle(
-              color: Colors.grey[600]
-            ),
-           ),
-
-           Text(
-            '03 - jun - Completado',
+            'Pide de un restaurante local',
             style: TextStyle(
               color: Colors.grey[600]
             ),
@@ -120,8 +119,4 @@ class _ListPageState extends State<ListPage> {
     ),
    );
   }
-
-
- 
-
 }

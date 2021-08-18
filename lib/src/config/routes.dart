@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ramayo_client_app/src/pages/agregar_tarjeta.dart';
 import 'package:ramayo_client_app/src/pages/detalle_page.dart';
+import 'package:ramayo_client_app/src/pages/favorite_restaurant_page.dart';
 import 'package:ramayo_client_app/src/pages/home_page.dart';
+import 'package:ramayo_client_app/src/pages/information_restaurant_page.dart';
 import 'package:ramayo_client_app/src/pages/login_page.dart';
 import 'package:ramayo_client_app/src/pages/pruebas_page.dart';
 import 'package:ramayo_client_app/src/pages/registration/activar_ubicacion_page.dart';
@@ -27,6 +29,8 @@ class RoutesApp {
       '/registerPassword': (BuildContext context) => RegisterPassword(),
       '/registerNameYLastname': (BuildContext context) => RegisterNameYLastName(),
       '/ubication': (BuildContext context) => ActivarUbicacion(),
+      '/informationRestaurant': (BuildContext context) => InformationRestaurant(),
+      '/favoriteRestaurant': (BuildContext context) => FavoriteRestaurantPage()
     };
   }
 }
