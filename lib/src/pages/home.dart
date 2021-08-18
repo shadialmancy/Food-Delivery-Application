@@ -28,6 +28,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
            title: const Center(child: Text('Delivery')),
            elevation: 5,
+           leading: const Icon(FontAwesomeIcons.signOutAlt),
            backgroundColor: MyColors.primaryOrange,
            actions: <Widget>[
              
