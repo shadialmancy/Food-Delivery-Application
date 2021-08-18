@@ -26,6 +26,7 @@ class _VerificaNumeroState extends State<VerificaNumero> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
       
@@ -35,10 +36,12 @@ class _VerificaNumeroState extends State<VerificaNumero> {
       
             _inputNumber(),
       
+            //const SizedBox(height: 10),
+
             _reenviarCodigo(),
       
             Container(
-              margin: const EdgeInsets.only(left: 30, right: 30, top: 280),
+              margin: const EdgeInsets.only(left: 30, right: 30, top: 110),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -61,7 +64,7 @@ class _VerificaNumeroState extends State<VerificaNumero> {
 
   Widget _title(){
     return const Padding(
-      padding: EdgeInsets.only(top: 100, left: 30, bottom: 30),
+      padding: EdgeInsets.only(top: 85, left: 30, bottom: 30),
       child: Text(
         'Verifica tu numero de celular',
         style: TextStyle(
@@ -86,21 +89,23 @@ class _VerificaNumeroState extends State<VerificaNumero> {
   }
 
   Widget _inputNumber(){
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 30),
-      width: 389,
-      height: 50,
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-      ),
-      child: TextFormField(
-        keyboardType: TextInputType.phone,
-        decoration: const InputDecoration(
-          hintText: 'Ingresa el codigo de 4 digitos',
-          border: InputBorder.none,
-          contentPadding: EdgeInsets.all(15),
-          hintStyle: TextStyle(
-            color: Colors.black54
+    return Form(
+      child: Container(
+        margin: const EdgeInsets.only(left: 30, right: 30),
+        width: 389,
+        height: 50,
+        decoration: BoxDecoration(
+          color: Colors.grey[200],
+        ),
+        child: TextFormField(
+          keyboardType: TextInputType.phone,
+          decoration: const InputDecoration(
+            hintText: 'Ingresa el codigo de 4 digitos',
+            border: InputBorder.none,
+            contentPadding: EdgeInsets.all(15),
+            hintStyle: TextStyle(
+              color: Colors.black54
+            ),
           ),
         ),
       ),
@@ -108,18 +113,23 @@ class _VerificaNumeroState extends State<VerificaNumero> {
   }
 
   Widget _reenviarCodigo(){
-    return Container(
-      margin: const EdgeInsets.only(left: 30, top: 30),
-      child: TextButton(
-       onPressed: () {}, 
-       child: Text(
-        "Reenviar el codigo SMS", 
-        style: TextStyle(
-         fontSize: 15,
-         color: Colors.greenAccent[400]
-        )
-       )
-      ),
+    return Padding(
+      padding: const EdgeInsets.only(left: 30, right: 30, top: 5),
+      child:/* TextButton(
+         onPressed: () {}, 
+         child:*/ GestureDetector(
+           onTap: (){
+             print('el pepe');
+           },
+           child: Text(
+            "Reenviar el codigo SMS", 
+            style: TextStyle(
+             fontSize: 15,
+             color: Colors.greenAccent[400]
+            )
+           ),
+         )
+      //),
     );
   }
 

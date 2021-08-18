@@ -26,8 +26,8 @@ class _NumberPageState extends State<NumberPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
+      body: //SingleChildScrollView(
+        /*child:*/ Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
       
@@ -35,39 +35,41 @@ class _NumberPageState extends State<NumberPage> {
              _title(),
       
       
-            _formulario(),
+             _formulario(),
       
             const SizedBox(height: 10),
       
-            _text(),
+            Expanded(
+              child: _text()
+            ),
             
-            const SizedBox(height: 370),
+            //const SizedBox(height: 270),
       
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 30),
-              child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-      
-                bottonBack(),
-      
-                bottonNext(),
-              
-      
-              ],
-            ),
-            ),
+                margin: const EdgeInsets.only(left: 30, right: 30, bottom: 20),
+                child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  
+                  bottonBack(),
+                  
+                  bottonNext(),
+                
+                  
+                ],
+              ),
+              ),
       
           ],
         ),
-      )
+      //)
     );
   }
 
 
   Widget _title(){
     return const Padding(
-      padding: EdgeInsets.only(top: 110, left: 30, bottom: 30),
+      padding: EdgeInsets.only(top: 85, left: 30, bottom: 30),
       child: Text(
        'Ingresa tu numero',
        style: TextStyle(
@@ -84,11 +86,6 @@ class _NumberPageState extends State<NumberPage> {
      child: Row(
        children: <Widget>[
 
-           const SizedBox(width: 30),
-
-           _inputCountry(),
-
-           const SizedBox(width: 20),
 
            _inputNumber(),
 
@@ -100,52 +97,34 @@ class _NumberPageState extends State<NumberPage> {
   }
 
   Widget _inputNumber(){
-    return Container(
-      //margin: const EdgeInsets.symmetric(horizontal: 50),
-      width: 260,
-      height: 50,
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-      ),
-      child: TextFormField(
-        keyboardType: TextInputType.phone,
-        decoration: const InputDecoration(
-          hintText: 'Ingresa tu numero',
-          border: InputBorder.none,
-          contentPadding: EdgeInsets.all(15),
-          hintStyle: TextStyle(
-            color: Colors.black54
+    return Expanded(
+      child: Container(
+        margin: const EdgeInsets.only(left: 30, right: 30),
+        //width: 260,
+        height: 50,
+        decoration: BoxDecoration(
+          color: Colors.grey[200],
+        ),
+        child: TextFormField(
+          keyboardType: TextInputType.phone,
+          decoration: const InputDecoration(
+            hintText: 'Ingresa tu numero',
+            border: InputBorder.none,
+            contentPadding: EdgeInsets.all(15),
+            hintStyle: TextStyle(
+              color: Colors.black54
+            ),
           ),
         ),
       ),
     );
   }
 
-  Widget _inputCountry(){
-   return Container(
-      //margin: const EdgeInsets.symmetric(horizontal: 50),
-      width: 70,
-      height: 50,
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-      ),
-      child: TextFormField(
-        keyboardType: TextInputType.phone,
-        decoration: const InputDecoration(
-          border: InputBorder.none,
-          contentPadding: EdgeInsets.all(15),
-          hintStyle: TextStyle(
-            color: Colors.black54
-          ),
-        ),
-      ),
-    );
- }
-
   Widget _text(){
     return  Padding(
      padding: const EdgeInsets.only(left: 30, top: 5, right: 30),
      child: RichText(
+      textAlign: TextAlign.justify,
       text: const TextSpan(
         children: [
         
@@ -153,8 +132,8 @@ class _NumberPageState extends State<NumberPage> {
           text: 'Para continuar recibiras un mensaje SMS a el numero de telefono que ingresate para poder verificar tu numero',
           style: TextStyle(
             fontWeight: FontWeight.normal, 
-            color: Colors.black38
-          )
+            color: Colors.black38,
+          ),
         ),
         
         ]

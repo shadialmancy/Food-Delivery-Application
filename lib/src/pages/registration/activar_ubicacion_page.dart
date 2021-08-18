@@ -24,33 +24,35 @@ class _ActivarUbicacionState extends State<ActivarUbicacion> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-
-          _title(),
-
-          _descripcion(),
-
-          _inputAdress(),
-
-          _activarUbicacion(),
-
-          Container(
-              margin: const EdgeInsets.only(left: 20, right: 20, top: 270),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
       
-                   bottonBack(),
+            _title(),
       
-                   bottonNext(),
+            _descripcion(),
       
-                ],
+            _inputAdress(),
+      
+            _activarUbicacion(),
+      
+            Container(
+                margin: const EdgeInsets.only(left: 20, right: 20, top: 270),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+        
+                     bottonBack(),
+        
+                     bottonNext(),
+        
+                  ],
+                ),
               ),
-            ),
-
-        ],
+      
+          ],
+        ),
       ),
     );
   }

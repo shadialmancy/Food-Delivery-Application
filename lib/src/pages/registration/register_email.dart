@@ -25,39 +25,41 @@ class _RegisterEmailState extends State<RegisterEmail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-
-        const SizedBox(height: 50,),
-
-        header_text("Ingresa tu correo electronico"),
+      body: SingleChildScrollView(
+        child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+      
+          const SizedBox(height: 50,),
+      
+          header_text("Ingresa tu correo electronico"),
+          
+          const SizedBox(height: 15),
+      
+          description_text("los recibos se enviarán a su correo electrónico"),
+      
+          const SizedBox(height: 15),
+      
+          _inputNumber(),
+          
+          const SizedBox(height: 100),
+      
+      
+          Container(
+                margin: const EdgeInsets.only(left: 30, right: 30, top: 280),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
         
-        const SizedBox(height: 15),
-
-        description_text("los recibos se enviarán a su correo electrónico"),
-
-        const SizedBox(height: 15),
-
-        _inputNumber(),
+                     bottonBack(),
         
-        const SizedBox(height: 100),
-
-
-        Container(
-              margin: const EdgeInsets.only(left: 30, right: 30, top: 280),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-      
-                   bottonBack(),
-      
-                   bottonNext(),
-      
-                ],
+                     bottonNext(),
+        
+                  ],
+                ),
               ),
-            ),
-      ],
+        ],
+        ),
       ),
     );
   }
