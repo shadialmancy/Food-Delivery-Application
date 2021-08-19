@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ramayo_client_app/src/pages/controllers/pago_controller.dart';
 
 class PagoPage extends StatefulWidget {
   PagoPage({Key? key}) : super(key: key);
@@ -12,12 +14,23 @@ class _PagoPageState extends State<PagoPage> {
 
   List<int> card = [1,2,4,5];
 
+  PagoController _controller = new PagoController();
+
+  @override
+  void initState() {
+    super.initState();
+    SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
+      _controller.init(context);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(
-          FontAwesomeIcons.arrowLeft,
+        leading:  IconButton(
+          onPressed: _controller.goBack,
+          icon: Icon(FontAwesomeIcons.arrowLeft),
           color: Colors.black
         ),
         title: const Padding(
