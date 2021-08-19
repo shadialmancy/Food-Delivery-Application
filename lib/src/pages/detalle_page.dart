@@ -72,6 +72,8 @@ class _DetallePageState extends State<DetallePage> {
                   thickness: 2,
                 ),
 
+
+
               ],
             ),
           ),
@@ -221,7 +223,7 @@ class _DetallePageState extends State<DetallePage> {
     );
   }
  
-
+  
 
 
 

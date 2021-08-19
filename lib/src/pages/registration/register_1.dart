@@ -29,7 +29,7 @@ class _RegisterPage_1State extends State<RegisterPage_1> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-
+/*
           Center(
             child: Container(
               //width: double.infinity,
@@ -40,7 +40,7 @@ class _RegisterPage_1State extends State<RegisterPage_1> {
                width: 200,
               ),
             ),
-          ),
+          ),*/
 
           Positioned(
             top: 75,
