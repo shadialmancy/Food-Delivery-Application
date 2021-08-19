@@ -25,9 +25,11 @@ class _RegisterPasswordState extends State<RegisterPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(10),
-        child: column(context),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          child: column(context),
+        ),
       ),
     );
   }

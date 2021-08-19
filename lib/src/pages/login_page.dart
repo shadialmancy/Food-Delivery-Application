@@ -235,14 +235,16 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget title(){
-    return const Text(
-      "LYZOO", 
-      style: TextStyle(
-        fontSize: 98, 
-        color: const Color.fromRGBO(252, 73, 73, 0.80), 
-        fontWeight: FontWeight.bold, 
-        letterSpacing: 2
-      )
+    return const FittedBox(
+      child: Text(
+        "LYZOO", 
+        style: TextStyle(
+          fontSize: 98, 
+          color: const Color.fromRGBO(252, 73, 73, 0.80), 
+          fontWeight: FontWeight.bold, 
+          letterSpacing: 2
+        )
+      ),
     );
   }
 

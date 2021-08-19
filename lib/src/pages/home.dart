@@ -87,43 +87,45 @@ class _HomeState extends State<Home> {
 
               
 
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-
-                  const Padding(
-                   padding: const EdgeInsets.only(left: 15, top: 5),
-                   child: const Text(
-                     'La Coronela Hamburguesas',
-                     style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500
+              FittedBox(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+              
+                    const Padding(
+                     padding: const EdgeInsets.only(left: 15, top: 5),
+                     child: const Text(
+                       'La Coronela Hamburguesas',
+                       style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500
+                       ),
                      ),
-                   ),
-                  ),
-
-                  const Padding(
-                    padding: const EdgeInsets.only(left: 60, top: 5),
-                    child: const Text(
-                     '4.5',
-                     style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500
-                     )
                     ),
-                  ),
-
-                  const Padding(
-                    padding: const EdgeInsets.only(top: 5),
-                    child: const Icon(
-                     Icons.star, 
-                     color: Colors.amber,
+              
+                    const Padding(
+                      padding: const EdgeInsets.only(left: 60, top: 5),
+                      child: const Text(
+                       '4.5',
+                       style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500
+                       )
+                      ),
                     ),
-                  ),
-
-                ]
+              
+                    const Padding(
+                      padding: const EdgeInsets.only(top: 5),
+                      child: const Icon(
+                       Icons.star, 
+                       color: Colors.amber,
+                      ),
+                    ),
+              
+                  ]
+                ),
               ),
               
                Padding(

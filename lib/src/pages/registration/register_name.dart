@@ -29,33 +29,35 @@ class _RegisterNameYLastNameState extends State<RegisterNameYLastName> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-
-          _title(),
-
-          _descripcion(),
-
-          _inputName(),
-
-          _inputLastname(),
-
-          Container(
-              margin: const EdgeInsets.only(left: 20, right: 20, top: 320),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
       
-                   bottonBack(),
+            _title(),
       
-                   bottonNext(),
+            _descripcion(),
       
-                ],
+            _inputName(),
+      
+            _inputLastname(),
+      
+            Container(
+                margin: const EdgeInsets.only(left: 20, right: 20, top: 320),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+        
+                     bottonBack(),
+        
+                     bottonNext(),
+        
+                  ],
+                ),
               ),
-            ),
-         
-        ],
+           
+          ],
+        ),
       ),
     );
   }
