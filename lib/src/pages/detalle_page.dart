@@ -59,26 +59,31 @@ class _DetallePageState extends State<DetallePage> {
               )
             ];
           },
-          body: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-          
-                _encabezado(),
+          body: ListView(
+            padding: const EdgeInsets.only(top: 0),
+            children: <Widget>[
 
-                _infoRestaurante(),
+              _encabezado(),
 
-                const Divider(
-                  thickness: 2,
+              _infoRestaurante(),
+
+              const Divider(
+                thickness: 1,
+              ),
+
+              Column(
+                children: List.generate(
+                  10, 
+                  (index){ 
+                    return _cardPlatillo();
+                  }
                 ),
+              ),
 
-
-
-              ],
-            ),
+            ],
+          ),
           ),
         ),
-      ),
     );
   }
 
@@ -223,7 +228,67 @@ class _DetallePageState extends State<DetallePage> {
     );
   }
  
-  
+  Widget _cardPlatillo(){
+   return Container(
+    height: 120,
+    margin: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+
+        Padding(
+          padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+
+               const Text(
+                'Hamburguesa con queso',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontSize: 17
+                ),
+               ),
+
+               Expanded(
+                 child: Container(
+                   margin: const EdgeInsets.only(top: 5),
+                   height: 10,
+                   width: 250,
+                   child: const Text(
+                    'Rica hamburguesa con queso y tocino para toda la familia, con tomates y el deep de la casa y original',
+                    textAlign: TextAlign.justify,
+                   ),
+                 ),
+               ),
+                      
+               const Padding(
+                 padding: const EdgeInsets.only(bottom: 10),
+                 child: Text(
+                  '135.00',
+                 ),
+               ),
+
+            ],
+          ),
+        ),
+
+        Container(
+          margin: const EdgeInsets.only(right: 10),
+          height: 100,
+          width: 100,
+          child: Image.network(
+           'https://static.displate.com/857x1200/displate/2018-11-30/c3ec1197d3ad652433bbebf9dec1a7af_9793d944a67664785f7eaf6d30033180.jpg',
+           fit: BoxFit.fill
+          ),
+        ),
+       
+        
+      ],
+    ),
+   );
+  }
 
 
 

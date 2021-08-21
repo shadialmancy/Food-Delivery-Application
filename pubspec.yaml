@@ -22,6 +22,7 @@ dependencies:
   package_info: ^2.0.2
   provider: ^5.0.0
   country_code_picker: ^2.0.2
+  scrollable_list_tabview: ^0.2.0-nullsafety
 
 dev_dependencies:
   flutter_test:
