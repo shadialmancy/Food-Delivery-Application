@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ramayo_client_app/src/pages/controllers/favorite_restaurant_controller.dart';
 
 class FavoriteRestaurantPage extends StatefulWidget {
   FavoriteRestaurantPage({Key? key}) : super(key: key);
@@ -12,12 +14,23 @@ class _FavoriteRestaurantPageState extends State<FavoriteRestaurantPage> {
 
   double precio = 11.9;
 
+  FavoriteRestaurantController _controller = new FavoriteRestaurantController();
+
+  @override
+  void initState() {
+    super.initState();
+    SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
+      _controller.init(context);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(
-          FontAwesomeIcons.arrowLeft,
+        leading:  IconButton(
+          onPressed: _controller.goback,
+          icon: const Icon(FontAwesomeIcons.arrowLeft),
           color: Colors.black
         ),
         title: const Padding(

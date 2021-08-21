@@ -7,6 +7,7 @@ import 'package:ramayo_client_app/src/pages/information_restaurant_page.dart';
 import 'package:ramayo_client_app/src/pages/login_page.dart';
 import 'package:ramayo_client_app/src/pages/notifications_page.dart';
 import 'package:ramayo_client_app/src/pages/pago_page.dart';
+import 'package:ramayo_client_app/src/pages/payment_page.dart';
 import 'package:ramayo_client_app/src/pages/pruebas_page.dart';
 import 'package:ramayo_client_app/src/pages/registration/activar_ubicacion_page.dart';
 import 'package:ramayo_client_app/src/pages/registration/number_page.dart';
@@ -35,6 +36,7 @@ class RoutesApp {
       '/favoriteRestaurant': (BuildContext context) => FavoriteRestaurantPage(),
       '/pagoPage': (BuildContext context) => PagoPage(),
       '/notificationsPage': (BuildContext context) => NotificationsPage(),
+      '/shadi': (BuildContext context) => PaymentPage(),
     };
   }
 }

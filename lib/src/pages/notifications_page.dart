@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ramayo_client_app/src/pages/controllers/notifications_controller.dart';
 
 class NotificationsPage extends StatefulWidget {
 
@@ -8,14 +10,27 @@ class NotificationsPage extends StatefulWidget {
 }
 
 class _NotificationsPageState extends State<NotificationsPage> {
+  
+  NotificationsController _controller = new NotificationsController();
+
+  @override
+  void initState() {
+    super.initState();
+    SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
+      _controller.init(context);
+    });
+  }
+  
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        leading: const Icon(
-          FontAwesomeIcons.arrowLeft,
+        leading: IconButton(
+          onPressed: _controller.goback,
+          icon: const Icon(FontAwesomeIcons.arrowLeft),
           color: Colors.black
         ),
       ),

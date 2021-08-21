@@ -29,16 +29,12 @@ class _RegisterPage_1State extends State<RegisterPage_1> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-
+            
           Center(
             child: Container(
-              //width: double.infinity,
-              //color: Colors.blue,
-              child: SvgPicture.asset(
-               'assets/undraw_Sync_files_re_ws4c.svg',
-               height: 450,
-               width: 200,
-              ),
+              width: double.infinity,
+              color: Colors.blue,
+              height: 40,
             ),
           ),
 
