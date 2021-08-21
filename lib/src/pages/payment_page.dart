@@ -141,8 +141,6 @@ class _PaymentPageState extends State<PaymentPage> {
           cashSelected = false;
           creditSelected = true;
         });
-        print(cashSelected);
-        print(creditSelected);
       },
       child: Container(
         height: 50,
