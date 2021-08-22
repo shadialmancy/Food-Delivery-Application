@@ -16,4 +16,8 @@ class DetalleController {
     Navigator.pop(context!);
   }  
 
+  void goToInformation(){
+    Navigator.pushNamed(context!, '/informationRestaurant');
+  }
+
 }

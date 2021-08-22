@@ -30,7 +30,7 @@ class _PagoPageState extends State<PagoPage> {
       appBar: AppBar(
         leading:  IconButton(
           onPressed: _controller.goBack,
-          icon: Icon(FontAwesomeIcons.arrowLeft),
+          icon: const Icon(FontAwesomeIcons.arrowLeft),
           color: Colors.black
         ),
         title: const Padding(

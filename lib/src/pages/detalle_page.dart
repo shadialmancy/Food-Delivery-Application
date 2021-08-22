@@ -207,7 +207,7 @@ class _DetallePageState extends State<DetallePage> {
               Padding(
                 padding: const EdgeInsets.only(right: 10),
                 child: GestureDetector(
-                  onTap: (){},
+                  onTap: _controller.goToInformation,
                   child: Text(
                     'mas informacion',
                     style: TextStyle(
