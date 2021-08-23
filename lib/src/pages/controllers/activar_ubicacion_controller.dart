@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class ActivarUbicationController{
 
  BuildContext? context;
+ TextEditingController adressController = new TextEditingController();
 
 
  Future? init(BuildContext context){

@@ -151,10 +151,6 @@ class _PagoPageState extends State<PagoPage> {
         fontWeight: FontWeight.bold
       ),
     ),
-    trailing: const Icon(
-      FontAwesomeIcons.chevronRight,
-      color: Colors.black
-     ),
    );
   }
 

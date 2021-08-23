@@ -96,6 +96,7 @@ class _ActivarUbicacionState extends State<ActivarUbicacion> {
         color: Colors.grey[200],
       ),
       child: TextFormField(
+        controller: _controller.adressController,
         keyboardType: TextInputType.streetAddress,
         decoration: const InputDecoration(
           hintText: 'Ingresa tu direccion',

@@ -196,6 +196,12 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
               ),
             ),
             
+
+             Expanded(
+               child: Container(),
+             ),
+ 
+
             _botonGuardar(),
           ],
         ),
