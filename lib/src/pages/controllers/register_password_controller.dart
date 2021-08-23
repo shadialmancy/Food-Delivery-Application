@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
  class RegisterPasswordController {
 
    BuildContext? context;
+   TextEditingController passwordController = new TextEditingController();
 
    Future? init(BuildContext context){
 

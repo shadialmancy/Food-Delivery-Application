@@ -92,6 +92,7 @@ class _RegisterEmailState extends State<RegisterEmail> {
         color: Colors.grey[200],
       ),
       child: TextFormField(
+        controller: _controller.emailController,
         keyboardType: TextInputType.phone,
         decoration: const InputDecoration(
           hintText: 'Ingresa tu email',

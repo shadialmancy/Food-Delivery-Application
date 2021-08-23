@@ -27,7 +27,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(

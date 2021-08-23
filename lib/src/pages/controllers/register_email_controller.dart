@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class RegisterEmailController {
 
   BuildContext? context;
+  TextEditingController emailController = new TextEditingController();
 
   Future? init(BuildContext context){
 

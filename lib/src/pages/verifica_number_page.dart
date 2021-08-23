@@ -98,6 +98,7 @@ class _VerificaNumeroState extends State<VerificaNumero> {
           color: Colors.grey[200],
         ),
         child: TextFormField(
+          controller: _controller.verificaNumberController,
           keyboardType: TextInputType.phone,
           decoration: const InputDecoration(
             hintText: 'Ingresa el codigo de 4 digitos',

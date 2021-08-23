@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 class RegisterNameController {
 
   BuildContext? context;
+  TextEditingController nameController = new TextEditingController();
+  TextEditingController lastnameController = new TextEditingController();
 
   Future? init(BuildContext context){
 

@@ -99,6 +99,7 @@ class _RegisterNameYLastNameState extends State<RegisterNameYLastName> {
         color: Colors.grey[200],
       ),
       child: TextFormField(
+        controller: _controller.nameController,
         keyboardType: TextInputType.name,
         decoration: const InputDecoration(
           hintText: 'Ingresa tu primer nombre',
@@ -121,6 +122,7 @@ class _RegisterNameYLastNameState extends State<RegisterNameYLastName> {
         color: Colors.grey[200],
       ),
       child: TextFormField(
+        controller: _controller.lastnameController,
         keyboardType: TextInputType.name,
         decoration: const InputDecoration(
           hintText: 'Ingresa tu primer apellido',

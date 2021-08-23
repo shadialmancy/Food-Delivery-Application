@@ -106,6 +106,7 @@ class _NumberPageState extends State<NumberPage> {
           color: Colors.grey[200],
         ),
         child: TextFormField(
+          controller: _controller.phoneController,
           keyboardType: TextInputType.phone,
           decoration: const InputDecoration(
             hintText: 'Ingresa tu numero',

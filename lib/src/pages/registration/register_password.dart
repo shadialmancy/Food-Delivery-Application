@@ -49,7 +49,7 @@ class _RegisterPasswordState extends State<RegisterPassword> {
         
         const SizedBox(height: 15),
         
-        _inputNumber(),
+        _inputPassword(),
         
         const SizedBox( height: 100),
 
@@ -72,28 +72,7 @@ class _RegisterPasswordState extends State<RegisterPassword> {
 
   bool passwordVisible = false;
 
-  Widget passwordField() {
-    return Container(
-      color: const Color(0xFFDEDEDE),
-      child: TextFormField(
-        obscureText: passwordVisible,
-        keyboardType: TextInputType.text,
-        decoration: InputDecoration(
-            hintText: 'Ingresa tu contraseña',
-            border: InputBorder.none,
-            contentPadding: const EdgeInsets.all(15),
-            suffixIcon: IconButton(
-              icon: Icon(
-                  passwordVisible ? Icons.visibility : Icons.visibility_off),
-              onPressed: () {
-                setState(() {
-                  passwordVisible = !passwordVisible;
-                });
-              },
-            )),
-      ),
-    );
-  }
+  
 
   Widget header_text(String text) {
    return Padding(
@@ -106,7 +85,7 @@ class _RegisterPasswordState extends State<RegisterPassword> {
    );
   }
 
-  Widget _inputNumber(){
+  Widget _inputPassword(){
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       width: 389,
@@ -115,10 +94,11 @@ class _RegisterPasswordState extends State<RegisterPassword> {
         color: Colors.grey[200],
       ),
       child: TextFormField(
+        controller: _controller.passwordController,
         obscureText: passwordVisible,
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
-            hintText: 'Ingresa tu contraseña',
+            hintText: 'Ingresa tu cont',
             border: InputBorder.none,
             contentPadding: const EdgeInsets.all(15),
             suffixIcon: IconButton(

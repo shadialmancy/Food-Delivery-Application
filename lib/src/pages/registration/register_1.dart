@@ -31,12 +31,10 @@ class _RegisterPage_1State extends State<RegisterPage_1> {
         children: <Widget>[
             
           Center(
-            child: Container(
-              width: double.infinity,
-              color: Colors.blue,
-              height: 40,
+            child: SvgPicture.asset(
+                'assets/undraw_Sync_files_re_ws4c.svg'
+              )
             ),
-          ),
 
           Positioned(
             top: 75,

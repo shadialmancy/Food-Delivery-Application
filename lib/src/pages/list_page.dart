@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ramayo_client_app/src/utils/my_colors.dart';
 
 class ListPage extends StatefulWidget {
 
