@@ -144,11 +144,17 @@ class _LoginPageState extends State<LoginPage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          IconButton(onPressed: () {}, icon: const Icon(FontAwesomeIcons.googlePlus), color: Colors.red, iconSize: 50),
+          IconButton(onPressed: () {
+            //TODO g+
+          }, icon: const Icon(FontAwesomeIcons.googlePlus), color: MyColors.primaryColor, iconSize: 50),
           const SizedBox(width: 10),
-          IconButton(onPressed: () {}, icon: const Icon(FontAwesomeIcons.facebook), color: Colors.red, iconSize: 50),
+          IconButton(onPressed: () {
+            //TODO face
+          }, icon: const Icon(FontAwesomeIcons.facebook), color: MyColors.primaryColor, iconSize: 50),
           const SizedBox(width: 10),
-          IconButton(onPressed: () {}, icon: const Icon(FontAwesomeIcons.twitter), color: Colors.red, iconSize: 50),
+          IconButton(onPressed: () {
+            //TODO twitter
+          }, icon: const Icon(FontAwesomeIcons.twitter), color: MyColors.primaryColor, iconSize: 50),
         ],
       ),
     );
