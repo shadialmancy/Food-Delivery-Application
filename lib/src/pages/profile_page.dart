@@ -25,7 +25,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    //TODO quitar esto
+    //TODO quitar esto cuando tengamos provider
     usuario
       ..name = "Domenica"
       ..subName = 'Duch'
