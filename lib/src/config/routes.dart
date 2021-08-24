@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ramayo_client_app/src/pages/agregar_tarjeta.dart';
 import 'package:ramayo_client_app/src/pages/detalle_page.dart';
 import 'package:ramayo_client_app/src/pages/favorite_restaurant_page.dart';
+import 'package:ramayo_client_app/src/pages/forgot_page.dart';
 import 'package:ramayo_client_app/src/pages/home_page.dart';
 import 'package:ramayo_client_app/src/pages/information_restaurant_page.dart';
 import 'package:ramayo_client_app/src/pages/login_page.dart';
@@ -37,6 +38,7 @@ class RoutesApp {
       '/pagoPage': (BuildContext context) => PagoPage(),
       '/notificationsPage': (BuildContext context) => NotificationsPage(),
       '/shadi': (BuildContext context) => PaymentPage(),
+      '/forgotPassword': (BuildContext context) => ForgotPage(),
     };
   }
 }

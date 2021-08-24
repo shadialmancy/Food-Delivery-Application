@@ -12,11 +12,15 @@ import 'package:flutter/material.dart';
 
   
    void goToHomePage(){
-     
+     //TODO validar login
      Navigator.pushNamed(context!, '/');
    }
 
    void goToIngresaNumero(){
      Navigator.pushNamed(context!, '/numberPage');
+   }
+
+   void goToForgotPassword(){
+     Navigator.pushNamed(context!, '/forgotPassword');
    }
  }
