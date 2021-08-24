@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:ramayo_client_app/src/config/config.dart';
 import 'package:ramayo_client_app/src/config/routes.dart';
 import 'package:ramayo_client_app/src/config/theme.dart';
@@ -25,12 +26,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     pn.initListeners(context);
 
+    SystemChrome.setPreferredOrientations([
+      // DeviceOrientation.landscapeRight,
+      // DeviceOrientation.landscapeLeft,
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: Config.data['title'].toString(),
       theme: ThemeInfo.getTheme(),
       routes: RoutesApp().getRoutes(),
-      initialRoute: '/login', 
+      initialRoute: '/login',
     );
   }
 }
