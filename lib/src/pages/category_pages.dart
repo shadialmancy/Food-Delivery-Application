@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ramayo_client_app/src/models/category_model.dart';
 import 'package:ramayo_client_app/src/utils/my_colors.dart';
 
 
@@ -10,9 +11,9 @@ class CategoryPage extends StatefulWidget {
 
 class _CategoryPageState extends State<CategoryPage> {
 
-  final List<Map> myProducts =
-      List.generate(20, (index) => {"id": index, "name": "Product $index"})
-          .toList();
+  List<CategoryModel> categorias = [new CategoryModel(), new CategoryModel(), new CategoryModel()];
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +22,8 @@ class _CategoryPageState extends State<CategoryPage> {
            title: const Center(child: Text('Delivery')),
            elevation: 5,
            backgroundColor: MyColors.primaryOrange,
-           leading: const Icon(Icons.menu, color: Colors.white),
-           actions: <Widget>[
-             
-               IconButton(
-                 icon: const Icon(Icons.search),
-                 onPressed: (){},
-               )
-           ],
-        ),
+           leading: const Icon(Icons.menu, color: Colors.white),     
+      ),
       body: Container(
         margin: const EdgeInsets.only(left: 8, right: 8, top: 10),
         child: _prueba()
@@ -37,9 +31,24 @@ class _CategoryPageState extends State<CategoryPage> {
     );
   }
 
+  Widget _prueba(){
+   return GridView.builder(
+    gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+     maxCrossAxisExtent: 200,
+     childAspectRatio: 3 / 2,
+     crossAxisSpacing: 20,
+     mainAxisSpacing: 20
+    ),
+    itemCount: categorias.length,
+    itemBuilder: (BuildContext context, index) {
+     return _contenedor(categorias[index]);
+    }
+   );
+ }
 
 
- Widget _contenedor(){
+
+ Widget _contenedor(CategoryModel categorias){
    return GestureDetector(
      onTap: (){},
      child: Container(
@@ -53,7 +62,7 @@ class _CategoryPageState extends State<CategoryPage> {
             width: 190,
             color: Colors.orange,
             child: Image.network(
-              'https://static.displate.com/857x1200/displate/2018-11-30/c3ec1197d3ad652433bbebf9dec1a7af_9793d944a67664785f7eaf6d30033180.jpg',
+              categorias.image,
               fit: BoxFit.fill
             ),
           ),
@@ -62,10 +71,10 @@ class _CategoryPageState extends State<CategoryPage> {
             height: 190,
             width: 190,
             color: Colors.black.withOpacity(0.4),
-            child: const Center(
+            child:  Center(
               child: Text(
-                'Italiana',
-                style: TextStyle(
+                categorias.title,
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 25,
                   fontWeight: FontWeight.bold
@@ -81,20 +90,7 @@ class _CategoryPageState extends State<CategoryPage> {
  }
 
 
- Widget _prueba(){
-   return GridView.builder(
-    gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-     maxCrossAxisExtent: 200,
-     childAspectRatio: 3 / 2,
-     crossAxisSpacing: 20,
-     mainAxisSpacing: 20
-    ),
-    itemCount: myProducts.length,
-    itemBuilder: (BuildContext ctx, index) {
-     return _contenedor();
-    }
-   );
- }
+ 
 
 
  /*

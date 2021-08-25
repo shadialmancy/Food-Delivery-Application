@@ -48,7 +48,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
       body: Align(
         alignment: Alignment.topCenter,
         child: Container(
-          height: double.infinity,
+          //height: double.infinity,
           width: double.infinity,
           child: _formulario(),
         ),
@@ -98,73 +98,75 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
             
             const SizedBox(height: 15.0),
             
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Exp. date',
-                      style: TextStyle(
-                        color: Colors.black,
+            FittedBox(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Exp. date',
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 5.0),
-                    Container(
-                      height: 40.0,
-                      width: 172.0,
-                      color: Colors.grey[200],
-                      padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-                      child: TextFormField(
-                        keyboardType: TextInputType.number,
-                        style: const TextStyle(color: Colors.black),
-                        decoration: const InputDecoration(
-                          contentPadding: EdgeInsets.only(bottom: 6.0),
-                          border: InputBorder.none,
-                          hintText: 'mm/yy',
-                          hintStyle: TextStyle(
-                            color: Colors.black38,
+                      const SizedBox(height: 5.0),
+                      Container(
+                        height: 40.0,
+                        width: 172.0,
+                        color: Colors.grey[200],
+                        padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                        child: TextFormField(
+                          keyboardType: TextInputType.number,
+                          style: const TextStyle(color: Colors.black),
+                          decoration: const InputDecoration(
+                            contentPadding: EdgeInsets.only(bottom: 6.0),
+                            border: InputBorder.none,
+                            hintText: 'mm/yy',
+                            hintStyle: TextStyle(
+                              color: Colors.black38,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'CVV',
-                      style: TextStyle(
-                        color: Colors.black,
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'CVV',
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 5.0),
-                    Container(
-                      height: 40.0,
-                      width: 172.0,
-                      color: Colors.grey[200],
-                      padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-                      child: TextFormField(
-                        onChanged: (value) {
-                          cvv = value;
-                        },
-                        keyboardType: TextInputType.number,
-                        style: const TextStyle(color: Colors.black),
-                        decoration: const InputDecoration(
-                          contentPadding: EdgeInsets.only(bottom: 6.0),
-                          border: InputBorder.none,
-                          hintText: '123',
-                          hintStyle: TextStyle(
-                            color: Colors.black38,
+                      const SizedBox(height: 5.0),
+                      Container(
+                        height: 40.0,
+                        width: 172.0,
+                        color: Colors.grey[200],
+                        padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                        child: TextFormField(
+                          onChanged: (value) {
+                            cvv = value;
+                          },
+                          keyboardType: TextInputType.number,
+                          style: const TextStyle(color: Colors.black),
+                          decoration: const InputDecoration(
+                            contentPadding: EdgeInsets.only(bottom: 6.0),
+                            border: InputBorder.none,
+                            hintText: '123',
+                            hintStyle: TextStyle(
+                              color: Colors.black38,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                )
-              ],
+                    ],
+                  )
+                ],
+              ),
             ),
             
             const SizedBox(height: 30.0),
