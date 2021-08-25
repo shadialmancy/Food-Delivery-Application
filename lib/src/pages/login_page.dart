@@ -29,8 +29,13 @@ class _LoginPageState extends State<LoginPage> {
       width: double.infinity,
       child: Stack(
         children: <Widget>[
+
           const _PelotaRojaLogin(),
-          SingleChildScrollView(child: pagina(context)),
+          
+          SingleChildScrollView(
+            child: pagina(context)
+          ),
+        
         ],
       ),
     ));
@@ -43,25 +48,36 @@ class _LoginPageState extends State<LoginPage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+
           Expanded(
             child: title(),
             flex: 4,
           ),
+          
           Expanded(
             flex: 6,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                
                 inputEmail(),
+                
                 inputPassword(),
+                
                 bottonLogin(),
+                
                 forgotPassword(),
+                
                 orIcon(),
+                
                 register(),
+                
                 socialIcon(),
+              
               ],
             ),
           ),
+
         ],
       ),
     );
@@ -70,7 +86,6 @@ class _LoginPageState extends State<LoginPage> {
   Widget inputEmail() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 50),
-      // width: 300,
       height: 50,
       decoration: BoxDecoration(color: const Color.fromRGBO(231, 13, 50, 0.09019607843137255), borderRadius: BorderRadius.circular(30)),
       child: TextFormField(
@@ -94,7 +109,6 @@ class _LoginPageState extends State<LoginPage> {
   Widget inputPassword() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 50),
-      // width: 300,
       decoration: BoxDecoration(color: MyColors.primaryOpacityColor, borderRadius: BorderRadius.circular(30)),
       child: TextFormField(
         obscureText: true,
@@ -125,7 +139,15 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget forgotPassword() {
-    return TextButton(onPressed: _controller.goToForgotPassword, child: Text('Forgot Password ?', style: TextStyle(color: MyColors.primaryColor)));
+    return TextButton(
+      onPressed: _controller.goToForgotPassword, 
+      child: Text(
+        'Forgot Password ?', 
+        style: TextStyle(
+          color: MyColors.primaryColor
+        )
+      )
+    );
   }
 
   Widget register() {
@@ -179,6 +201,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
 }
 
 class _PelotaRojaLogin extends StatelessWidget {
@@ -207,3 +230,5 @@ class _PelotaRojaLogin extends StatelessWidget {
     );
   }
 }
+
+
