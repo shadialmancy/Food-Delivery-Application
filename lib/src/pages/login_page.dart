@@ -54,6 +54,7 @@ class _LoginPageState extends State<LoginPage> {
             flex: 4,
           ),
           
+          
           Expanded(
             flex: 6,
             child: Column(
