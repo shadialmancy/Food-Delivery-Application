@@ -52,24 +52,18 @@ class _CategoryPageState extends State<CategoryPage> {
    return GestureDetector(
      onTap: (){},
      child: Container(
-      height: 190,
-      width: 190,
       child: Stack(
         children: <Widget>[
    
           Container(
-            height: 190,
-            width: 190,
-            color: Colors.orange,
+            width: double.infinity,
             child: Image.network(
               categorias.image,
-              fit: BoxFit.fill
+              fit: BoxFit.cover
             ),
           ),
    
           Container(
-            height: 190,
-            width: 190,
             color: Colors.black.withOpacity(0.4),
             child:  Center(
               child: Text(

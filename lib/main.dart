@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
     pn.initListeners(context);
 
     SystemChrome.setPreferredOrientations([
-      // DeviceOrientation.landscapeRight,
-      // DeviceOrientation.landscapeLeft,
+      //DeviceOrientation.landscapeRight,
+      //DeviceOrientation.landscapeLeft,
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
