@@ -71,19 +71,21 @@ class _DetallePageState extends State<DetallePage> {
                 thickness: 1,
               ),
 
-              Column(
-                children: List.generate(
-                  10, 
-                  (index){ 
-                    return _cardPlatillo();
-                  }
+              FittedBox(
+                child: Column(
+                  children: List.generate(
+                    10, 
+                    (index){ 
+                      return _cardPlatillo();
+                    }
+                  ),
                 ),
               ),
 
             ],
           ),
           ),
-        ),
+      ),
     );
   }
 
@@ -259,8 +261,8 @@ class _DetallePageState extends State<DetallePage> {
                
                   
                    Container(
-                     margin: const EdgeInsets.only(top: 5, right: 2, bottom: 5),
-                     width: size.width * 0.63, //250
+                     margin: const EdgeInsets.only(top: 5, right: 10, bottom: 5),
+                     width: 270,//size.width * 0.63, //250
                      child: const Text(
                         'Rica hamburguesa con queso y tocino para toda la familia, con tomates y el deep de la casa y original',
                         textAlign: TextAlign.justify,
