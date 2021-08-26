@@ -39,7 +39,7 @@ class _RegisterPage_1State extends State<RegisterPage_1> {
           Positioned(
             top: 75,
             child: Container(
-             margin: const EdgeInsets.symmetric(horizontal: 20),
+             margin: const EdgeInsets.only(left: 10, right: 10),
              width: 370,
              child: description()
             ),

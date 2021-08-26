@@ -25,8 +25,8 @@ class _RegisterEmailState extends State<RegisterEmail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
+      body: //SingleChildScrollView(
+       /* child:*/ Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
       
@@ -42,11 +42,11 @@ class _RegisterEmailState extends State<RegisterEmail> {
       
           _inputNumber(),
           
-          const SizedBox(height: 100),
+          Expanded(child: Container()),
       
       
           Container(
-                margin: const EdgeInsets.only(left: 30, right: 30, top: 280),
+                margin: const EdgeInsets.only(left: 30, right: 30, bottom: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -60,7 +60,7 @@ class _RegisterEmailState extends State<RegisterEmail> {
               ),
         ],
         ),
-      ),
+      //),
     );
   }
   

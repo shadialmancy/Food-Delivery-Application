@@ -24,8 +24,8 @@ class _VerificaNumeroState extends State<VerificaNumero> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
+      body: //SingleChildScrollView(
+        /*child:*/ Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -38,10 +38,12 @@ class _VerificaNumeroState extends State<VerificaNumero> {
       
             //const SizedBox(height: 10),
 
-            _reenviarCodigo(),
+            Expanded(
+              child: _reenviarCodigo()
+            ),
       
             Container(
-              margin: const EdgeInsets.only(left: 30, right: 30, top: 110),
+              margin: const EdgeInsets.only(left: 30, right: 30, bottom: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -57,7 +59,7 @@ class _VerificaNumeroState extends State<VerificaNumero> {
       
           ],
         ),
-      ),
+      //),
     );
   }
 

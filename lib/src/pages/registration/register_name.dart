@@ -29,8 +29,8 @@ class _RegisterNameYLastNameState extends State<RegisterNameYLastName> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
+      body: //SingleChildScrollView(
+        /*child:*/ Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
       
@@ -41,9 +41,13 @@ class _RegisterNameYLastNameState extends State<RegisterNameYLastName> {
             _inputName(),
       
             _inputLastname(),
+
+            Expanded(
+              child: Container(),
+            ),
       
             Container(
-                margin: const EdgeInsets.only(left: 20, right: 20, top: 320),
+                margin: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -57,7 +61,7 @@ class _RegisterNameYLastNameState extends State<RegisterNameYLastName> {
               ),
            
           ],
-        ),
+        //),
       ),
     );
   }
