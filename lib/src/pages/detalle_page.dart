@@ -242,42 +242,40 @@ class _DetallePageState extends State<DetallePage> {
       children: <Widget>[
 
         Padding(
-          padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+          padding: const EdgeInsets.only(top: 10, left: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
 
-                Text(
+                const Text(
                 'Hamburguesa con queso',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
-                  fontSize: size.height * 0.021 //17
+                  fontSize: 17//size.height * 0.021 //17
                 ),
                ),
 
                
-                 //Expanded(
-                   //child:  
+                  
                    Container(
-                     margin: const EdgeInsets.only(top: 5, right: 5, bottom: 5),
+                     margin: const EdgeInsets.only(top: 5, right: 2, bottom: 5),
                      width: size.width * 0.63, //250
-                     child: Text(
+                     child: const Text(
                         'Rica hamburguesa con queso y tocino para toda la familia, con tomates y el deep de la casa y original',
                         textAlign: TextAlign.justify,
                         style: TextStyle(
-                          fontSize: size.height * 0.0186 //15
+                          fontSize: 15//size.height * 0.0186 //15
                         ),
-                       ),
+                     ),
                    ),
-                 //),
                       
-                 Padding(
+                 const Padding(
                  padding: const EdgeInsets.only(bottom: 10),
                  child: Text(
                   '135.00',
                   style: TextStyle(
-                    fontSize: size.height * 0.0176, //14
+                    fontSize: 14,//size.height * 0.0176, //14
                     fontWeight: FontWeight.bold,
                   ),
                  ),
@@ -289,7 +287,7 @@ class _DetallePageState extends State<DetallePage> {
 
         Container(
           margin: const EdgeInsets.only(right: 0),
-          height: size.height * 0.125, //100
+          height: 100, //size.height * 0.125, //100
           width: 110, //size.width * 0.270, //110
           child: Image.network(
            'https://static.displate.com/857x1200/displate/2018-11-30/c3ec1197d3ad652433bbebf9dec1a7af_9793d944a67664785f7eaf6d30033180.jpg',
