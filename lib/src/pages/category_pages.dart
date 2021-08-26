@@ -13,8 +13,6 @@ class _CategoryPageState extends State<CategoryPage> {
 
   List<CategoryModel> categorias = [new CategoryModel(), new CategoryModel(), new CategoryModel()];
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
