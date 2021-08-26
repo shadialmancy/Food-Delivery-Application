@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ramayo_client_app/src/models/restaurant_model.dart';
 import 'package:ramayo_client_app/src/pages/controllers/home_controller.dart';
 import 'package:ramayo_client_app/src/utils/my_colors.dart';
 
@@ -13,6 +14,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   HomeController _controller = new HomeController();
+  RestaurantModel restaurante = new RestaurantModel();
 
   @override
   void initState() {
@@ -38,8 +40,11 @@ class _HomeState extends State<Home> {
                )
            ],
       ),
-      body: SingleChildScrollView(
-          child: Padding(
+      body: ListView(
+        children: [
+          
+          
+          Padding(
             padding: const EdgeInsets.only(bottom: 30),
             child: Column(            
               children: <Widget>[
@@ -69,7 +74,8 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-        ),
+        ]
+      ),
     );
   }
 
@@ -82,10 +88,10 @@ class _HomeState extends State<Home> {
           children: <Widget>[
         
 
-              const FadeInImage(
-                image: NetworkImage('https://static.displate.com/857x1200/displate/2018-11-30/c3ec1197d3ad652433bbebf9dec1a7af_9793d944a67664785f7eaf6d30033180.jpg'),
-                placeholder: AssetImage('assets/jar-loading.gif'), 
-                fadeInDuration: Duration(milliseconds: 200),
+              FadeInImage(
+                image: NetworkImage(restaurante.image),
+                placeholder: const AssetImage('assets/jar-loading.gif'), 
+                fadeInDuration: const Duration(milliseconds: 200),
               ),
 
               
@@ -95,11 +101,11 @@ class _HomeState extends State<Home> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
               
-                    const Padding(
+                     Padding(
                      padding: const EdgeInsets.only(left: 15, top: 5),
-                     child: const Text(
-                       'La Coronela Hamburguesas',
-                       style: TextStyle(
+                     child: Text(
+                       restaurante.name,
+                       style: const TextStyle(
                         fontSize: 18,
                         color: Colors.black,
                         fontWeight: FontWeight.w500
@@ -107,11 +113,11 @@ class _HomeState extends State<Home> {
                      ),
                     ),
               
-                    const Padding(
+                    Padding(
                       padding: const EdgeInsets.only(left: 60, top: 5),
-                      child: const Text(
-                       '4.5',
-                       style: TextStyle(
+                      child: Text(
+                       restaurante.calificacion,
+                       style: const TextStyle(
                         color: Colors.black,
                         fontSize: 15,
                         fontWeight: FontWeight.w500
@@ -134,7 +140,7 @@ class _HomeState extends State<Home> {
                Padding(
                 padding: const EdgeInsets.only(left: 15, top: 5, bottom: 8),
                 child:  Text(
-                  'Restaurante de hamburguesas estilo libanesas al carbon',
+                  restaurante.descripcion,
                    style: TextStyle(
                     color: Colors.grey[600]
                    ),
@@ -159,7 +165,7 @@ class _HomeState extends State<Home> {
                        ),
                         
                        Text(
-                         ' Envio: 35.00',
+                         restaurante.costoEnvio,
                          style: TextStyle(
                            color: Colors.grey[600]
                          )
@@ -174,7 +180,7 @@ class _HomeState extends State<Home> {
                        ),
 
                        Text(
-                         '30 - 40 min',
+                         restaurante.tiempo,
                          style: TextStyle(
                            color: Colors.grey[600],
                          ),

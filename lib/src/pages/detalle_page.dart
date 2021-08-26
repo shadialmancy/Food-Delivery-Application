@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ramayo_client_app/src/models/restaurant_model.dart';
 import 'package:ramayo_client_app/src/pages/controllers/detalle_controller.dart';
 
 class DetallePage extends StatefulWidget {
@@ -13,6 +14,7 @@ class DetallePage extends StatefulWidget {
 class _DetallePageState extends State<DetallePage> {
 
   DetalleController _controller = new DetalleController();
+  RestaurantModel restaurante = new RestaurantModel();
 
   @override
   void initState() {
@@ -97,11 +99,11 @@ class _DetallePageState extends State<DetallePage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
 
-              const Padding(
+              Padding(
                 padding: const EdgeInsets.only(left: 10, top: 15),
-                child: const Text(
-                 'La Coronela Hamburguesas',
-                 style: TextStyle(
+                child: Text(
+                 restaurante.name,
+                 style: const TextStyle(
                   color: Colors.black,
                   fontSize: 22,
                   fontWeight: FontWeight.w500
@@ -120,7 +122,7 @@ class _DetallePageState extends State<DetallePage> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10),
                       child: Text(
-                        'Hamburguesa & chill',
+                        restaurante.leyenda,
                         style: TextStyle(
                           color: Colors.grey[600],
                           fontSize: 17
@@ -202,7 +204,7 @@ class _DetallePageState extends State<DetallePage> {
 
               Expanded(
                 child: Text(
-                  'Calle 20 #187 Col. Altabrisa',
+                  restaurante.direccion,
                   style: TextStyle(
                     color: Colors.grey[600],
                   ),
