@@ -236,8 +236,7 @@ class _DetallePageState extends State<DetallePage> {
    final size = MediaQuery.of(context).size;
 
    return Container(
-    height: size.height * 0.15, //120
-    margin: const EdgeInsets.only(left: 8, right: 0, bottom: 8),
+    margin: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
@@ -248,30 +247,32 @@ class _DetallePageState extends State<DetallePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
 
-               Text(
+                Text(
                 'Hamburguesa con queso',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
-                  fontSize: size.height * 0.023 //17
+                  fontSize: size.height * 0.021 //17
                 ),
                ),
 
                
-                 Container(
-                   margin: const EdgeInsets.only(top: 5),
-                  // height: 10,
-                   width: size.width * 0.63, //250
-                   child: Text(
-                    'Rica hamburguesa con queso y tocino para toda la familia, con tomates y el deep de la casa y original',
-                    textAlign: TextAlign.justify,
-                    style: TextStyle(
-                      fontSize: size.height * 0.0186 //15
-                    ),
+                 //Expanded(
+                   //child:  
+                   Container(
+                     margin: const EdgeInsets.only(top: 5, right: 5, bottom: 5),
+                     width: size.width * 0.63, //250
+                     child: Text(
+                        'Rica hamburguesa con queso y tocino para toda la familia, con tomates y el deep de la casa y original',
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontSize: size.height * 0.0186 //15
+                        ),
+                       ),
                    ),
-                 ),
+                 //),
                       
-                Padding(
+                 Padding(
                  padding: const EdgeInsets.only(bottom: 10),
                  child: Text(
                   '135.00',
@@ -287,9 +288,9 @@ class _DetallePageState extends State<DetallePage> {
         ),
 
         Container(
-          margin: const EdgeInsets.only(right: 10),
+          margin: const EdgeInsets.only(right: 0),
           height: size.height * 0.125, //100
-          width: 110,//size.width * 0.270, //110
+          width: 110, //size.width * 0.270, //110
           child: Image.network(
            'https://static.displate.com/857x1200/displate/2018-11-30/c3ec1197d3ad652433bbebf9dec1a7af_9793d944a67664785f7eaf6d30033180.jpg',
            fit: BoxFit.cover
