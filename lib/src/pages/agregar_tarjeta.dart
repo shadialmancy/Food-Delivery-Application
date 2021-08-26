@@ -20,9 +20,6 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
   }
 
 
-  String inicial = 'Mexico';
-  String numerotarjeta = '';
-  String cvv = '';
   final _formkey = GlobalKey<FormState>();
 
   @override
@@ -79,9 +76,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
               color: Colors.grey[200],
               padding: const EdgeInsets.only(left: 5.0, right: 5.0),
               child: TextFormField(
-                onChanged: (value) {
-                  numerotarjeta = value;
-                },
+                controller: _controller.numberCardController,
                 keyboardType: TextInputType.number,
                 style: const TextStyle(color: Colors.black),
                 decoration: const InputDecoration(
@@ -114,10 +109,12 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
                       const SizedBox(height: 5.0),
                       Container(
                         height: 40.0,
-                        width: 172.0,
+                        width: 150,
+                        margin: const EdgeInsets.only(right: 50),
                         color: Colors.grey[200],
                         padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                         child: TextFormField(
+                          controller: _controller.expDateController,
                           keyboardType: TextInputType.number,
                           style: const TextStyle(color: Colors.black),
                           decoration: const InputDecoration(
@@ -132,6 +129,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
                       ),
                     ],
                   ),
+
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -148,9 +146,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
                         color: Colors.grey[200],
                         padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                         child: TextFormField(
-                          onChanged: (value) {
-                            cvv = value;
-                          },
+                          controller: _controller.cvvController,
                           keyboardType: TextInputType.number,
                           style: const TextStyle(color: Colors.black),
                           decoration: const InputDecoration(
@@ -167,11 +163,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
                   )
                 ],
               ),
-            ),
-            
-            const SizedBox(height: 30.0),
-            
-            _seleccionPais(),
+            ),      
             
             const SizedBox(height: 15.0),
             
@@ -189,6 +181,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
               color: Colors.grey[200],
               padding: const EdgeInsets.only(left: 5.0, right: 5.0),
               child: TextFormField(
+                controller: _controller.codigoPostalController,
                 decoration: const InputDecoration(
                   contentPadding: EdgeInsets.only(bottom: 8.0),
                   border: InputBorder.none,
@@ -211,45 +204,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
     );
   }
 
-  Container _seleccionPais() {
-    return Container(
-      height: 40.0,
-      width: double.infinity,
-      color: Colors.grey[200],
-      padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-      child: DropdownButton<String>(
-        underline: Container(
-          height: 0,
-          color: Colors.transparent,
-        ),
-        value: inicial,
-        icon: const Icon(
-          Icons.arrow_drop_down,
-          color: Colors.black,
-        ),
-        iconSize: 35,
-        dropdownColor: Colors.white,
-        style: const TextStyle(
-          color: Colors.black,
-          fontWeight: FontWeight.w300,
-          fontSize: 18.0,
-        ),
-        isExpanded: true,
-        onChanged: (String? newValue) {
-          setState(() {
-            inicial = newValue!;
-          });
-        },
-        items: <String>['Mexico', 'Argentina', 'Colombia', 'Peru']
-            .map<DropdownMenuItem<String>>((String value) {
-          return DropdownMenuItem<String>(
-            value: value,
-            child: Text(value),
-          );
-        }).toList(),
-      ),
-    );
-  }
+  
 
   Padding _botonGuardar() {
     return Padding(
