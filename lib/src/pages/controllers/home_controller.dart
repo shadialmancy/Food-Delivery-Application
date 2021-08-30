@@ -16,4 +16,9 @@ class HomeController {
     Navigator.pushNamed(context!, '/detalle');
   }  
 
+  void goOut(){
+    Navigator.pushNamedAndRemoveUntil(context!, '/login', (route) => false);
+  }
+
+
 }

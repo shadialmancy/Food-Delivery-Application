@@ -3,6 +3,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ramayo_client_app/src/models/restaurant_model.dart';
 import 'package:ramayo_client_app/src/pages/controllers/detalle_controller.dart';
+import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 
 class DetallePage extends StatefulWidget {
 
@@ -12,6 +13,8 @@ class DetallePage extends StatefulWidget {
 }
 
 class _DetallePageState extends State<DetallePage> {
+
+  var _tabTextIndexSelected = 1;
 
   DetalleController _controller = new DetalleController();
   RestaurantModel restaurante = new RestaurantModel();
@@ -155,14 +158,29 @@ class _DetallePageState extends State<DetallePage> {
              ),
 
              Padding(
-               padding: EdgeInsets.only(left: size.width * 0.14, top: 15),
-               child: Container(
-                 height: size.height * 0.075,
-                 width: size.width * 0.70,
-                 decoration: BoxDecoration( 
-                  color: Colors.grey[600],
-                  borderRadius: BorderRadius.circular(30),
-                 ),
+               padding: const EdgeInsets.only(left: 55, top: 15),
+               child: FlutterToggleTab(
+                selectedBackgroundColors: [Colors.red],
+                width: 70,  
+                borderRadius: 15,
+                selectedTextStyle: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600
+                ),
+                unSelectedTextStyle: const TextStyle(
+                 color: Colors.blue,
+                 fontSize: 14,
+                 fontWeight: FontWeight.w400
+                ),
+                labels: ["Pick-up","Delivery"], 
+                selectedLabelIndex: (index) {  
+	               print("Selected Index $_tabTextIndexSelected");
+                 setState(() {
+                   _tabTextIndexSelected = index;
+                 });
+                }, 
+                selectedIndex: _tabTextIndexSelected,   
                ),
              ),
              
@@ -236,72 +254,73 @@ class _DetallePageState extends State<DetallePage> {
   }
  
   Widget _cardPlatillo(){
+
+   return GestureDetector(
+     onTap: _controller.goToItemsPage,
+     child: Container(
+      margin: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
    
-   final size = MediaQuery.of(context).size;
-
-   return Container(
-    margin: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-
-        Padding(
-          padding: const EdgeInsets.only(top: 10, left: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-
-                const Text(
-                'Hamburguesa con queso',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 17//size.height * 0.021 //17
-                ),
-               ),
-
-               
-                  
-                   Container(
-                     margin: const EdgeInsets.only(top: 5, right: 10, bottom: 5),
-                     width: 270,//size.width * 0.63, //250
-                     child: const Text(
-                        'Rica hamburguesa con queso y tocino para toda la familia, con tomates y el deep de la casa y original',
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          fontSize: 15//size.height * 0.0186 //15
-                        ),
-                     ),
-                   ),
-                      
-                 const Padding(
-                 padding: const EdgeInsets.only(bottom: 10),
-                 child: Text(
-                  '135.00',
+          Padding(
+            padding: const EdgeInsets.only(top: 10, left: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+   
+                  const Text(
+                  'Hamburguesa con queso',
                   style: TextStyle(
-                    fontSize: 14,//size.height * 0.0176, //14
                     fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontSize: 17//size.height * 0.021 //17
                   ),
                  ),
-               ),
-
-            ],
+   
+                 
+                    
+                     Container(
+                       margin: const EdgeInsets.only(top: 5, right: 10, bottom: 5),
+                       width: 270,//size.width * 0.63, //250
+                       child: const Text(
+                          'Rica hamburguesa con queso y tocino para toda la familia, con tomates y el deep de la casa y original',
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                            fontSize: 15//size.height * 0.0186 //15
+                          ),
+                       ),
+                     ),
+                        
+                   const Padding(
+                   padding: const EdgeInsets.only(bottom: 10),
+                   child: Text(
+                    '135.00',
+                    style: TextStyle(
+                      fontSize: 14,//size.height * 0.0176, //14
+                      fontWeight: FontWeight.bold,
+                    ),
+                   ),
+                 ),
+   
+              ],
+            ),
           ),
-        ),
-
-        Container(
-          margin: const EdgeInsets.only(right: 0),
-          height: 100, //size.height * 0.125, //100
-          width: 110, //size.width * 0.270, //110
-          child: Image.network(
-           'https://static.displate.com/857x1200/displate/2018-11-30/c3ec1197d3ad652433bbebf9dec1a7af_9793d944a67664785f7eaf6d30033180.jpg',
-           fit: BoxFit.cover
+   
+          Container(
+            margin: const EdgeInsets.only(right: 0),
+            height: 100, //size.height * 0.125, //100
+            width: 110, //size.width * 0.270, //110
+            child: Image.network(
+             'https://static.displate.com/857x1200/displate/2018-11-30/c3ec1197d3ad652433bbebf9dec1a7af_9793d944a67664785f7eaf6d30033180.jpg',
+             fit: BoxFit.cover
+            ),
           ),
-        ),
-       
-        
-      ],
-    ),
+         
+          
+        ],
+      ),
+     ),
    );
   }
 
@@ -312,3 +331,16 @@ class _DetallePageState extends State<DetallePage> {
 
 
 }
+
+/*
+ Container(
+                 height: size.height * 0.075,
+                 width: size.width * 0.70,
+                 decoration: BoxDecoration( 
+                  color: Colors.grey[600],
+                  borderRadius: BorderRadius.circular(30),
+                 ),
+               ),
+
+
+ */

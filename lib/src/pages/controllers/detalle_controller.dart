@@ -20,4 +20,8 @@ class DetalleController {
     Navigator.pushNamed(context!, '/informationRestaurant');
   }
 
+  void goToItemsPage(){
+    Navigator.pushNamed(context!, '/itemsPage');
+  }
+
 }

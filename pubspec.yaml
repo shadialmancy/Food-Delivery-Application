@@ -10,20 +10,20 @@ environment:
 
 dependencies:
   convex_bottom_bar: ^3.0.0
+  country_code_picker: ^2.0.2
   cupertino_icons: ^1.0.2
   firebase_core: ^1.4.0
   firebase_messaging: ^10.0.4
+  flutter:
+    sdk: flutter
   flutter_local_notifications: ^8.0.0
   flutter_svg: ^0.22.0
+  flutter_toggle_tab: ^1.1.7
   font_awesome_flutter: ^9.1.0
   intl: ^0.17.0
   package_info: ^2.0.2
   provider: ^5.0.0
-  country_code_picker: ^2.0.2
   scrollable_list_tabview: ^0.2.0-nullsafety
-
-  flutter:
-    sdk: flutter
 
 dev_dependencies:
   flutter_test:
