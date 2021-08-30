@@ -171,7 +171,7 @@ class _DetallePageState extends State<DetallePage> {
                  fontSize: 14,
                  fontWeight: FontWeight.w400
                 ),
-                labels: ["Pick-up","Delivery"], 
+                labels: ["Delivery","Pick-up"], 
                 selectedLabelIndex: (index) {  
 	               print("Selected Index $_tabTextIndexSelected");
                  setState(() {
