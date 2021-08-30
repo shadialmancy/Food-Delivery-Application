@@ -14,7 +14,8 @@ class DetallePage extends StatefulWidget {
 
 class _DetallePageState extends State<DetallePage> {
 
-  var _tabTextIndexSelected = 1;
+  var _tabTextIndexSelected = 0;
+  bool favorite = false;
 
   DetalleController _controller = new DetalleController();
   RestaurantModel restaurante = new RestaurantModel();
@@ -55,10 +56,7 @@ class _DetallePageState extends State<DetallePage> {
                 pinned: true,
                 actions: <Widget>[
 
-                  IconButton(
-                    icon: const Icon(Icons.favorite),
-                    onPressed: (){},
-                  ),
+                  getFavoriteWidget(),
 
                 ],
               )
@@ -324,7 +322,38 @@ class _DetallePageState extends State<DetallePage> {
    );
   }
 
+  Widget getFavoriteWidget(){
+    if(favorite != null){
+       if(favorite){
+         return IconButton(
+           icon: const Icon(Icons.favorite),
+           color: Colors.red,
+           onPressed: (){
+             setState(() {
+               favorite = false;
+             });
+           },
+         );
+       } else {
+         return IconButton(
+           icon: const Icon(Icons.favorite_border),
+           color: Colors.white,
+           onPressed: (){
+             setState(() {
+               favorite = true;
+             });
+           },
+         );
+       }
+    } else {
 
+      return Container(
+        margin: const EdgeInsets.all(15),
+        width: 30,
+        child: const CircularProgressIndicator()
+      );
+    }
+  }
 
 
 
