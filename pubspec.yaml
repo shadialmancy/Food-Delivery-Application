@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   
-  carousel_slider: ^4.0.0
+  # carousel_slider: ^4.0.0
   convex_bottom_bar: ^3.0.0
   country_code_picker: ^2.0.2
   cupertino_icons: ^1.0.2
