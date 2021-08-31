@@ -13,6 +13,7 @@ import 'package:ramayo_client_app/src/pages/payment_page.dart';
 import 'package:ramayo_client_app/src/pages/pruebas_page.dart';
 import 'package:ramayo_client_app/src/pages/registration/activar_ubicacion_page.dart';
 import 'package:ramayo_client_app/src/pages/registration/number_page.dart';
+import 'package:ramayo_client_app/src/pages/registration/page.dart';
 import 'package:ramayo_client_app/src/pages/registration/register_1.dart';
 import 'package:ramayo_client_app/src/pages/registration/register_email.dart';
 import 'package:ramayo_client_app/src/pages/registration/register_name.dart';
@@ -23,17 +24,14 @@ class RoutesApp {
   getRoutes() {
     return {
       '/': (BuildContext context) => HomePage(),
-      '/agregarTargeta': (BuildContext context) => AgregarTarjetaPage(),
       '/login': (BuildContext context) => LoginPage(),
       '/pruebas': (BuildContext context) => PruebasPage(),
       '/detalle': (BuildContext context) => DetallePage(),
-      '/register_1': (BuildContext context) => const RegisterPage_1(),
       '/numberPage': (BuildContext context) => NumberPage(),
       '/verificaNumber': (BuildContext context) => VerificaNumero(),
       '/registerEmail': (BuildContext context) => RegisterEmail(),
       '/registerPassword': (BuildContext context) => RegisterPassword(),
       '/registerNameYLastname': (BuildContext context) => RegisterNameYLastName(),
-      '/ubication': (BuildContext context) => ActivarUbicacion(),
       '/informationRestaurant': (BuildContext context) => InformationRestaurant(),
       '/favoriteRestaurant': (BuildContext context) => FavoriteRestaurantPage(),
       '/pagoPage': (BuildContext context) => PagoPage(),
@@ -41,6 +39,7 @@ class RoutesApp {
       '/shadi': (BuildContext context) => PaymentPage(),
       '/forgotPassword': (BuildContext context) => ForgotPage(),
       '/itemsPage': (BuildContext context) => ItemsPage(),
+      '/pageRegister': (BuildContext context) => PageRegistration(),
     };
   }
 }

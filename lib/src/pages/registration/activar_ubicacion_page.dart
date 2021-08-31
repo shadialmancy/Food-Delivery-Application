@@ -42,12 +42,11 @@ class _ActivarUbicacionState extends State<ActivarUbicacion> {
             ),
 
             Container(
-                margin: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                margin: const EdgeInsets.only(left: 20, right: 20, bottom: 60),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
         
-                     bottonBack(),
         
                      bottonNext(),
         

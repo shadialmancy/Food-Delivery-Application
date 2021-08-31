@@ -14,7 +14,6 @@ class AgregarTarjetaController{
  }
 
  goToUbicationPage(){
-   Navigator.pushNamed(context!, '/ubication');
  }
 
 

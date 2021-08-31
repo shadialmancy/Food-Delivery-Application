@@ -42,23 +42,7 @@ class _RegisterNameYLastNameState extends State<RegisterNameYLastName> {
       
             _inputLastname(),
 
-            Expanded(
-              child: Container(),
-            ),
-      
-            Container(
-                margin: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-        
-                     bottonBack(),
-        
-                     bottonNext(),
-        
-                  ],
-                ),
-              ),
+            
            
           ],
         //),

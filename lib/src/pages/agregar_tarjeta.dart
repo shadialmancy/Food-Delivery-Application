@@ -208,7 +208,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
 
   Padding _botonGuardar() {
     return Padding(
-      padding: const EdgeInsets.only(top: 15.0),
+      padding: const EdgeInsets.only(bottom: 40,top: 15.0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           animationDuration: const Duration(milliseconds: 500),

@@ -51,8 +51,6 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.only(bottom: 30),
             child: Column(            
               children: <Widget>[
-                               
-                 _card1(context),
                  
                  _card1(context),
                  
@@ -77,7 +75,7 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-        ]
+        ],
       ),
     );
   }

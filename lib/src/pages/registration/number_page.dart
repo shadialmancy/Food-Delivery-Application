@@ -43,23 +43,6 @@ class _NumberPageState extends State<NumberPage> {
               child: _text()
             ),
             
-            //const SizedBox(height: 270),
-      
-            Container(
-                margin: const EdgeInsets.only(left: 30, right: 30, bottom: 20),
-                child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  
-                  bottonBack(),
-                  
-                  bottonNext(),
-                
-                  
-                ],
-              ),
-              ),
-      
           ],
         ),
       //)

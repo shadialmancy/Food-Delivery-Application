@@ -42,22 +42,7 @@ class _RegisterEmailState extends State<RegisterEmail> {
       
           _inputNumber(),
           
-          Expanded(child: Container()),
-      
-      
-          Container(
-                margin: const EdgeInsets.only(left: 30, right: 30, bottom: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-        
-                     bottonBack(),
-        
-                     bottonNext(),
-        
-                  ],
-                ),
-              ),
+          
         ],
         ),
       //),

@@ -17,7 +17,7 @@ import 'package:flutter/material.dart';
    }
 
    void goToIngresaNumero(){
-     Navigator.pushNamed(context!, '/numberPage');
+     Navigator.pushNamed(context!, '/pageRegister');
    }
 
    void goToForgotPassword(){

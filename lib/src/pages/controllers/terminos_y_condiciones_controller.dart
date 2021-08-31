@@ -10,7 +10,6 @@ class TerminosYCondicionesController{
 
 
   goToAgregarTarjeta(){
-    Navigator.pushNamed(context!, '/agregarTargeta');
   }
 
 

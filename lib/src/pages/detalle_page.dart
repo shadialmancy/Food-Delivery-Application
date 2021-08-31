@@ -373,3 +373,50 @@ class _DetallePageState extends State<DetallePage> {
 
 
  */
+
+/*
+ Padding(
+            padding: const EdgeInsets.only(bottom: 30),
+            child: Column(            
+              children: <Widget>[
+                 
+                 _card1(context),
+                 
+                 _card1(context),
+
+                 const SizedBox(height: 20),
+
+                 _scrollHorizontal(context),
+
+                 _card1(context),
+
+                 _card1(context),
+
+                 const SizedBox(height: 20),
+
+                 _scrollHorizontal(context),
+
+                 _card1(context),
+
+                 _card1(context),
+
+              ],
+            ),
+          ),
+
+
+          ListView.separated(
+        itemCount: 20,
+        separatorBuilder: (BuildContext context, int index) {
+          if(index % 5 == 0){
+             return _scrollHorizontal(context);
+          }
+          return const Divider();
+       },
+        itemBuilder: (BuildContext context, int index) {
+        return _card1(context);
+       },
+      ),
+
+
+ */
