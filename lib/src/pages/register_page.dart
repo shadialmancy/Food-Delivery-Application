@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ramayo_client_app/src/pages/agregar_tarjeta.dart';
 import 'package:ramayo_client_app/src/pages/registration/activar_ubicacion_page.dart';
-import 'package:ramayo_client_app/src/pages/registration/number_page.dart';
-import 'package:ramayo_client_app/src/pages/registration/register_1.dart';
-import 'package:ramayo_client_app/src/pages/registration/register_email.dart';
-import 'package:ramayo_client_app/src/pages/registration/register_name.dart';
-import 'package:ramayo_client_app/src/pages/registration/register_password.dart';
+import 'package:ramayo_client_app/src/pages/registration/carrusel_partial_0_number_page.dart';
+import 'package:ramayo_client_app/src/pages/registration/carrusel_partial_5_privacy_agree.dart';
+import 'package:ramayo_client_app/src/pages/registration/carrusel_partial_2_register_email.dart';
+import 'package:ramayo_client_app/src/pages/registration/carrusel_partial_4_register_name.dart';
+import 'package:ramayo_client_app/src/pages/registration/carrusel_partial_3_register_password.dart';
 import 'package:ramayo_client_app/src/pages/verifica_number_page.dart';
 
 class PageRegistration extends StatefulWidget {
