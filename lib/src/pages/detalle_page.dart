@@ -93,9 +93,6 @@ class _DetallePageState extends State<DetallePage> {
   }
 
   Widget _encabezado(){
-
-    final size = MediaQuery.of(context).size;
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
