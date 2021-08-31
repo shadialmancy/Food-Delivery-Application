@@ -42,6 +42,8 @@ class RoutesApp {
       '/itemsPage': (BuildContext context) => ItemsPage(),
       '/pageRegister': (BuildContext context) => PageRegistration(),
       '/privacyAgree': (BuildContext context) => PrivacyAgreePage(),
+      '/agregarTarjeta': (BuildContext context) => AgregarTarjetaPage(),
+      '/activarUbicacion': (BuildContext context) => ActivarUbicacion(),
     };
   }
 }
