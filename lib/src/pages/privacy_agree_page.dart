@@ -4,14 +4,14 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ramayo_client_app/src/pages/controllers/terminos_y_condiciones_controller.dart';
 
-class RegisterPage_1 extends StatefulWidget {
-  const RegisterPage_1({Key? key}) : super(key: key);
+class PrivacyAgreePage extends StatefulWidget {
+  const PrivacyAgreePage({Key? key}) : super(key: key);
 
   @override
-  _RegisterPage_1State createState() => _RegisterPage_1State();
+  _PrivacyAgreePageState createState() => _PrivacyAgreePageState();
 }
 
-class _RegisterPage_1State extends State<RegisterPage_1> {
+class _PrivacyAgreePageState extends State<PrivacyAgreePage> {
 
  TerminosYCondicionesController _controller = new TerminosYCondicionesController();
 
