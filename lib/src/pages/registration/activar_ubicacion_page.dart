@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:geolocator/geolocator.dart' as Geolocator;
+import 'package:permission_handler/permission_handler.dart';
 import 'package:ramayo_client_app/src/pages/controllers/activar_ubicacion_controller.dart';
 
 class ActivarUbicacion extends StatefulWidget {
@@ -8,16 +10,34 @@ class ActivarUbicacion extends StatefulWidget {
   _ActivarUbicacionState createState() => _ActivarUbicacionState();
 }
 
-class _ActivarUbicacionState extends State<ActivarUbicacion> {
+class _ActivarUbicacionState extends State<ActivarUbicacion> with WidgetsBindingObserver{
 
+  
   ActivarUbicationController _controller = new ActivarUbicationController();
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance!.addObserver(this);
     SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
       _controller.init(context);
     });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    WidgetsBinding.instance!.removeObserver(this);
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) async{
+    
+    if(state == AppLifecycleState.resumed){
+      if(await Permission.location.isGranted && await Geolocator.Geolocator.isLocationServiceEnabled()){
+        _controller.goToHomePage();
+      }
+    }
   }
 
 
@@ -37,23 +57,7 @@ class _ActivarUbicacionState extends State<ActivarUbicacion> {
       
             _activarUbicacion(),
       
-            Expanded(
-              child: Container(),
-            ),
-
-            Container(
-                margin: const EdgeInsets.only(left: 20, right: 20, bottom: 60),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-        
-        
-                     bottonNext(),
-        
-                  ],
-                ),
-              ),
-      
+    
           ],
         ),
       //),
@@ -115,7 +119,23 @@ class _ActivarUbicacionState extends State<ActivarUbicacion> {
 
   Widget _activarUbicacion(){
     return GestureDetector(
-      onTap: (){},
+      onTap: () async{
+        
+        final status = await Permission.location.request();
+        final gps = await Geolocator.Geolocator.isLocationServiceEnabled();
+        
+        if(gps != true){
+          const snackBar = SnackBar(
+            content: const Text('Activa el GPS'),
+          );
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        } else {
+          
+          this._controller.activarGPS(context, status);
+        }
+        
+        
+      },
       child: Container(
         margin: const  EdgeInsets.only(top: 50, left: 20),
         child: Row(
@@ -142,82 +162,5 @@ class _ActivarUbicacionState extends State<ActivarUbicacion> {
     );
   }
  
-  Widget bottonNext(){
-    return GestureDetector(
-      onTap: _controller.goToHomePage,
-      child: Container(
-        width: 100,
-        height: 50,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-    
-            const SizedBox(width: 5),
-    
-            const Text(
-              'Next',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-              )
-            ),
-    
-            const Icon(
-              FontAwesomeIcons.arrowRight,
-              color: Colors.white
-            ),
-    
-            const SizedBox(width: 3),
-          ],
-        ),
-        decoration: BoxDecoration(
-         color: Colors.red,
-         borderRadius: BorderRadius.circular(60)
-        )
-      ),
-    );
-  }
-
-  Widget bottonBack(){
-    return GestureDetector(
-      onTap: (){},
-      child: Container(
-        width: 100,
-        height: 50,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-
-            const SizedBox(width: 3),
-    
-            const Icon(
-              FontAwesomeIcons.arrowLeft,
-              color: Colors.white
-            ),
-    
-            const Text(
-              'Back',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-              )
-            ),
-    
-            const SizedBox(width: 10),
-    
-          ],
-        ),
-        decoration: BoxDecoration(
-          color: Colors.red,
-          borderRadius: BorderRadius.circular(60)
-        ),
-      ),
-    );
-  }
-
-
-
 
 }

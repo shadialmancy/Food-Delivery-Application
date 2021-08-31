@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class ActivarUbicationController{
 
@@ -11,8 +12,25 @@ class ActivarUbicationController{
  }
 
  void goToHomePage(){
-   Navigator.pushNamed(context!, '/');
+   Navigator.pushReplacementNamed(context!, '/');
  }
+
+ void activarGPS(context,PermissionStatus status){
+  
+  switch (status) {
+
+    case PermissionStatus.granted:
+      Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+      break;
+    case PermissionStatus.denied:
+    case PermissionStatus.restricted:
+    case PermissionStatus.permanentlyDenied:
+        openAppSettings();
+      break;
+  }
+ }
+
+
 
 
 }
