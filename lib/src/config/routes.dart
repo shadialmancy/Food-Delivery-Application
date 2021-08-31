@@ -8,6 +8,7 @@ import 'package:ramayo_client_app/src/pages/information_restaurant_page.dart';
 import 'package:ramayo_client_app/src/pages/items_page.dart';
 import 'package:ramayo_client_app/src/pages/login_page.dart';
 import 'package:ramayo_client_app/src/pages/notifications_page.dart';
+import 'package:ramayo_client_app/src/pages/order_summary_page.dart';
 import 'package:ramayo_client_app/src/pages/pago_page.dart';
 import 'package:ramayo_client_app/src/pages/payment_page.dart';
 import 'package:ramayo_client_app/src/pages/pruebas_page.dart';
@@ -40,6 +41,7 @@ class RoutesApp {
       '/forgotPassword': (BuildContext context) => ForgotPage(),
       '/itemsPage': (BuildContext context) => ItemsPage(),
       '/pageRegister': (BuildContext context) => PageRegistration(),
+      '/order': (BuildContext context) => OrderSummaryPage(),
     };
   }
 }
