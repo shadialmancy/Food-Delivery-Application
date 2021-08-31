@@ -13,7 +13,7 @@ import 'package:ramayo_client_app/src/pages/payment_page.dart';
 import 'package:ramayo_client_app/src/pages/pruebas_page.dart';
 import 'package:ramayo_client_app/src/pages/registration/activar_ubicacion_page.dart';
 import 'package:ramayo_client_app/src/pages/registration/number_page.dart';
-import 'package:ramayo_client_app/src/pages/registration/page.dart';
+import 'package:ramayo_client_app/src/pages/register_page.dart';
 import 'package:ramayo_client_app/src/pages/registration/register_1.dart';
 import 'package:ramayo_client_app/src/pages/registration/register_email.dart';
 import 'package:ramayo_client_app/src/pages/registration/register_name.dart';
