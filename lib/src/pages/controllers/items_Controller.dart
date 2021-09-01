@@ -11,6 +11,8 @@ class ItemsController {
 
   }
 
-
+  void goBack(){
+    Navigator.pop(context!);
+  }
 
 }

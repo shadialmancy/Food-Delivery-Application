@@ -39,7 +39,7 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
             FontAwesomeIcons.arrowLeft,
             color: Colors.black
            ),
-           onPressed: (){},
+           onPressed: _controller.goBack,
          ),
        ),
        body: ListView(
