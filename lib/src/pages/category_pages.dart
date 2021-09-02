@@ -17,7 +17,8 @@ class _CategoryPageState extends State<CategoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-           title: const Center(child: Text('Delivery')),
+           centerTitle: true,
+           title: const Text('Delivery'),
            elevation: 5,
            backgroundColor: MyColors.primaryOrange,
            leading: const Icon(Icons.menu, color: Colors.white),     
