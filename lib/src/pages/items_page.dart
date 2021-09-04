@@ -55,7 +55,13 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
 
            nameYdescripcion(),
 
-           _items(),
+           _items('Elige tu carne', 'obligatorio'),
+
+           _items('elige tu aderezo', 'selecciona 1'),
+
+           _items('elige tu refresco', 'selecciona 2'),
+
+           _items('elige tus complementos', 'elige hasta 5'),
            
            
 
@@ -117,7 +123,7 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
      );
    }
  
-   Widget _items(){
+   Widget _items(String title, String descripcion){
      return Column(
        mainAxisSize: MainAxisSize.min,
        children: <Widget>[
@@ -136,9 +142,9 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
 
-                    const Text(
-                      'Elige tu tamaño',
-                      style: TextStyle(
+                    Text(
+                      title,
+                      style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 18
@@ -146,7 +152,7 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
                     ),
 
                     Text(
-                      'Obligatorio',
+                      descripcion,
                       style: TextStyle(
                         color: Colors.grey[800],
                         fontSize: 14
@@ -192,7 +198,7 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
             duration: const Duration(milliseconds: 260),
             width: double.infinity,
             height: _open ? 250 : 0,
-            color: Colors.grey[200],
+            color: Colors.white,
             child: Column(
               children: <Widget>[
 
