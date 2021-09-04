@@ -14,6 +14,14 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
    ItemsController _controller = new ItemsController();
    late AnimationController _animation;
    bool _open = false;
+   List<String> lista = [
+     'Elige tu carne',
+     'Elige tu refresco'
+   ];
+   List<String> lista2 = [
+     'selecciona 1',
+     'selecciona hasta 4'
+   ];
 
    @override
   void initState() {
@@ -56,16 +64,12 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
 
            nameYdescripcion(),
 
-           _items('Elige tu carne', 'obligatorio'),
-
-           _items('elige tu aderezo', 'selecciona 1'),
+           Column(
+             children: List.generate(2, (index){
+               return _items(lista[index], lista2[index]);
+             }),
+           ),
            
-           
-
-          
- 
-           
-
           
 
          ],
