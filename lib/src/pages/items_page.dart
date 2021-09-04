@@ -77,7 +77,7 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
        ),
      );
    }
-
+ 
    Widget _cabecera(){
      return Container(
       width: double.infinity,
