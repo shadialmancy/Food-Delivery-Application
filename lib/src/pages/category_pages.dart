@@ -86,28 +86,5 @@ class _CategoryPageState extends State<CategoryPage> {
  
 
 
- /*
-  GridView.builder(
-         itemCount: 20,
-         itemBuilder: (context, index) => _carril(),
-         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-           crossAxisCount: 2,
-           childAspectRatio: 1,
-           crossAxisSpacing: 2
-         ), 
-      ),
 
-
-   Container(
-      alignment: Alignment.center,
-      child: Text(myProducts[index]["name"]),
-      decoration: BoxDecoration(
-       color: Colors.amber,
-       borderRadius: BorderRadius.circular(15)
-      ),
-     );
-
-
-  
-  */
 }
