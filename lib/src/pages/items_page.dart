@@ -30,6 +30,7 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
    @override
    Widget build(BuildContext context) {
      return Scaffold(
+       backgroundColor: Colors.white,
        appBar: AppBar(
          backgroundColor: Colors.white,
          elevation: 0,
@@ -58,10 +59,6 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
            _items('Elige tu carne', 'obligatorio'),
 
            _items('elige tu aderezo', 'selecciona 1'),
-
-           _items('elige tu refresco', 'selecciona 2'),
-
-           _items('elige tus complementos', 'elige hasta 5'),
            
            
 
