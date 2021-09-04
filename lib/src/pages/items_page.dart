@@ -12,6 +12,7 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
  class _ItemsPageState extends State<ItemsPage> with SingleTickerProviderStateMixin{
    
    ItemsController _controller = new ItemsController();
+   bool check = false;
    late AnimationController _animation;
    bool _open = false;
    List<String> lista = [
@@ -124,6 +125,8 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
      );
    }
  
+   
+
    Widget _items(String title, String descripcion){
      return Column(
        mainAxisSize: MainAxisSize.min,
@@ -204,25 +207,49 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
 
                 if(_open)
                 ...[
-                  const ListTile(
-                    trailing: Text('15.00'),
-                    title: Text('Res'),
-                    leading: Text('elele'),
+                  CheckboxListTile(
+                    secondary: const Text('+15.00'),
+                    title: const Text('Res'),
+                    controlAffinity: ListTileControlAffinity.leading,
+                    value: check,
+                    onChanged: (value){
+                      setState(() {
+                        check = value!;
+                      });
+                    }
                   ),
-                  const ListTile(
-                    trailing: Text('15.00'),
-                    title: Text('Res'),
-                    leading: Text('elele'),
+                  CheckboxListTile(
+                    secondary: const Text('+15.00'),
+                    title: const Text('Res'),
+                    controlAffinity: ListTileControlAffinity.leading,
+                    value: check,
+                    onChanged: (value){
+                      setState(() {
+                        check = value!;
+                      });
+                    }
                   ),
-                  const ListTile(
-                    trailing: Text('15.00'),
-                    title: Text('Res'),
-                    leading: Text('elele'),
+                  CheckboxListTile(
+                    secondary: const Text('+15.00'),
+                    title: const Text('Res'),
+                    controlAffinity: ListTileControlAffinity.leading,
+                    value: check,
+                    onChanged: (value){
+                      setState(() {
+                        check = value!;
+                      });
+                    }
                   ),
-                  const ListTile(
-                    trailing: Text('15.00'),
-                    title: Text('Res'),
-                    leading: Text('elele'),
+                  CheckboxListTile(
+                    secondary: const Text('+15.00'),
+                    title: const Text('Res'),
+                    controlAffinity: ListTileControlAffinity.leading,
+                    value: check,
+                    onChanged: (value){
+                      setState(() {
+                        check = value!;
+                      });
+                    }
                   ),
                 ]
               ],
