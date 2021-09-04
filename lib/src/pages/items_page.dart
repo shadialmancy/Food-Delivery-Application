@@ -191,7 +191,62 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
             ),
           ),
 
-          AnimatedContainer(
+          if(_open)
+          Container(
+            width: double.infinity,
+            color: Colors.white,
+            child: Column(
+              children: <Widget>[
+
+                if(_open)
+                ...[
+                  const ListTile(
+                    trailing: Text('15.00'),
+                    title: Text('Res'),
+                    leading: Text('elele'),
+                  ),
+                  const ListTile(
+                    trailing: Text('15.00'),
+                    title: Text('Res'),
+                    leading: Text('elele'),
+                  ),
+                  const ListTile(
+                    trailing: Text('15.00'),
+                    title: Text('Res'),
+                    leading: Text('elele'),
+                  ),
+                  const ListTile(
+                    trailing: Text('15.00'),
+                    title: Text('Res'),
+                    leading: Text('elele'),
+                  ),
+                ]
+              ],
+            ),
+            ),
+
+       ],
+     );
+   }
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ }
+
+ /*
+ 
+ AnimatedContainer(
             duration: const Duration(milliseconds: 260),
             width: double.infinity,
             height: _open ? 250 : 0,
@@ -220,24 +275,5 @@ import 'package:ramayo_client_app/src/pages/controllers/items_Controller.dart';
               ],
             ),
           ),
-
-       ],
-     );
-   }
-   
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- }
-
- 
+  */
