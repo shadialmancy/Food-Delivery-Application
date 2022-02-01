@@ -13,7 +13,7 @@ PushNotification pn = PushNotification();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await VersionApp.getVersion();
+  await VersionApp.getVersion();  
 
   ln.initializeSetting();
   pn.init();
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
       title: Config.data['title'].toString(),
       theme: ThemeInfo.getTheme(),
       routes: RoutesApp().getRoutes(),
-      initialRoute: '/login',
+      initialRoute: '/pageRegister',
     );
   }
 }
