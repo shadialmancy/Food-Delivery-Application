@@ -11,7 +11,6 @@ class RegisterPassword extends StatefulWidget {
 }
 
 class _RegisterPasswordState extends State<RegisterPassword> {
-
   RegisterPasswordController _controller = new RegisterPasswordController();
 
   @override
@@ -26,9 +25,9 @@ class _RegisterPasswordState extends State<RegisterPassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          padding: const EdgeInsets.only(top: 10),
-          child: column(context),
-        ),
+        padding: const EdgeInsets.only(top: 10),
+        child: column(context),
+      ),
     );
   }
 
@@ -36,40 +35,31 @@ class _RegisterPasswordState extends State<RegisterPassword> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
         const SizedBox(height: 50),
-        
-        header_text("Ingresa tu contraseña"),
-        
+        header_text("Enter your password"),
         const SizedBox(height: 15),
-        
-        description_text("Tu contraseña debe contener al menos 8 caracteres, y al menos una letra y un numero"),
-        
+        description_text(
+            "Your password must contain at least 8 characters, and at least one letter and one number"),
         const SizedBox(height: 15),
-        
         _inputPassword(),
-        
-        
       ],
     );
   }
 
   bool passwordVisible = false;
 
-  
-
   Widget header_text(String text) {
-   return Padding(
-     padding: const EdgeInsets.only(left: 20, top: 50),
-     child: Text(
-      text,
-      style: const TextStyle(
-          fontSize: 25, color: Colors.black, fontWeight: FontWeight.w500),
-     ),
-   );
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, top: 50),
+      child: Text(
+        text,
+        style: const TextStyle(
+            fontSize: 25, color: Colors.black, fontWeight: FontWeight.w500),
+      ),
+    );
   }
 
-  Widget _inputPassword(){
+  Widget _inputPassword() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       width: 389,
@@ -82,7 +72,7 @@ class _RegisterPasswordState extends State<RegisterPassword> {
         obscureText: passwordVisible,
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
-            hintText: 'Ingresa tu cont',
+            hintText: 'Enter your account',
             border: InputBorder.none,
             contentPadding: const EdgeInsets.all(15),
             suffixIcon: IconButton(
@@ -99,91 +89,56 @@ class _RegisterPasswordState extends State<RegisterPassword> {
   }
 
   Widget description_text(String text) {
-   return Padding(
-    padding: const EdgeInsets.only(left: 20, right: 20),
-    child: Text(text)
-   );
+    return Padding(
+        padding: const EdgeInsets.only(left: 20, right: 20), child: Text(text));
   }
 
-  Widget bottonNext(){
+  Widget bottonNext() {
     return GestureDetector(
-      onTap: _controller.goToRegisterNameYLastName,
+      onTap: _controller.goToRegisterNameAndLastName,
       child: Container(
-        width: 100,
-        height: 50,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-    
-            const SizedBox(width: 5),
-    
-            const Text(
-              'Next',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-              )
-            ),
-    
-            const Icon(
-              FontAwesomeIcons.arrowRight,
-              color: Colors.white
-            ),
-    
-            const SizedBox(width: 3),
-          ],
-        ),
-        decoration: BoxDecoration(
-         color: Colors.red,
-         borderRadius: BorderRadius.circular(60)
-        )
-      ),
+          width: 100,
+          height: 50,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              const SizedBox(width: 5),
+              const Text('Next',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold)),
+              const Icon(FontAwesomeIcons.arrowRight, color: Colors.white),
+              const SizedBox(width: 3),
+            ],
+          ),
+          decoration: BoxDecoration(
+              color: Colors.red, borderRadius: BorderRadius.circular(60))),
     );
   }
 
-  Widget bottonBack(){
+  Widget bottonBack() {
     return GestureDetector(
-      onTap: (){},
+      onTap: () {},
       child: Container(
         width: 100,
         height: 50,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-
             const SizedBox(width: 3),
-    
-            const Icon(
-              FontAwesomeIcons.arrowLeft,
-              color: Colors.white
-            ),
-    
-            const Text(
-              'Back',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-              )
-            ),
-    
+            const Icon(FontAwesomeIcons.arrowLeft, color: Colors.white),
+            const Text('Back',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold)),
             const SizedBox(width: 10),
-    
           ],
         ),
         decoration: BoxDecoration(
-          color: Colors.red,
-          borderRadius: BorderRadius.circular(60)
-        ),
+            color: Colors.red, borderRadius: BorderRadius.circular(60)),
       ),
     );
   }
-
-
-
-
-
-
-
 }

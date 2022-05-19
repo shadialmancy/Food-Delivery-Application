@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:ramayo_client_app/src/services/local_notification.dart';
 
-class PruebasPage extends StatefulWidget {
+class TestPage extends StatefulWidget {
   @override
-  _PruebasPageState createState() => _PruebasPageState();
+  _TestsPageState createState() => _TestsPageState();
 }
 
-class _PruebasPageState extends State<PruebasPage> {
+class _TestsPageState extends State<TestPage> {
   LocalNotification ln = LocalNotification();
 
   @override
@@ -15,16 +15,18 @@ class _PruebasPageState extends State<PruebasPage> {
     return Scaffold(
       body: Center(
         child: TextButton(
-          onPressed: () => aviso(),
-          child: const Text('Prueba notificación local'),
+          onPressed: () => warning(),
+          child: const Text('Try local notification'),
         ),
       ),
     );
   }
 
-  aviso() {
+  warning() {
     // LocalNotification ln = LocalNotification();
     ln.displayNotification(
-        'aviso', 'aviso ${DateFormat('dd-MM-yyyy – kk:mm:ss').format(DateTime.now())}', (DateTime.now().add(const Duration(seconds: 10))));
+        'warning',
+        'warning ${DateFormat('dd-MM-yyyy – kk:mm:ss').format(DateTime.now())}',
+        (DateTime.now().add(const Duration(seconds: 10))));
   }
 }

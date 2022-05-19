@@ -3,17 +3,19 @@ import 'package:ramayo_client_app/src/pages/registration/carrusel_partial_0_numb
 import 'package:ramayo_client_app/src/pages/registration/carrusel_partial_2_register_email.dart';
 import 'package:ramayo_client_app/src/pages/registration/carrusel_partial_4_register_name.dart';
 import 'package:ramayo_client_app/src/pages/registration/carrusel_partial_3_register_password.dart';
-import 'package:ramayo_client_app/src/pages/verifica_number_page.dart';
+// import 'package:ramayo_client_app/src/pages/verifica_number_page.dart';
+import 'package:ramayo_client_app/src/pages/verify_number_page.dart';
 
 class PageRegistration extends StatefulWidget {
   @override
   _PageRegistrationState createState() => _PageRegistrationState();
 }
 
-class _PageRegistrationState extends State<PageRegistration> with TickerProviderStateMixin {
+class _PageRegistrationState extends State<PageRegistration>
+    with TickerProviderStateMixin {
   final List<Widget> listPage = [
     NumberPage(),
-    VerificaNumero(),
+    VerifyNumber(),
     const RegisterEmail(),
     const RegisterPassword(),
     const RegisterNameYLastName(),
@@ -105,7 +107,9 @@ class __ButtonsState extends State<_Buttons> {
                 widget._tabController.index--;
               setState(() {});
             },
-            child: const Padding(padding: EdgeInsets.symmetric(horizontal: 10, vertical: 1), child: Text('Anterior')),
+            child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 1),
+                child: Text('Previous')),
           ),
           ElevatedButton(
             onPressed: () {
@@ -115,7 +119,9 @@ class __ButtonsState extends State<_Buttons> {
                 widget._tabController.index++;
               setState(() {});
             },
-            child: const Padding(padding: EdgeInsets.symmetric(horizontal: 10, vertical: 1), child: Text('Siguiente')),
+            child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 1),
+                child: Text('Following')),
           ),
         ],
       ),
@@ -127,7 +133,8 @@ class _Dots extends StatefulWidget {
   final List<Widget> listPage;
   final TabController controller;
 
-  const _Dots({Key? key, required this.listPage, required this.controller}) : super(key: key);
+  const _Dots({Key? key, required this.listPage, required this.controller})
+      : super(key: key);
 
   @override
   __DotsState createState() => __DotsState();
@@ -163,8 +170,11 @@ class __DotsState extends State<_Dots> {
             margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: (Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black)
-                    .withOpacity(widget.controller.index == entry.key ? 0.9 : 0.4)),
+                color: (Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white
+                        : Colors.black)
+                    .withOpacity(
+                        widget.controller.index == entry.key ? 0.9 : 0.4)),
           ),
         );
       }).toList(),

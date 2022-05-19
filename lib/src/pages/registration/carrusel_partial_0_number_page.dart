@@ -28,7 +28,7 @@ class _NumberPageState extends State<NumberPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           _title(),
-          _formulario(),
+          _form(),
           const SizedBox(height: 10),
           Expanded(child: _text()),
         ],
@@ -41,13 +41,13 @@ class _NumberPageState extends State<NumberPage> {
     return const Padding(
       padding: EdgeInsets.only(top: 85, left: 30, bottom: 30),
       child: Text(
-        'Ingresa tu número de teléfono',
+        'Enter your phone number',
         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
       ),
     );
   }
 
-  Widget _formulario() {
+  Widget _form() {
     return Form(
       key: _formKey,
       child: Row(
@@ -71,7 +71,7 @@ class _NumberPageState extends State<NumberPage> {
           controller: _controller.phoneController,
           keyboardType: TextInputType.phone,
           decoration: const InputDecoration(
-            hintText: 'Número de teléfono',
+            hintText: 'Phone number',
             border: InputBorder.none,
             contentPadding: EdgeInsets.all(15),
             hintStyle: TextStyle(color: Colors.black54),
@@ -88,7 +88,8 @@ class _NumberPageState extends State<NumberPage> {
         textAlign: TextAlign.justify,
         text: const TextSpan(children: [
           TextSpan(
-            text: 'Para continuar recibiras un mensaje SMS a el número de teléfono que ingresate para poder verificarlo',
+            text:
+                'To continue you will receive an SMS message to the phone number you entered to be able to verify it',
             style: TextStyle(
               fontWeight: FontWeight.normal,
               color: Colors.black38,

@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
       title: Config.data['title'].toString(),
       theme: ThemeInfo.getTheme(),
       routes: RoutesApp().getRoutes(),
-      initialRoute: '/pageRegister',
+      initialRoute: '/login',
     );
   }
 }

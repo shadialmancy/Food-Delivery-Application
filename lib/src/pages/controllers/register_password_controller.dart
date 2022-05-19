@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 
- class RegisterPasswordController {
+class RegisterPasswordController {
+  BuildContext? context;
+  TextEditingController passwordController = new TextEditingController();
 
-   BuildContext? context;
-   TextEditingController passwordController = new TextEditingController();
-
-   Future? init(BuildContext context){
-
+  Future? init(BuildContext context) {
     this.context = context;
+  }
 
-   }
-
-  
-   void goToRegisterNameYLastName(){
-     
-     Navigator.pushNamed(context!, '/registerNameYLastname');
-   }
- }
+  void goToRegisterNameAndLastName() {
+    Navigator.pushNamed(context!, '/goToRegisterNameAndLastName');
+  }
+}

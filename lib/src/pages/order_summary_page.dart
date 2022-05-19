@@ -13,7 +13,7 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: Container(
             height: 90,
             child: ElevatedButton(
@@ -26,7 +26,7 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
                   ))),
               onPressed: () {},
               child: const Text(
-                'Hacer pedido - \$ 609.00',
+                'Make an order - \$ 609.00',
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
               ),
             ),
@@ -49,7 +49,7 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          headerText("Hamburguesa con queso"),
+          headerText("Cheeseburger"),
           const SizedBox(
             height: 4,
           ),
@@ -210,14 +210,14 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          "Calle 20 \#187",
+          "Call 20 \#187",
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
         ),
         const SizedBox(
           height: 2,
         ),
         const Text(
-          "san pedro cholul 97138 Merida, Yuc.",
+          "44 Elmessaha Street Dokki, Giza",
           style: TextStyle(
               color: Colors.grey, fontWeight: FontWeight.w600, fontSize: 15),
         )
@@ -230,14 +230,14 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          "Esperar afuera",
+          "wait outside",
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
         ),
         const SizedBox(
           height: 2,
         ),
         const Text(
-          "Agregar una nota de entrega",
+          "Add a delivery note",
           style: TextStyle(
               color: Color(0xff00d6af),
               fontWeight: FontWeight.w600,
@@ -252,7 +252,7 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         const Text(
-          "Tiempo de Entrega",
+          "Delivery time",
           style: TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
         ),
         const Text("15-25 min",
@@ -266,7 +266,7 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("Tus Articulos",
+          const Text("Your Articles",
               style: TextStyle(fontSize: 21, fontWeight: FontWeight.w800)),
           const SizedBox(
             height: 10,
@@ -300,14 +300,14 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "Hamburguesa con queso",
+                "Cheeseburger",
                 style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
               ),
               const SizedBox(
                 height: 3,
               ),
               const Text(
-                "Mediano",
+                "Medium",
                 style: TextStyle(fontSize: 15, color: Colors.grey),
               )
             ],
@@ -335,7 +335,7 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
           child: Row(
             children: [
               const Text(
-                "Pide cubiertos, etc.",
+                "Ask for cutlery, etc.",
                 style: TextStyle(fontSize: 18),
               ),
               const SizedBox(
@@ -376,7 +376,7 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
           const SizedBox(
             width: 15,
           ),
-          const Text("Agregar un codigo promo",
+          const Text("Add a promo code",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
           const Spacer(
             flex: 1,
@@ -390,46 +390,71 @@ class _OrderSummaryPageState extends State<OrderSummaryPage> {
     );
   }
 
-  Widget totalMoney(){
+  Widget totalMoney() {
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("Subtotal",style: TextStyle(fontSize: 20,color: Colors.grey),),
-            const Text("\$ 570.00",style: TextStyle(fontSize: 20,color: Colors.grey),)
+            const Text(
+              "Subtotal",
+              style: TextStyle(fontSize: 20, color: Colors.grey),
+            ),
+            const Text(
+              "\$ 570.00",
+              style: TextStyle(fontSize: 20, color: Colors.grey),
+            )
           ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("Tarifas",style: TextStyle(fontSize: 20,color: Colors.grey),),
+            const Text(
+              "Rates",
+              style: TextStyle(fontSize: 20, color: Colors.grey),
+            ),
           ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("Servicio",style: TextStyle(fontSize: 20,color: Colors.grey),),
-            const Text("\$ 4.00",style: TextStyle(fontSize: 20,color: Colors.grey),)
+            const Text(
+              "Service",
+              style: TextStyle(fontSize: 20, color: Colors.grey),
+            ),
+            const Text(
+              "\$ 4.00",
+              style: TextStyle(fontSize: 20, color: Colors.grey),
+            )
           ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("Entrega",style: TextStyle(fontSize: 20,color: Colors.grey),),
-            const Text("\$ 35.00",style: TextStyle(fontSize: 20,color: Colors.grey),)
+            const Text(
+              "Delivery",
+              style: TextStyle(fontSize: 20, color: Colors.grey),
+            ),
+            const Text(
+              "\$ 35.00",
+              style: TextStyle(fontSize: 20, color: Colors.grey),
+            )
           ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("Total",style: TextStyle(fontSize: 20,color: Colors.grey),),
-            const Text("\$ 609.00",style: TextStyle(fontSize: 20,color: Colors.grey),)
+            const Text(
+              "Total",
+              style: TextStyle(fontSize: 20, color: Colors.grey),
+            ),
+            const Text(
+              "\$ 609.00",
+              style: TextStyle(fontSize: 20, color: Colors.grey),
+            )
           ],
         ),
       ],
     );
   }
-
-
 }

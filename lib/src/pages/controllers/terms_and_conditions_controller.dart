@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Page2Controller {
+class TermsAndConditionsController {
   BuildContext? context;
 
   Future? init(BuildContext context) {
     this.context = context;
   }
 
-  void goBack() {
-    Navigator.pop(context!);
+  goToAddCard() {
+    Navigator.pushReplacementNamed(context!, '/addCard');
   }
 }

@@ -28,8 +28,9 @@ class _ProfilePageState extends State<ProfilePage> {
     //TODO quitar esto cuando tengamos provider
     usuario
       ..name = "Domenica"
-      ..subName = 'Duch'
-      ..urlImage = 'https://eslamoda.com/wp-content/uploads/sites/2/2018/05/bite.jpg';
+      ..subName = 'Shower'
+      ..urlImage =
+          'https://eslamoda.com/wp-content/uploads/sites/2/2018/05/bite.jpg';
 
     return Scaffold(
       body: Column(
@@ -58,13 +59,17 @@ class _ProfilePageState extends State<ProfilePage> {
           Container(
             height: 80,
             width: 80,
-            decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.grey[400]),
+            decoration:
+                BoxDecoration(shape: BoxShape.circle, color: Colors.grey[400]),
             child: Center(
               child: usuario.urlImage == ''
                   ? const Icon(FontAwesomeIcons.userAlt, size: 45)
                   : Container(
-                      decoration:
-                          BoxDecoration(shape: BoxShape.circle, image: DecorationImage(fit: BoxFit.cover, image: NetworkImage(usuario.urlImage)))),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(usuario.urlImage)))),
             ),
           ),
           Column(
@@ -75,15 +80,21 @@ class _ProfilePageState extends State<ProfilePage> {
                 padding: const EdgeInsets.only(left: 10),
                 child: Text(
                   '${usuario.name} ${usuario.subName}',
-                  style: const TextStyle(color: Colors.black, fontSize: 22, fontWeight: FontWeight.w500),
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w500),
                 ),
               ),
               //TODO Ver cuenta
               Padding(
                 padding: const EdgeInsets.only(left: 10, top: 5),
                 child: Text(
-                  'Ver cuenta',
-                  style: TextStyle(color: Colors.greenAccent[400], fontSize: 14, fontWeight: FontWeight.w500),
+                  'See account',
+                  style: TextStyle(
+                      color: Colors.greenAccent[400],
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500),
                 ),
               ),
             ],
@@ -99,7 +110,8 @@ class _ProfilePageState extends State<ProfilePage> {
       leading: const Icon(Icons.favorite, color: Colors.black),
       title: const Text(
         'Tus Favoritos',
-        style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w500),
+        style: TextStyle(
+            fontSize: 18, color: Colors.black, fontWeight: FontWeight.w500),
       ),
       trailing: const Icon(
         FontAwesomeIcons.chevronRight,
@@ -113,7 +125,8 @@ class _ProfilePageState extends State<ProfilePage> {
       leading: const Icon(FontAwesomeIcons.creditCard, color: Colors.black),
       title: const Text(
         'Pago',
-        style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w500),
+        style: TextStyle(
+            fontSize: 18, color: Colors.black, fontWeight: FontWeight.w500),
       ),
       trailing: const Icon(
         FontAwesomeIcons.chevronRight,
@@ -127,7 +140,8 @@ class _ProfilePageState extends State<ProfilePage> {
       leading: Icon(FontAwesomeIcons.lifeRing, color: Colors.black),
       title: Text(
         'Ayuda',
-        style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w500),
+        style: TextStyle(
+            fontSize: 18, color: Colors.black, fontWeight: FontWeight.w500),
       ),
       trailing: Icon(
         FontAwesomeIcons.chevronRight,
@@ -141,13 +155,12 @@ class _ProfilePageState extends State<ProfilePage> {
       leading: const Icon(FontAwesomeIcons.bell, color: Colors.black),
       title: const Text(
         'Notificaciones',
-        style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w500),
+        style: TextStyle(
+            fontSize: 18, color: Colors.black, fontWeight: FontWeight.w500),
       ),
       trailing: const Icon(
         FontAwesomeIcons.chevronRight,
       ),
     );
   }
-
-
 }

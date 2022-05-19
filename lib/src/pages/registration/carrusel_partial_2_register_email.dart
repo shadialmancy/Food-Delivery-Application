@@ -11,64 +11,53 @@ class RegisterEmail extends StatefulWidget {
 }
 
 class _RegisterEmailState extends State<RegisterEmail> {
-  
   RegisterEmailController _controller = new RegisterEmailController();
 
-   @override
+  @override
   void initState() {
     super.initState();
     SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
       _controller.init(context);
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: //SingleChildScrollView(
-       /* child:*/ Column(
+          /* child:*/ Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-      
-          const SizedBox(height: 50,),
-      
-          header_text("Ingresa tu correo electronico"),
-          
+          const SizedBox(
+            height: 50,
+          ),
+          header_text("Enter your email"),
           const SizedBox(height: 15),
-      
-          description_text("los recibos se enviarán a su correo electrónico"),
-      
+          description_text("receipts will be sent to your email"),
           const SizedBox(height: 15),
-      
           _inputNumber(),
-          
-          
         ],
-        ),
+      ),
       //),
     );
   }
-  
 
   Widget header_text(String text) {
-   return Padding(
-     padding: const EdgeInsets.only(left: 30, top: 50),
-     child: Text(
-      text,
-      style: const TextStyle(
-          fontSize: 25, color: Colors.black, fontWeight: FontWeight.w500),
-     ),
-   );
+    return Padding(
+      padding: const EdgeInsets.only(left: 30, top: 50),
+      child: Text(
+        text,
+        style: const TextStyle(
+            fontSize: 25, color: Colors.black, fontWeight: FontWeight.w500),
+      ),
+    );
   }
 
   Widget description_text(String text) {
-   return Padding(
-    padding: const EdgeInsets.only(left: 30),
-    child: Text(text)
-   );
+    return Padding(padding: const EdgeInsets.only(left: 30), child: Text(text));
   }
 
-  Widget _inputNumber(){
+  Widget _inputNumber() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 30),
       width: 389,
@@ -83,87 +72,58 @@ class _RegisterEmailState extends State<RegisterEmail> {
           hintText: 'Ingresa tu email',
           border: InputBorder.none,
           contentPadding: EdgeInsets.all(15),
-          hintStyle: TextStyle(
-            color: Colors.black54
-          ),
+          hintStyle: TextStyle(color: Colors.black54),
         ),
       ),
     );
   }
 
-  Widget bottonNext(){
+  Widget bottonNext() {
     return GestureDetector(
       onTap: _controller.goToRegisterPassword,
       child: Container(
-        width: 100,
-        height: 50,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-    
-            const SizedBox(width: 5),
-    
-            const Text(
-              'Next',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-              )
-            ),
-    
-            const Icon(
-              FontAwesomeIcons.arrowRight,
-              color: Colors.white
-            ),
-    
-            const SizedBox(width: 3),
-          ],
-        ),
-        decoration: BoxDecoration(
-         color: Colors.red,
-         borderRadius: BorderRadius.circular(60)
-        )
-      ),
+          width: 100,
+          height: 50,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              const SizedBox(width: 5),
+              const Text('Next',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold)),
+              const Icon(FontAwesomeIcons.arrowRight, color: Colors.white),
+              const SizedBox(width: 3),
+            ],
+          ),
+          decoration: BoxDecoration(
+              color: Colors.red, borderRadius: BorderRadius.circular(60))),
     );
   }
 
-  Widget bottonBack(){
+  Widget bottonBack() {
     return GestureDetector(
-      onTap: (){},
+      onTap: () {},
       child: Container(
         width: 100,
         height: 50,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-
             const SizedBox(width: 3),
-    
-            const Icon(
-              FontAwesomeIcons.arrowLeft,
-              color: Colors.white
-            ),
-    
-            const Text(
-              'Back',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-              )
-            ),
-    
+            const Icon(FontAwesomeIcons.arrowLeft, color: Colors.white),
+            const Text('Back',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold)),
             const SizedBox(width: 10),
-    
           ],
         ),
         decoration: BoxDecoration(
-          color: Colors.red,
-          borderRadius: BorderRadius.circular(60)
-        ),
+            color: Colors.red, borderRadius: BorderRadius.circular(60)),
       ),
     );
   }
-
 }

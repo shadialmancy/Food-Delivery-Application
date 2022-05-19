@@ -13,7 +13,6 @@ class RegisterNameYLastName extends StatefulWidget {
 }
 
 class _RegisterNameYLastNameState extends State<RegisterNameYLastName> {
-
   RegisterNameController _controller = new RegisterNameController();
 
   @override
@@ -24,61 +23,44 @@ class _RegisterNameYLastNameState extends State<RegisterNameYLastName> {
     });
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: //SingleChildScrollView(
-        /*child:*/ Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-      
-            _title(),
-      
-            _descripcion(),
-      
-            _inputName(),
-      
-            _inputLastname(),
-
-            
-           
-          ],
+          /*child:*/ Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          _title(),
+          _description(),
+          _inputName(),
+          _inputLastname(),
+        ],
         //),
       ),
     );
   }
 
-  Widget _title(){
+  Widget _title() {
     return const Padding(
       padding: EdgeInsets.only(top: 85, left: 20),
-      child: const Text(
-        'Como te llamas ?',
-        style: TextStyle(
-          fontSize: 25,
-          color: Colors.black,
-          fontWeight: FontWeight.w500
-        )
-      ),
+      child: const Text('What\'s your name?',
+          style: TextStyle(
+              fontSize: 25, color: Colors.black, fontWeight: FontWeight.w500)),
     );
   }
 
-  Widget _descripcion(){
+  Widget _description() {
     return Padding(
       padding: const EdgeInsets.only(top: 20, left: 20),
-      child: Text(
-        'Dejanos saber como dirigirnos correctamente a ti',
-        style: TextStyle(
-          fontSize: 15,
-          color: Colors.grey[600],
-          fontWeight: FontWeight.normal
-        )
-      ),
+      child: Text('Let us know how to address you correctly',
+          style: TextStyle(
+              fontSize: 15,
+              color: Colors.grey[600],
+              fontWeight: FontWeight.normal)),
     );
   }
 
-  Widget _inputName(){
+  Widget _inputName() {
     return Container(
       margin: const EdgeInsets.only(left: 20, top: 20, right: 20),
       width: 389,
@@ -90,18 +72,16 @@ class _RegisterNameYLastNameState extends State<RegisterNameYLastName> {
         controller: _controller.nameController,
         keyboardType: TextInputType.name,
         decoration: const InputDecoration(
-          hintText: 'Ingresa tu primer nombre',
+          hintText: 'Enter your first name',
           border: InputBorder.none,
           contentPadding: EdgeInsets.all(15),
-          hintStyle: TextStyle(
-            color: Colors.black54
-          ),
+          hintStyle: TextStyle(color: Colors.black54),
         ),
       ),
     );
   }
 
-  Widget _inputLastname(){
+  Widget _inputLastname() {
     return Container(
       margin: const EdgeInsets.only(left: 20, top: 20, right: 20),
       width: 389,
@@ -113,94 +93,63 @@ class _RegisterNameYLastNameState extends State<RegisterNameYLastName> {
         controller: _controller.lastnameController,
         keyboardType: TextInputType.name,
         decoration: const InputDecoration(
-          hintText: 'Ingresa tu primer apellido',
+          hintText: 'Enter your last name',
           border: InputBorder.none,
           contentPadding: EdgeInsets.all(15),
-          hintStyle: TextStyle(
-            color: Colors.black54
-          ),
+          hintStyle: TextStyle(color: Colors.black54),
         ),
       ),
     );
   }
 
-
-  Widget bottonNext(){
+  Widget bottonNext() {
     return GestureDetector(
       onTap: _controller.goToAcuerdoycondiciones,
       child: Container(
-        width: 100,
-        height: 50,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-    
-            const SizedBox(width: 5),
-    
-            const Text(
-              'Next',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-              )
-            ),
-    
-            const Icon(
-              FontAwesomeIcons.arrowRight,
-              color: Colors.white
-            ),
-    
-            const SizedBox(width: 3),
-          ],
-        ),
-        decoration: BoxDecoration(
-         color: Colors.red,
-         borderRadius: BorderRadius.circular(60)
-        )
-      ),
+          width: 100,
+          height: 50,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              const SizedBox(width: 5),
+              const Text('Next',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold)),
+              const Icon(FontAwesomeIcons.arrowRight, color: Colors.white),
+              const SizedBox(width: 3),
+            ],
+          ),
+          decoration: BoxDecoration(
+              color: Colors.red, borderRadius: BorderRadius.circular(60))),
     );
   }
 
-  Widget bottonBack(){
+  Widget bottonBack() {
     return GestureDetector(
-      onTap: (){},
+      onTap: () {},
       child: Container(
         width: 100,
         height: 50,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-
             const SizedBox(width: 3),
-    
-            const Icon(
-              FontAwesomeIcons.arrowLeft,
-              color: Colors.white
-            ),
-    
-            const Text(
-              'Back',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-              )
-            ),
-    
+            const Icon(FontAwesomeIcons.arrowLeft, color: Colors.white),
+            const Text('Back',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold)),
             const SizedBox(width: 10),
-    
           ],
         ),
         decoration: BoxDecoration(
-          color: Colors.red,
-          borderRadius: BorderRadius.circular(60)
-        ),
+            color: Colors.red, borderRadius: BorderRadius.circular(60)),
       ),
     );
   }
-  
- 
 
 //   Widget header_text() {
 //     return const Text(

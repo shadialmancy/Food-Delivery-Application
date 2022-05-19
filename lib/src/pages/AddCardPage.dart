@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:ramayo_client_app/src/pages/controllers/agregar_tarjeta_controller.dart';
+import 'package:ramayo_client_app/src/pages/controllers/Active_Target_Controller.dart';
 
-class AgregarTarjetaPage extends StatefulWidget {
+class AddCardPage extends StatefulWidget {
   @override
-  _AgregarTarjetaPageState createState() => _AgregarTarjetaPageState();
+  _AddCardPageState createState() => _AddCardPageState();
 }
 
-class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
-
-  AgregarTarjetaController _controller = new AgregarTarjetaController();
+class _AddCardPageState extends State<AddCardPage> {
+  AddCardController _controller = new AddCardController();
 
   @override
   void initState() {
@@ -19,12 +18,10 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
     });
   }
 
-
   final _formkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -47,13 +44,13 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
         child: Container(
           //height: double.infinity,
           width: double.infinity,
-          child: _formulario(),
+          child: _form(),
         ),
       ),
     );
   }
 
-  Widget _formulario() {
+  Widget _form() {
     return Form(
       key: _formkey,
       child: Padding(
@@ -61,16 +58,13 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
             const Text(
-              'Numero de tarjeta',
+              'Card number',
               style: TextStyle(
                 color: Colors.black,
               ),
             ),
-            
             const SizedBox(height: 5.0),
-            
             Container(
               height: 40.0,
               color: Colors.grey[200],
@@ -90,9 +84,7 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
                 ),
               ),
             ),
-            
             const SizedBox(height: 15.0),
-            
             FittedBox(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,7 +121,6 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
                       ),
                     ],
                   ),
-
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -163,19 +154,15 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
                   )
                 ],
               ),
-            ),      
-            
+            ),
             const SizedBox(height: 15.0),
-            
             const Text(
-              'Codigo postal',
+              'Postal Code',
               style: TextStyle(
                 color: Colors.black,
               ),
             ),
-            
             const SizedBox(height: 5.0),
-            
             Container(
               height: 40.0,
               color: Colors.grey[200],
@@ -190,25 +177,19 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
                 style: const TextStyle(color: Colors.black),
               ),
             ),
-            
-
-             Expanded(
-               child: Container(),
-             ),
- 
-
-            _botonGuardar(),
+            Expanded(
+              child: Container(),
+            ),
+            _buttonSave(),
           ],
         ),
       ),
     );
   }
 
-  
-
-  Padding _botonGuardar() {
+  Padding _buttonSave() {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 40,top: 15.0),
+      padding: const EdgeInsets.only(bottom: 40, top: 15.0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           animationDuration: const Duration(milliseconds: 500),
@@ -217,11 +198,9 @@ class _AgregarTarjetaPageState extends State<AgregarTarjetaPage> {
           onSurface: Colors.white,
           enableFeedback: true,
         ),
-        onPressed: _controller.goToUbicationPage,
+        onPressed: _controller.goToLocationPage,
         child: const Text('Guardar'),
       ),
     );
   }
-
-
 }

@@ -25,60 +25,43 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+        body: Container(
       width: double.infinity,
       child: Stack(
         children: <Widget>[
-
-          const _PelotaRojaLogin(),
-          
-          SingleChildScrollView(
-            child: pagina(context)
-          ),
-        
+          const _RedBallLogin(),
+          SingleChildScrollView(child: page(context)),
         ],
       ),
     ));
   }
 
-  Widget pagina(BuildContext context) {
+  Widget page(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-
           Expanded(
             child: title(),
             flex: 4,
           ),
-          
-          
           Expanded(
             flex: 6,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                
                 inputEmail(),
-                
                 inputPassword(),
-                
                 bottonLogin(),
-                
                 forgotPassword(),
-                
                 orIcon(),
-                
                 register(),
-                
                 socialIcon(),
-              
               ],
             ),
           ),
-
         ],
       ),
     );
@@ -88,11 +71,13 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 50),
       height: 50,
-      decoration: BoxDecoration(color: const Color.fromRGBO(231, 13, 50, 0.09019607843137255), borderRadius: BorderRadius.circular(30)),
+      decoration: BoxDecoration(
+          color: const Color.fromRGBO(231, 13, 50, 0.09019607843137255),
+          borderRadius: BorderRadius.circular(30)),
       child: TextFormField(
         keyboardType: TextInputType.emailAddress,
         decoration: const InputDecoration(
-          hintText: 'Correo electronico',
+          hintText: 'Email',
           border: InputBorder.none,
           contentPadding: EdgeInsets.all(15),
           hintStyle: TextStyle(
@@ -110,12 +95,14 @@ class _LoginPageState extends State<LoginPage> {
   Widget inputPassword() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 50),
-      decoration: BoxDecoration(color: MyColors.primaryOpacityColor, borderRadius: BorderRadius.circular(30)),
+      decoration: BoxDecoration(
+          color: MyColors.primaryOpacityColor,
+          borderRadius: BorderRadius.circular(30)),
       child: TextFormField(
         obscureText: true,
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
-            hintText: 'Contraseña',
+            hintText: 'Password',
             border: InputBorder.none,
             contentPadding: const EdgeInsets.all(15),
             hintStyle: TextStyle(color: MyColors.primaryColorDark),
@@ -133,7 +120,8 @@ class _LoginPageState extends State<LoginPage> {
         child: const Text('Login'),
         style: ElevatedButton.styleFrom(
             primary: MyColors.primaryColor,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
             padding: const EdgeInsets.symmetric(vertical: 15)),
       ),
     );
@@ -141,22 +129,21 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget forgotPassword() {
     return TextButton(
-      onPressed: _controller.goToForgotPassword, 
-      child: Text(
-        'Forgot Password ?', 
-        style: TextStyle(
-          color: MyColors.primaryColor
-        )
-      )
-    );
+        onPressed: _controller.goToForgotPassword,
+        child: Text('Forgot Password ?',
+            style: TextStyle(color: MyColors.primaryColor)));
   }
 
   Widget register() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("Don\'t have an account yet?", style: TextStyle(color: MyColors.primaryColor)),
-        TextButton(onPressed: _controller.goToIngresaNumero, child: Text("Register", style: TextStyle(color: MyColors.primaryColor)))
+        Text("Don\'t have an account yet?",
+            style: TextStyle(color: MyColors.primaryColor)),
+        TextButton(
+            onPressed: _controller.goToIngresaNumero,
+            child: Text("Register",
+                style: TextStyle(color: MyColors.primaryColor)))
       ],
     );
   }
@@ -167,17 +154,29 @@ class _LoginPageState extends State<LoginPage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          IconButton(onPressed: () {
-            //TODO g+
-          }, icon: const Icon(FontAwesomeIcons.googlePlus), color: MyColors.primaryColor, iconSize: 50),
+          IconButton(
+              onPressed: () {
+                //TODO g+
+              },
+              icon: const Icon(FontAwesomeIcons.googlePlus),
+              color: MyColors.primaryColor,
+              iconSize: 50),
           const SizedBox(width: 10),
-          IconButton(onPressed: () {
-            //TODO face
-          }, icon: const Icon(FontAwesomeIcons.facebook), color: MyColors.primaryColor, iconSize: 50),
+          IconButton(
+              onPressed: () {
+                //TODO face
+              },
+              icon: const Icon(FontAwesomeIcons.facebook),
+              color: MyColors.primaryColor,
+              iconSize: 50),
           const SizedBox(width: 10),
-          IconButton(onPressed: () {
-            //TODO twitter
-          }, icon: const Icon(FontAwesomeIcons.twitter), color: MyColors.primaryColor, iconSize: 50),
+          IconButton(
+              onPressed: () {
+                //TODO twitter
+              },
+              icon: const Icon(FontAwesomeIcons.twitter),
+              color: MyColors.primaryColor,
+              iconSize: 50),
         ],
       ),
     );
@@ -188,7 +187,11 @@ class _LoginPageState extends State<LoginPage> {
       child: Padding(
         padding: EdgeInsets.only(top: 80, left: 15, right: 15),
         child: Text("LYZOO",
-            style: TextStyle(fontSize: 98, color: const Color.fromRGBO(252, 73, 73, 0.80), fontWeight: FontWeight.bold, letterSpacing: 2)),
+            style: TextStyle(
+                fontSize: 98,
+                color: const Color.fromRGBO(252, 73, 73, 0.80),
+                fontWeight: FontWeight.bold,
+                letterSpacing: 2)),
       ),
     );
   }
@@ -199,20 +202,23 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           Expanded(
               child: Container(
-                  margin: const EdgeInsets.only(left: 10.0, right: 15.0), child: Divider(indent: 30, color: MyColors.primaryColor, height: 0))),
+                  margin: const EdgeInsets.only(left: 10.0, right: 15.0),
+                  child: Divider(
+                      indent: 30, color: MyColors.primaryColor, height: 0))),
           const Text("OR"),
           Expanded(
               child: Container(
-                  margin: const EdgeInsets.only(left: 15.0, right: 10.0), child: Divider(color: MyColors.primaryColor, height: 0, endIndent: 30))),
+                  margin: const EdgeInsets.only(left: 15.0, right: 10.0),
+                  child: Divider(
+                      color: MyColors.primaryColor, height: 0, endIndent: 30))),
         ],
       ),
     );
   }
-
 }
 
-class _PelotaRojaLogin extends StatelessWidget {
-  const _PelotaRojaLogin({
+class _RedBallLogin extends StatelessWidget {
+  const _RedBallLogin({
     Key? key,
   }) : super(key: key);
 
@@ -224,18 +230,21 @@ class _PelotaRojaLogin extends StatelessWidget {
             top: -80,
             left: -100,
             child: Container(
-                width: 240, height: 230, decoration: BoxDecoration(color: MyColors.primaryColor, borderRadius: BorderRadius.circular(100)))),
+                width: 240,
+                height: 230,
+                decoration: BoxDecoration(
+                    color: MyColors.primaryColor,
+                    borderRadius: BorderRadius.circular(100)))),
         const Positioned(
           top: 60,
           left: 25,
           child: Text(
             'Login',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 22),
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 22),
           ),
         )
       ],
     );
   }
 }
-
-

@@ -1,27 +1,21 @@
 import 'package:flutter/material.dart';
 
-
-class DetalleController {
-
+class DetailController {
   BuildContext? context;
 
-  Future? init(BuildContext context){
-
+  Future? init(BuildContext context) {
     this.context = context;
-
   }
 
-
-  void backToHome(){
+  void backToHome() {
     Navigator.pop(context!);
-  }  
+  }
 
-  void goToInformation(){
+  void goToInformation() {
     Navigator.pushNamed(context!, '/informationRestaurant');
   }
 
-  void goToItemsPage(){
+  void goToItemsPage() {
     Navigator.pushNamed(context!, '/itemsPage');
   }
-
 }
